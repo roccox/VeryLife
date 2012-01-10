@@ -1,0 +1,303 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		DDE10A9014BBD774006630F4 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DDE10A8F14BBD774006630F4 /* UIKit.framework */; };
+		DDE10A9214BBD774006630F4 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DDE10A9114BBD774006630F4 /* Foundation.framework */; };
+		DDE10A9414BBD774006630F4 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DDE10A9314BBD774006630F4 /* CoreGraphics.framework */; };
+		DDE10A9A14BBD774006630F4 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = DDE10A9814BBD774006630F4 /* InfoPlist.strings */; };
+		DDE10A9C14BBD774006630F4 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = DDE10A9B14BBD774006630F4 /* main.m */; };
+		DDE10AA014BBD774006630F4 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = DDE10A9F14BBD774006630F4 /* AppDelegate.m */; };
+		DDE10AA314BBD775006630F4 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DDE10AA114BBD775006630F4 /* MainStoryboard.storyboard */; };
+		DDE10AA614BBD775006630F4 /* FirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DDE10AA514BBD775006630F4 /* FirstViewController.m */; };
+		DDE10AA814BBD775006630F4 /* first.png in Resources */ = {isa = PBXBuildFile; fileRef = DDE10AA714BBD775006630F4 /* first.png */; };
+		DDE10AAA14BBD775006630F4 /* first@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DDE10AA914BBD775006630F4 /* first@2x.png */; };
+		DDE10AAD14BBD775006630F4 /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DDE10AAC14BBD775006630F4 /* SecondViewController.m */; };
+		DDE10AAF14BBD775006630F4 /* second.png in Resources */ = {isa = PBXBuildFile; fileRef = DDE10AAE14BBD775006630F4 /* second.png */; };
+		DDE10AB114BBD775006630F4 /* second@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DDE10AB014BBD775006630F4 /* second@2x.png */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		DDE10A8B14BBD774006630F4 /* MyVeryLife.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyVeryLife.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		DDE10A8F14BBD774006630F4 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		DDE10A9114BBD774006630F4 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		DDE10A9314BBD774006630F4 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		DDE10A9714BBD774006630F4 /* MyVeryLife-Info.plist */ = {isa = PBXFileReference; path = "MyVeryLife-Info.plist"; sourceTree = "<group>"; };
+		DDE10A9914BBD774006630F4 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		DDE10A9B14BBD774006630F4 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		DDE10A9D14BBD774006630F4 /* MyVeryLife-Prefix.pch */ = {isa = PBXFileReference; path = "MyVeryLife-Prefix.pch"; sourceTree = "<group>"; };
+		DDE10A9E14BBD774006630F4 /* AppDelegate.h */ = {isa = PBXFileReference; path = AppDelegate.h; sourceTree = "<group>"; };
+		DDE10A9F14BBD774006630F4 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		DDE10AA214BBD775006630F4 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
+		DDE10AA414BBD775006630F4 /* FirstViewController.h */ = {isa = PBXFileReference; path = FirstViewController.h; sourceTree = "<group>"; };
+		DDE10AA514BBD775006630F4 /* FirstViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FirstViewController.m; sourceTree = "<group>"; };
+		DDE10AA714BBD775006630F4 /* first.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = first.png; sourceTree = "<group>"; };
+		DDE10AA914BBD775006630F4 /* first@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "first@2x.png"; sourceTree = "<group>"; };
+		DDE10AAB14BBD775006630F4 /* SecondViewController.h */ = {isa = PBXFileReference; path = SecondViewController.h; sourceTree = "<group>"; };
+		DDE10AAC14BBD775006630F4 /* SecondViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SecondViewController.m; sourceTree = "<group>"; };
+		DDE10AAE14BBD775006630F4 /* second.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = second.png; sourceTree = "<group>"; };
+		DDE10AB014BBD775006630F4 /* second@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "second@2x.png"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		DDE10A8814BBD774006630F4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DDE10A9014BBD774006630F4 /* UIKit.framework in Frameworks */,
+				DDE10A9214BBD774006630F4 /* Foundation.framework in Frameworks */,
+				DDE10A9414BBD774006630F4 /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		DDE10A8014BBD774006630F4 = {
+			isa = PBXGroup;
+			children = (
+				DDE10A9514BBD774006630F4 /* MyVeryLife */,
+				DDE10A8E14BBD774006630F4 /* Frameworks */,
+				DDE10A8C14BBD774006630F4 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		DDE10A8C14BBD774006630F4 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				DDE10A8B14BBD774006630F4 /* MyVeryLife.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		DDE10A8E14BBD774006630F4 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				DDE10A8F14BBD774006630F4 /* UIKit.framework */,
+				DDE10A9114BBD774006630F4 /* Foundation.framework */,
+				DDE10A9314BBD774006630F4 /* CoreGraphics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		DDE10A9514BBD774006630F4 /* MyVeryLife */ = {
+			isa = PBXGroup;
+			children = (
+				DDE10A9E14BBD774006630F4 /* AppDelegate.h */,
+				DDE10A9F14BBD774006630F4 /* AppDelegate.m */,
+				DDE10AA114BBD775006630F4 /* MainStoryboard.storyboard */,
+				DDE10AA414BBD775006630F4 /* FirstViewController.h */,
+				DDE10AA514BBD775006630F4 /* FirstViewController.m */,
+				DDE10AA714BBD775006630F4 /* first.png */,
+				DDE10AA914BBD775006630F4 /* first@2x.png */,
+				DDE10AAB14BBD775006630F4 /* SecondViewController.h */,
+				DDE10AAC14BBD775006630F4 /* SecondViewController.m */,
+				DDE10AAE14BBD775006630F4 /* second.png */,
+				DDE10AB014BBD775006630F4 /* second@2x.png */,
+				DDE10A9614BBD774006630F4 /* Supporting Files */,
+			);
+			path = MyVeryLife;
+			sourceTree = "<group>";
+		};
+		DDE10A9614BBD774006630F4 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				DDE10A9714BBD774006630F4 /* MyVeryLife-Info.plist */,
+				DDE10A9814BBD774006630F4 /* InfoPlist.strings */,
+				DDE10A9B14BBD774006630F4 /* main.m */,
+				DDE10A9D14BBD774006630F4 /* MyVeryLife-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		DDE10A8A14BBD774006630F4 /* MyVeryLife */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DDE10AB414BBD775006630F4 /* Build configuration list for PBXNativeTarget "MyVeryLife" */;
+			buildPhases = (
+				DDE10A8714BBD774006630F4 /* Sources */,
+				DDE10A8814BBD774006630F4 /* Frameworks */,
+				DDE10A8914BBD774006630F4 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MyVeryLife;
+			productName = MyVeryLife;
+			productReference = DDE10A8B14BBD774006630F4 /* MyVeryLife.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		DDE10A8214BBD774006630F4 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0420;
+			};
+			buildConfigurationList = DDE10A8514BBD774006630F4 /* Build configuration list for PBXProject "MyVeryLife" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = DDE10A8014BBD774006630F4;
+			productRefGroup = DDE10A8C14BBD774006630F4 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				DDE10A8A14BBD774006630F4 /* MyVeryLife */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		DDE10A8914BBD774006630F4 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DDE10A9A14BBD774006630F4 /* InfoPlist.strings in Resources */,
+				DDE10AA314BBD775006630F4 /* MainStoryboard.storyboard in Resources */,
+				DDE10AA814BBD775006630F4 /* first.png in Resources */,
+				DDE10AAA14BBD775006630F4 /* first@2x.png in Resources */,
+				DDE10AAF14BBD775006630F4 /* second.png in Resources */,
+				DDE10AB114BBD775006630F4 /* second@2x.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		DDE10A8714BBD774006630F4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DDE10A9C14BBD774006630F4 /* main.m in Sources */,
+				DDE10AA014BBD774006630F4 /* AppDelegate.m in Sources */,
+				DDE10AA614BBD775006630F4 /* FirstViewController.m in Sources */,
+				DDE10AAD14BBD775006630F4 /* SecondViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		DDE10A9814BBD774006630F4 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DDE10A9914BBD774006630F4 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		DDE10AA114BBD775006630F4 /* MainStoryboard.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DDE10AA214BBD775006630F4 /* en */,
+			);
+			name = MainStoryboard.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		DDE10AB214BBD775006630F4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		DDE10AB314BBD775006630F4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		DDE10AB514BBD775006630F4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "MyVeryLife/MyVeryLife-Prefix.pch";
+				INFOPLIST_FILE = "MyVeryLife/MyVeryLife-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		DDE10AB614BBD775006630F4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "MyVeryLife/MyVeryLife-Prefix.pch";
+				INFOPLIST_FILE = "MyVeryLife/MyVeryLife-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		DDE10A8514BBD774006630F4 /* Build configuration list for PBXProject "MyVeryLife" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DDE10AB214BBD775006630F4 /* Debug */,
+				DDE10AB314BBD775006630F4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DDE10AB414BBD775006630F4 /* Build configuration list for PBXNativeTarget "MyVeryLife" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DDE10AB514BBD775006630F4 /* Debug */,
+				DDE10AB614BBD775006630F4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = DDE10A8214BBD774006630F4 /* Project object */;
+}
