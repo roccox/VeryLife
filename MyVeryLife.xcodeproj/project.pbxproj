@@ -29,6 +29,12 @@
 		DDE10ACD14BBDE89006630F4 /* SearchTabController.m in Sources */ = {isa = PBXBuildFile; fileRef = DDE10ACC14BBDE89006630F4 /* SearchTabController.m */; };
 		DDE10AD014BBDE9E006630F4 /* EventTabController.m in Sources */ = {isa = PBXBuildFile; fileRef = DDE10ACF14BBDE9E006630F4 /* EventTabController.m */; };
 		DDE10AD314BBDEB3006630F4 /* SettingTabController.m in Sources */ = {isa = PBXBuildFile; fileRef = DDE10AD214BBDEB3006630F4 /* SettingTabController.m */; };
+		DDECFA4F14BD6B2900477A45 /* 1933_1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = DDECFA4A14BD6B2800477A45 /* 1933_1.jpg */; };
+		DDECFA5014BD6B2900477A45 /* 1933_2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = DDECFA4B14BD6B2800477A45 /* 1933_2.jpg */; };
+		DDECFA5114BD6B2900477A45 /* 1933_3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = DDECFA4C14BD6B2800477A45 /* 1933_3.jpg */; };
+		DDECFA5214BD6B2900477A45 /* 1933_4.jpg in Resources */ = {isa = PBXBuildFile; fileRef = DDECFA4D14BD6B2800477A45 /* 1933_4.jpg */; };
+		DDECFA5314BD6B2900477A45 /* 1933_5.jpg in Resources */ = {isa = PBXBuildFile; fileRef = DDECFA4E14BD6B2900477A45 /* 1933_5.jpg */; };
+		DDECFA5714BD6B7400477A45 /* PagePhotosView.m in Sources */ = {isa = PBXBuildFile; fileRef = DDECFA5614BD6B7400477A45 /* PagePhotosView.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -66,6 +72,14 @@
 		DDE10ACF14BBDE9E006630F4 /* EventTabController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventTabController.m; sourceTree = "<group>"; };
 		DDE10AD114BBDEB3006630F4 /* SettingTabController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingTabController.h; sourceTree = "<group>"; };
 		DDE10AD214BBDEB3006630F4 /* SettingTabController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingTabController.m; sourceTree = "<group>"; };
+		DDECFA4A14BD6B2800477A45 /* 1933_1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 1933_1.jpg; sourceTree = "<group>"; };
+		DDECFA4B14BD6B2800477A45 /* 1933_2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 1933_2.jpg; sourceTree = "<group>"; };
+		DDECFA4C14BD6B2800477A45 /* 1933_3.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 1933_3.jpg; sourceTree = "<group>"; };
+		DDECFA4D14BD6B2800477A45 /* 1933_4.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 1933_4.jpg; sourceTree = "<group>"; };
+		DDECFA4E14BD6B2900477A45 /* 1933_5.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 1933_5.jpg; sourceTree = "<group>"; };
+		DDECFA5414BD6B7400477A45 /* PagePhotosDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PagePhotosDataSource.h; path = MyVeryLife/PagePhotosDataSource.h; sourceTree = "<group>"; };
+		DDECFA5514BD6B7400477A45 /* PagePhotosView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PagePhotosView.h; path = MyVeryLife/PagePhotosView.h; sourceTree = "<group>"; };
+		DDECFA5614BD6B7400477A45 /* PagePhotosView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PagePhotosView.m; path = MyVeryLife/PagePhotosView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,6 +99,9 @@
 		DDE10A8014BBD774006630F4 = {
 			isa = PBXGroup;
 			children = (
+				DDECFA5414BD6B7400477A45 /* PagePhotosDataSource.h */,
+				DDECFA5514BD6B7400477A45 /* PagePhotosView.h */,
+				DDECFA5614BD6B7400477A45 /* PagePhotosView.m */,
 				DDE10A9514BBD774006630F4 /* MyVeryLife */,
 				DDE10A8E14BBD774006630F4 /* Frameworks */,
 				DDE10A8C14BBD774006630F4 /* Products */,
@@ -153,6 +170,11 @@
 		DDE10AD414BBDEC8006630F4 /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				DDECFA4A14BD6B2800477A45 /* 1933_1.jpg */,
+				DDECFA4B14BD6B2800477A45 /* 1933_2.jpg */,
+				DDECFA4C14BD6B2800477A45 /* 1933_3.jpg */,
+				DDECFA4D14BD6B2800477A45 /* 1933_4.jpg */,
+				DDECFA4E14BD6B2900477A45 /* 1933_5.jpg */,
 				DDE10AA714BBD775006630F4 /* first.png */,
 				DDE10AA914BBD775006630F4 /* first@2x.png */,
 				DDE10AAE14BBD775006630F4 /* second.png */,
@@ -165,11 +187,11 @@
 			isa = PBXGroup;
 			children = (
 				DDE10AA414BBD775006630F4 /* HomeTabController.h */,
-				DDE10AA514BBD775006630F4 /* HomeTabController.m */,
 				DDE10AAB14BBD775006630F4 /* ProductTabController.h */,
 				DDE10ACB14BBDE89006630F4 /* SearchTabController.h */,
 				DDE10ACE14BBDE9E006630F4 /* EventTabController.h */,
 				DDE10AD114BBDEB3006630F4 /* SettingTabController.h */,
+				DDE10AA514BBD775006630F4 /* HomeTabController.m */,
 				DDE10AD214BBDEB3006630F4 /* SettingTabController.m */,
 				DDE10ACF14BBDE9E006630F4 /* EventTabController.m */,
 				DDE10ACC14BBDE89006630F4 /* SearchTabController.m */,
@@ -237,6 +259,11 @@
 				DDE10ABF14BBDD0B006630F4 /* DetailInfo.xib in Resources */,
 				DDE10AC414BBDD20006630F4 /* DetailInfoWeb.xib in Resources */,
 				DDE10AC914BBDD7F006630F4 /* DetailInfoImage.xib in Resources */,
+				DDECFA4F14BD6B2900477A45 /* 1933_1.jpg in Resources */,
+				DDECFA5014BD6B2900477A45 /* 1933_2.jpg in Resources */,
+				DDECFA5114BD6B2900477A45 /* 1933_3.jpg in Resources */,
+				DDECFA5214BD6B2900477A45 /* 1933_4.jpg in Resources */,
+				DDECFA5314BD6B2900477A45 /* 1933_5.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -257,6 +284,7 @@
 				DDE10ACD14BBDE89006630F4 /* SearchTabController.m in Sources */,
 				DDE10AD014BBDE9E006630F4 /* EventTabController.m in Sources */,
 				DDE10AD314BBDEB3006630F4 /* SettingTabController.m in Sources */,
+				DDECFA5714BD6B7400477A45 /* PagePhotosView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -368,6 +396,7 @@
 				DDE10AB614BBD775006630F4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

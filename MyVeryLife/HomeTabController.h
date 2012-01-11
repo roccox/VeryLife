@@ -8,6 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
-@interface HomeTabController : UIViewController
+#import "PagePhotosView.h"
+#import "PagePhotosDataSource.h"
 
+@interface HomeTabController : UITableViewController <PagePhotosDataSource>
+
+@property (strong,nonatomic) PagePhotosView * pagePhotoView;
 @end
