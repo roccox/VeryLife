@@ -17,6 +17,8 @@
 		DD78473C14BE8FDB0050DD04 /* SDWebImageDownloader.m in Sources */ = {isa = PBXBuildFile; fileRef = DD78473314BE8FDB0050DD04 /* SDWebImageDownloader.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		DD78473D14BE8FDB0050DD04 /* SDWebImageManager.m in Sources */ = {isa = PBXBuildFile; fileRef = DD78473614BE8FDB0050DD04 /* SDWebImageManager.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		DD78473E14BE8FDB0050DD04 /* SDWebImagePrefetcher.m in Sources */ = {isa = PBXBuildFile; fileRef = DD78473914BE8FDB0050DD04 /* SDWebImagePrefetcher.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		DD78474214BE92E20050DD04 /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = DD78474114BE92E20050DD04 /* MBProgressHUD.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		DD78474514BE92F00050DD04 /* 37x-Checkmark.png in Resources */ = {isa = PBXBuildFile; fileRef = DD78474414BE92F00050DD04 /* 37x-Checkmark.png */; };
 		DDE10A9014BBD774006630F4 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DDE10A8F14BBD774006630F4 /* UIKit.framework */; };
 		DDE10A9214BBD774006630F4 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DDE10A9114BBD774006630F4 /* Foundation.framework */; };
 		DDE10A9414BBD774006630F4 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DDE10A9314BBD774006630F4 /* CoreGraphics.framework */; };
@@ -72,6 +74,9 @@
 		DD78473714BE8FDB0050DD04 /* SDWebImageManagerDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDWebImageManagerDelegate.h; sourceTree = "<group>"; };
 		DD78473814BE8FDB0050DD04 /* SDWebImagePrefetcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDWebImagePrefetcher.h; sourceTree = "<group>"; };
 		DD78473914BE8FDB0050DD04 /* SDWebImagePrefetcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDWebImagePrefetcher.m; sourceTree = "<group>"; };
+		DD78474014BE92E20050DD04 /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBProgressHUD.h; sourceTree = "<group>"; };
+		DD78474114BE92E20050DD04 /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
+		DD78474414BE92F00050DD04 /* 37x-Checkmark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "37x-Checkmark.png"; sourceTree = "<group>"; };
 		DDE10A8B14BBD774006630F4 /* MyVeryLife.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyVeryLife.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DDE10A8F14BBD774006630F4 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		DDE10A9114BBD774006630F4 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -150,6 +155,7 @@
 		DD78472A14BE8FDB0050DD04 /* Lib */ = {
 			isa = PBXGroup;
 			children = (
+				DD78473F14BE92E20050DD04 /* HUB */,
 				DD78472B14BE8FDB0050DD04 /* SDWebImage */,
 			);
 			path = Lib;
@@ -174,6 +180,23 @@
 				DD78473914BE8FDB0050DD04 /* SDWebImagePrefetcher.m */,
 			);
 			path = SDWebImage;
+			sourceTree = "<group>";
+		};
+		DD78473F14BE92E20050DD04 /* HUB */ = {
+			isa = PBXGroup;
+			children = (
+				DD78474014BE92E20050DD04 /* MBProgressHUD.h */,
+				DD78474114BE92E20050DD04 /* MBProgressHUD.m */,
+			);
+			path = HUB;
+			sourceTree = "<group>";
+		};
+		DD78474314BE92F00050DD04 /* Res */ = {
+			isa = PBXGroup;
+			children = (
+				DD78474414BE92F00050DD04 /* 37x-Checkmark.png */,
+			);
+			path = Res;
 			sourceTree = "<group>";
 		};
 		DDE10A8014BBD774006630F4 = {
@@ -210,6 +233,7 @@
 		DDE10A9514BBD774006630F4 /* MyVeryLife */ = {
 			isa = PBXGroup;
 			children = (
+				DD78474314BE92F00050DD04 /* Res */,
 				DD78472A14BE8FDB0050DD04 /* Lib */,
 				DD78470114BE86FA0050DD04 /* Taobao */,
 				DDE10A9E14BBD774006630F4 /* AppDelegate.h */,
@@ -347,6 +371,7 @@
 				DDECFA5114BD6B2900477A45 /* 1933_3.jpg in Resources */,
 				DDECFA5214BD6B2900477A45 /* 1933_4.jpg in Resources */,
 				DDECFA5314BD6B2900477A45 /* 1933_5.jpg in Resources */,
+				DD78474514BE92F00050DD04 /* 37x-Checkmark.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -377,6 +402,7 @@
 				DD78473C14BE8FDB0050DD04 /* SDWebImageDownloader.m in Sources */,
 				DD78473D14BE8FDB0050DD04 /* SDWebImageManager.m in Sources */,
 				DD78473E14BE8FDB0050DD04 /* SDWebImagePrefetcher.m in Sources */,
+				DD78474214BE92E20050DD04 /* MBProgressHUD.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
