@@ -12,6 +12,11 @@
 		DD78470C14BE87A00050DD04 /* ItemCategoryModel.m in Sources */ = {isa = PBXBuildFile; fileRef = DD78470614BE87A00050DD04 /* ItemCategoryModel.m */; };
 		DD78470D14BE87A00050DD04 /* ItemProductModel.m in Sources */ = {isa = PBXBuildFile; fileRef = DD78470814BE87A00050DD04 /* ItemProductModel.m */; };
 		DD78470E14BE87A00050DD04 /* Utility.m in Sources */ = {isa = PBXBuildFile; fileRef = DD78470A14BE87A00050DD04 /* Utility.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		DD78473A14BE8FDB0050DD04 /* SDImageCache.m in Sources */ = {isa = PBXBuildFile; fileRef = DD78472D14BE8FDB0050DD04 /* SDImageCache.m */; };
+		DD78473B14BE8FDB0050DD04 /* SDWebImageDecoder.m in Sources */ = {isa = PBXBuildFile; fileRef = DD78473114BE8FDB0050DD04 /* SDWebImageDecoder.m */; };
+		DD78473C14BE8FDB0050DD04 /* SDWebImageDownloader.m in Sources */ = {isa = PBXBuildFile; fileRef = DD78473314BE8FDB0050DD04 /* SDWebImageDownloader.m */; };
+		DD78473D14BE8FDB0050DD04 /* SDWebImageManager.m in Sources */ = {isa = PBXBuildFile; fileRef = DD78473614BE8FDB0050DD04 /* SDWebImageManager.m */; };
+		DD78473E14BE8FDB0050DD04 /* SDWebImagePrefetcher.m in Sources */ = {isa = PBXBuildFile; fileRef = DD78473914BE8FDB0050DD04 /* SDWebImagePrefetcher.m */; };
 		DDE10A9014BBD774006630F4 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DDE10A8F14BBD774006630F4 /* UIKit.framework */; };
 		DDE10A9214BBD774006630F4 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DDE10A9114BBD774006630F4 /* Foundation.framework */; };
 		DDE10A9414BBD774006630F4 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DDE10A9314BBD774006630F4 /* CoreGraphics.framework */; };
@@ -53,6 +58,20 @@
 		DD78470814BE87A00050DD04 /* ItemProductModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ItemProductModel.m; sourceTree = "<group>"; };
 		DD78470914BE87A00050DD04 /* Utility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Utility.h; sourceTree = "<group>"; };
 		DD78470A14BE87A00050DD04 /* Utility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Utility.m; sourceTree = "<group>"; };
+		DD78472C14BE8FDB0050DD04 /* SDImageCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDImageCache.h; sourceTree = "<group>"; };
+		DD78472D14BE8FDB0050DD04 /* SDImageCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDImageCache.m; sourceTree = "<group>"; };
+		DD78472E14BE8FDB0050DD04 /* SDImageCacheDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDImageCacheDelegate.h; sourceTree = "<group>"; };
+		DD78472F14BE8FDB0050DD04 /* SDWebImageCompat.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDWebImageCompat.h; sourceTree = "<group>"; };
+		DD78473014BE8FDB0050DD04 /* SDWebImageDecoder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDWebImageDecoder.h; sourceTree = "<group>"; };
+		DD78473114BE8FDB0050DD04 /* SDWebImageDecoder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDWebImageDecoder.m; sourceTree = "<group>"; };
+		DD78473214BE8FDB0050DD04 /* SDWebImageDownloader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDWebImageDownloader.h; sourceTree = "<group>"; };
+		DD78473314BE8FDB0050DD04 /* SDWebImageDownloader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDWebImageDownloader.m; sourceTree = "<group>"; };
+		DD78473414BE8FDB0050DD04 /* SDWebImageDownloaderDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDWebImageDownloaderDelegate.h; sourceTree = "<group>"; };
+		DD78473514BE8FDB0050DD04 /* SDWebImageManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDWebImageManager.h; sourceTree = "<group>"; };
+		DD78473614BE8FDB0050DD04 /* SDWebImageManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDWebImageManager.m; sourceTree = "<group>"; };
+		DD78473714BE8FDB0050DD04 /* SDWebImageManagerDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDWebImageManagerDelegate.h; sourceTree = "<group>"; };
+		DD78473814BE8FDB0050DD04 /* SDWebImagePrefetcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDWebImagePrefetcher.h; sourceTree = "<group>"; };
+		DD78473914BE8FDB0050DD04 /* SDWebImagePrefetcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDWebImagePrefetcher.m; sourceTree = "<group>"; };
 		DDE10A8B14BBD774006630F4 /* MyVeryLife.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyVeryLife.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DDE10A8F14BBD774006630F4 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		DDE10A9114BBD774006630F4 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -128,6 +147,35 @@
 			name = Taobao;
 			sourceTree = "<group>";
 		};
+		DD78472A14BE8FDB0050DD04 /* Lib */ = {
+			isa = PBXGroup;
+			children = (
+				DD78472B14BE8FDB0050DD04 /* SDWebImage */,
+			);
+			path = Lib;
+			sourceTree = "<group>";
+		};
+		DD78472B14BE8FDB0050DD04 /* SDWebImage */ = {
+			isa = PBXGroup;
+			children = (
+				DD78472C14BE8FDB0050DD04 /* SDImageCache.h */,
+				DD78472D14BE8FDB0050DD04 /* SDImageCache.m */,
+				DD78472E14BE8FDB0050DD04 /* SDImageCacheDelegate.h */,
+				DD78472F14BE8FDB0050DD04 /* SDWebImageCompat.h */,
+				DD78473014BE8FDB0050DD04 /* SDWebImageDecoder.h */,
+				DD78473114BE8FDB0050DD04 /* SDWebImageDecoder.m */,
+				DD78473214BE8FDB0050DD04 /* SDWebImageDownloader.h */,
+				DD78473314BE8FDB0050DD04 /* SDWebImageDownloader.m */,
+				DD78473414BE8FDB0050DD04 /* SDWebImageDownloaderDelegate.h */,
+				DD78473514BE8FDB0050DD04 /* SDWebImageManager.h */,
+				DD78473614BE8FDB0050DD04 /* SDWebImageManager.m */,
+				DD78473714BE8FDB0050DD04 /* SDWebImageManagerDelegate.h */,
+				DD78473814BE8FDB0050DD04 /* SDWebImagePrefetcher.h */,
+				DD78473914BE8FDB0050DD04 /* SDWebImagePrefetcher.m */,
+			);
+			path = SDWebImage;
+			sourceTree = "<group>";
+		};
 		DDE10A8014BBD774006630F4 = {
 			isa = PBXGroup;
 			children = (
@@ -162,6 +210,7 @@
 		DDE10A9514BBD774006630F4 /* MyVeryLife */ = {
 			isa = PBXGroup;
 			children = (
+				DD78472A14BE8FDB0050DD04 /* Lib */,
 				DD78470114BE86FA0050DD04 /* Taobao */,
 				DDE10A9E14BBD774006630F4 /* AppDelegate.h */,
 				DDE10A9F14BBD774006630F4 /* AppDelegate.m */,
@@ -323,6 +372,11 @@
 				DD78470C14BE87A00050DD04 /* ItemCategoryModel.m in Sources */,
 				DD78470D14BE87A00050DD04 /* ItemProductModel.m in Sources */,
 				DD78470E14BE87A00050DD04 /* Utility.m in Sources */,
+				DD78473A14BE8FDB0050DD04 /* SDImageCache.m in Sources */,
+				DD78473B14BE8FDB0050DD04 /* SDWebImageDecoder.m in Sources */,
+				DD78473C14BE8FDB0050DD04 /* SDWebImageDownloader.m in Sources */,
+				DD78473D14BE8FDB0050DD04 /* SDWebImageManager.m in Sources */,
+				DD78473E14BE8FDB0050DD04 /* SDWebImagePrefetcher.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
