@@ -19,6 +19,7 @@
 		DD78473E14BE8FDB0050DD04 /* SDWebImagePrefetcher.m in Sources */ = {isa = PBXBuildFile; fileRef = DD78473914BE8FDB0050DD04 /* SDWebImagePrefetcher.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		DD78474214BE92E20050DD04 /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = DD78474114BE92E20050DD04 /* MBProgressHUD.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		DD78474514BE92F00050DD04 /* 37x-Checkmark.png in Resources */ = {isa = PBXBuildFile; fileRef = DD78474414BE92F00050DD04 /* 37x-Checkmark.png */; };
+		DD78474C14BEC0A20050DD04 /* SingleModel.m in Sources */ = {isa = PBXBuildFile; fileRef = DD78474B14BEC0A20050DD04 /* SingleModel.m */; };
 		DDE10A9014BBD774006630F4 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DDE10A8F14BBD774006630F4 /* UIKit.framework */; };
 		DDE10A9214BBD774006630F4 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DDE10A9114BBD774006630F4 /* Foundation.framework */; };
 		DDE10A9414BBD774006630F4 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DDE10A9314BBD774006630F4 /* CoreGraphics.framework */; };
@@ -77,6 +78,8 @@
 		DD78474014BE92E20050DD04 /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBProgressHUD.h; sourceTree = "<group>"; };
 		DD78474114BE92E20050DD04 /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
 		DD78474414BE92F00050DD04 /* 37x-Checkmark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "37x-Checkmark.png"; sourceTree = "<group>"; };
+		DD78474A14BEC0A20050DD04 /* SingleModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SingleModel.h; sourceTree = "<group>"; };
+		DD78474B14BEC0A20050DD04 /* SingleModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SingleModel.m; sourceTree = "<group>"; };
 		DDE10A8B14BBD774006630F4 /* MyVeryLife.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyVeryLife.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DDE10A8F14BBD774006630F4 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		DDE10A9114BBD774006630F4 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -148,6 +151,8 @@
 				DD78470814BE87A00050DD04 /* ItemProductModel.m */,
 				DD78470914BE87A00050DD04 /* Utility.h */,
 				DD78470A14BE87A00050DD04 /* Utility.m */,
+				DD78474A14BEC0A20050DD04 /* SingleModel.h */,
+				DD78474B14BEC0A20050DD04 /* SingleModel.m */,
 			);
 			name = Taobao;
 			sourceTree = "<group>";
@@ -294,15 +299,15 @@
 			isa = PBXGroup;
 			children = (
 				DDE10AA414BBD775006630F4 /* HomeTabController.h */,
-				DDE10AAB14BBD775006630F4 /* ProductTabController.h */,
-				DDE10ACB14BBDE89006630F4 /* SearchTabController.h */,
-				DDE10ACE14BBDE9E006630F4 /* EventTabController.h */,
-				DDE10AD114BBDEB3006630F4 /* SettingTabController.h */,
 				DDE10AA514BBD775006630F4 /* HomeTabController.m */,
-				DDE10AD214BBDEB3006630F4 /* SettingTabController.m */,
-				DDE10ACF14BBDE9E006630F4 /* EventTabController.m */,
-				DDE10ACC14BBDE89006630F4 /* SearchTabController.m */,
+				DDE10AAB14BBD775006630F4 /* ProductTabController.h */,
 				DDE10AAC14BBD775006630F4 /* ProductTabController.m */,
+				DDE10ACB14BBDE89006630F4 /* SearchTabController.h */,
+				DDE10ACC14BBDE89006630F4 /* SearchTabController.m */,
+				DDE10ACE14BBDE9E006630F4 /* EventTabController.h */,
+				DDE10ACF14BBDE9E006630F4 /* EventTabController.m */,
+				DDE10AD114BBDEB3006630F4 /* SettingTabController.h */,
+				DDE10AD214BBDEB3006630F4 /* SettingTabController.m */,
 			);
 			name = NavController;
 			sourceTree = "<group>";
@@ -403,6 +408,7 @@
 				DD78473D14BE8FDB0050DD04 /* SDWebImageManager.m in Sources */,
 				DD78473E14BE8FDB0050DD04 /* SDWebImagePrefetcher.m in Sources */,
 				DD78474214BE92E20050DD04 /* MBProgressHUD.m in Sources */,
+				DD78474C14BEC0A20050DD04 /* SingleModel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

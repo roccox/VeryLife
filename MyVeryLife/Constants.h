@@ -10,7 +10,10 @@
 #define BASEURL     @"http://gw.api.taobao.com/router/rest"
 #define LOGINURL    @"http://container.api.taobao.com/container?appkey=12228835"
 
+/*
 #define PLAYBUTTONSOUND [(TaobaoClientAppDelegate *)[[UIApplication sharedApplication]delegate] loadButtonSound:1];
 #define PLAYERALERTSOUND [(TaobaoClientAppDelegate *)[[UIApplication sharedApplication]delegate] loadAlertSound:1];
 #define PLAYRIPPLESOUND [(TaobaoClientAppDelegate *)[[UIApplication sharedApplication]delegate] loadRippleSound:1];
 #define PLAYEPAGESOUND [(TaobaoClientAppDelegate *)[[UIApplication sharedApplication]delegate] loadPageSound:1];
+*/
+

@@ -11,7 +11,19 @@
 #import "PagePhotosView.h"
 #import "PagePhotosDataSource.h"
 
-@interface HomeTabController : UITableViewController <PagePhotosDataSource>
+#import "SingleModel.h"
+
+#import "Utility.h"
+
+@interface HomeTabController : UITableViewController <PagePhotosDataSource,NSXMLParserDelegate,TaobaoDataDelegate>{
+
+}
 
 @property (strong,nonatomic) PagePhotosView * pagePhotoView;
+
+-(void)getRecommendedProInfo;
+-(void)getNewProInfo;
+
+-(void)refreshData;
+
 @end

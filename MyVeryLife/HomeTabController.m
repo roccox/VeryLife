@@ -53,6 +53,18 @@
 	
 }
 
+#pragma mark - 获取产品信息
+-(void)getRecommendedProInfo
+{
+
+}
+
+-(void)getNewProInfo
+{
+}
+
+
+
 - (void)viewDidUnload
 {
     [super viewDidUnload];
