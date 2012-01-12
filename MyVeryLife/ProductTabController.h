@@ -8,6 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ProductTabController : UIViewController
+#import "SingleModel.h"
+#import "ProductTabProController.h"
+
+@interface ProductTabController : UITableViewController <TaobaoDataDelegate>
 
 @end

@@ -48,6 +48,7 @@
 		DDECFA5214BD6B2900477A45 /* 1933_4.jpg in Resources */ = {isa = PBXBuildFile; fileRef = DDECFA4D14BD6B2800477A45 /* 1933_4.jpg */; };
 		DDECFA5314BD6B2900477A45 /* 1933_5.jpg in Resources */ = {isa = PBXBuildFile; fileRef = DDECFA4E14BD6B2900477A45 /* 1933_5.jpg */; };
 		DDECFA5714BD6B7400477A45 /* PagePhotosView.m in Sources */ = {isa = PBXBuildFile; fileRef = DDECFA5614BD6B7400477A45 /* PagePhotosView.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		DDF0DAC314BF20B600D90BB1 /* ProductTabProController.m in Sources */ = {isa = PBXBuildFile; fileRef = DDF0DAC214BF20B600D90BB1 /* ProductTabProController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -122,6 +123,8 @@
 		DDECFA5414BD6B7400477A45 /* PagePhotosDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PagePhotosDataSource.h; path = MyVeryLife/PagePhotosDataSource.h; sourceTree = "<group>"; };
 		DDECFA5514BD6B7400477A45 /* PagePhotosView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PagePhotosView.h; path = MyVeryLife/PagePhotosView.h; sourceTree = "<group>"; };
 		DDECFA5614BD6B7400477A45 /* PagePhotosView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PagePhotosView.m; path = MyVeryLife/PagePhotosView.m; sourceTree = "<group>"; };
+		DDF0DAC114BF20B600D90BB1 /* ProductTabProController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProductTabProController.h; sourceTree = "<group>"; };
+		DDF0DAC214BF20B600D90BB1 /* ProductTabProController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProductTabProController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -266,13 +269,13 @@
 		DDE10ACA14BBDD92006630F4 /* DetailInfo */ = {
 			isa = PBXGroup;
 			children = (
-				DDE10ABB14BBDD0B006630F4 /* DetailInfo.h */,
-				DDE10AC014BBDD20006630F4 /* DetailInfoWeb.h */,
 				DDE10AC514BBDD7F006630F4 /* DetailInfoImage.h */,
 				DDE10AC614BBDD7F006630F4 /* DetailInfoImage.m */,
 				DDE10AC714BBDD7F006630F4 /* DetailInfoImage.xib */,
+				DDE10AC014BBDD20006630F4 /* DetailInfoWeb.h */,
 				DDE10AC114BBDD20006630F4 /* DetailInfoWeb.m */,
 				DDE10AC214BBDD20006630F4 /* DetailInfoWeb.xib */,
+				DDE10ABB14BBDD0B006630F4 /* DetailInfo.h */,
 				DDE10ABC14BBDD0B006630F4 /* DetailInfo.m */,
 				DDE10ABD14BBDD0B006630F4 /* DetailInfo.xib */,
 			);
@@ -308,6 +311,8 @@
 				DDE10ACF14BBDE9E006630F4 /* EventTabController.m */,
 				DDE10AD114BBDEB3006630F4 /* SettingTabController.h */,
 				DDE10AD214BBDEB3006630F4 /* SettingTabController.m */,
+				DDF0DAC114BF20B600D90BB1 /* ProductTabProController.h */,
+				DDF0DAC214BF20B600D90BB1 /* ProductTabProController.m */,
 			);
 			name = NavController;
 			sourceTree = "<group>";
@@ -409,6 +414,7 @@
 				DD78473E14BE8FDB0050DD04 /* SDWebImagePrefetcher.m in Sources */,
 				DD78474214BE92E20050DD04 /* MBProgressHUD.m in Sources */,
 				DD78474C14BEC0A20050DD04 /* SingleModel.m in Sources */,
+				DDF0DAC314BF20B600D90BB1 /* ProductTabProController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

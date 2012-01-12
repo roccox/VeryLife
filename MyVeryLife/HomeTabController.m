@@ -110,6 +110,18 @@
     return cell;    
 }
 
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+	ItemProductModel * product = [[SingleModel getSingleModal].itemNewProList objectAtIndex:indexPath.row];
+
+    DetailInfo * controller = [[DetailInfo alloc]initWithNibName:@"DetailInfo" bundle:nil];
+
+    controller.product = product;
+    controller.hidesBottomBarWhenPushed = YES;
+//    self.navigationController.hidesBottomBarWhenPushed = YES;
+    [self.navigationController pushViewController:controller animated:YES];
+
+}
 
 - (void)viewDidUnload
 {

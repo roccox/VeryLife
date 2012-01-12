@@ -8,6 +8,12 @@
 
 #import <UIKit/UIKit.h>
 
-@interface DetailInfo : UIViewController
+#import "SingleModel.h"
+
+@interface DetailInfo : UIViewController{
+    ItemProductModel * product;
+}
+
+@property(nonatomic,strong) ItemProductModel * product;
 
 @end

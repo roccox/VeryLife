@@ -11,6 +11,7 @@
 #import "PagePhotosView.h"
 #import "PagePhotosDataSource.h"
 
+#import "DetailInfo.h"
 #import "SingleModel.h"
 
 #import "Utility.h"

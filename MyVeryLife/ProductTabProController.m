@@ -1,16 +1,16 @@
 //
-//  DetailInfo.m
+//  ProductTabProController.m
 //  MyVeryLife
 //
-//  Created by Rock on 12-1-10.
+//  Created by Rock on 12-1-12.
 //  Copyright (c) 2012年 __MyCompanyName__. All rights reserved.
 //
 
-#import "DetailInfo.h"
+#import "ProductTabProController.h"
 
-@implementation DetailInfo
+@implementation ProductTabProController
 
-@synthesize product;
+@synthesize cat;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -31,11 +31,20 @@
 
 #pragma mark - View lifecycle
 
+/*
+// Implement loadView to create a view hierarchy programmatically, without using a nib.
+- (void)loadView
+{
+}
+*/
+
+/*
+// Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
 }
+*/
 
 - (void)viewDidUnload
 {
