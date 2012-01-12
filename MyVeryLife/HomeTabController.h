@@ -15,7 +15,7 @@
 
 #import "Utility.h"
 
-@interface HomeTabController : UITableViewController <PagePhotosDataSource,NSXMLParserDelegate,TaobaoDataDelegate>{
+@interface HomeTabController : UITableViewController <PagePhotosDataSource,TaobaoDataDelegate>{
 
 }
 

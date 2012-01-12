@@ -145,5 +145,48 @@
     [super dealloc];
 }
 
+-(void)refreshData:(id<PagePhotosDataSource>)_dataSource
+{
+    //release views
+    [scrollView release];
+	[pageControl release];
+ 
+    self.dataSource = _dataSource;
+    // Initialization UIScrollView
+    int pageControlHeight = 20;
+    scrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 0, 320.f, 240.0f)];
+    pageControl = [[UIPageControl alloc] initWithFrame:CGRectMake(0, 240.f, 320.f,pageControlHeight)];
+		
+    [self addSubview:scrollView];
+    [self addSubview:pageControl];
+    
+    int kNumberOfPages = [dataSource numberOfPages];
+    
+    // in the meantime, load the array with placeholders which will be replaced on demand
+    NSMutableArray *views = [[NSMutableArray alloc] init];
+    for (unsigned i = 0; i < kNumberOfPages; i++) {
+        [views addObject:[NSNull null]];
+    }
+    self.imageViews = views;
+    [views release];
+    
+    // a page is the width of the scroll view
+    scrollView.pagingEnabled = YES;
+    scrollView.contentSize = CGSizeMake(scrollView.frame.size.width * kNumberOfPages, scrollView.frame.size.height);
+    scrollView.showsHorizontalScrollIndicator = NO;
+    scrollView.showsVerticalScrollIndicator = NO;
+    scrollView.scrollsToTop = NO;
+    scrollView.delegate = self;
+    
+    pageControl.numberOfPages = kNumberOfPages;
+    pageControl.currentPage = 0;
+    pageControl.backgroundColor = [UIColor blackColor];
+		
+    // pages are created on demand
+    // load the visible page
+    // load the page on either side to avoid flashes when the user starts scrolling
+    [self loadScrollViewWithPage:0];
+    [self loadScrollViewWithPage:1];
+}
 
 @end

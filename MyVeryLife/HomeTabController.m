@@ -21,15 +21,23 @@
 // 有多少页
 //
 - (int)numberOfPages {
-	return 5;
+    return [[SingleModel getSingleModal].itemHotProList count];
+//	return 5;
 }
 
 // 每页的图片
 //
 - (UIImage *)imageAtIndex:(int)index {
+    ItemProductModel * curPro = [[SingleModel getSingleModal].itemHotProList objectAtIndex:index];
+    return curPro.photo;
+
+    /*
+    return [[SingleModel getSingleModal].itemHotProList];
+
 	NSString *imageName = [NSString stringWithFormat:@"1933_%d.jpg", index + 1];
 	return [UIImage imageNamed:imageName];
-}
+
+     */}
 
 #pragma mark - View lifecycle
 
@@ -50,9 +58,17 @@
 //        self.tableView.frame.origin.x;
 		pagePhotoView = view;
 	}
-	
+	[[SingleModel getSingleModal]refreshData];
+    //Sleep for a while
+    sleep(3);
+    [self.pagePhotoView refreshData:self];
 }
 
+#pragma taobao data
+-(void) finishedPrepareData
+{
+    
+}
 #pragma mark - 获取产品信息
 -(void)getRecommendedProInfo
 {

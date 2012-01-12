@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "PagePhotosDataSource.h"
 
+#import "ItemProductModel.h"
 @interface PagePhotosView : UIView<UIScrollViewDelegate> {
 	UIScrollView *scrollView;
 	UIPageControl *pageControl;
@@ -27,4 +28,5 @@
 
 - (id)initWithFrame:(CGRect)frame withDataSource:(id<PagePhotosDataSource>)_dataSource;
 
+-(void)refreshData:(id<PagePhotosDataSource>)_dataSource;
 @end
