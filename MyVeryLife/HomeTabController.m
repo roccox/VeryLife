@@ -79,6 +79,36 @@
 {
 }
 
+#pragma - Tableview
+-(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+{
+    return 1;
+}
+
+-(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    return [[SingleModel getSingleModal].itemNewProList count];
+}
+
+
+-(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    UITableViewCell *cell = [tableView 
+                             dequeueReusableCellWithIdentifier:@"homeprocell"];
+	ItemProductModel * product = [[SingleModel getSingleModal].itemNewProList objectAtIndex:indexPath.row];
+    UIImageView * proImage = (UIImageView*)[cell viewWithTag:100];
+    proImage.image = product.photo;
+    UILabel * proTitle = (UILabel *)[cell viewWithTag:101];
+    proTitle.text = product.title;
+    UILabel * proPrice = (UILabel *)[cell viewWithTag:102];
+    proPrice.text = product.price;
+    UILabel * proFreight = (UILabel *)[cell viewWithTag:103];
+    proFreight.text = product.item_express;
+    UILabel * proSold = (UILabel *)[cell viewWithTag:104];
+    proSold.text = product.sell_count;
+
+    return cell;    
+}
 
 
 - (void)viewDidUnload
