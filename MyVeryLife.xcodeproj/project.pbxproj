@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DD66CF3114BE85CD004D127C /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DD66CF3014BE85CD004D127C /* SystemConfiguration.framework */; };
+		DD78470B14BE87A00050DD04 /* CommentModel.m in Sources */ = {isa = PBXBuildFile; fileRef = DD78470314BE87A00050DD04 /* CommentModel.m */; };
+		DD78470C14BE87A00050DD04 /* ItemCategoryModel.m in Sources */ = {isa = PBXBuildFile; fileRef = DD78470614BE87A00050DD04 /* ItemCategoryModel.m */; };
+		DD78470D14BE87A00050DD04 /* ItemProductModel.m in Sources */ = {isa = PBXBuildFile; fileRef = DD78470814BE87A00050DD04 /* ItemProductModel.m */; };
+		DD78470E14BE87A00050DD04 /* Utility.m in Sources */ = {isa = PBXBuildFile; fileRef = DD78470A14BE87A00050DD04 /* Utility.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		DDE10A9014BBD774006630F4 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DDE10A8F14BBD774006630F4 /* UIKit.framework */; };
 		DDE10A9214BBD774006630F4 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DDE10A9114BBD774006630F4 /* Foundation.framework */; };
 		DDE10A9414BBD774006630F4 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DDE10A9314BBD774006630F4 /* CoreGraphics.framework */; };
@@ -38,6 +43,16 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		DD66CF3014BE85CD004D127C /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		DD78470214BE87A00050DD04 /* CommentModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommentModel.h; sourceTree = "<group>"; };
+		DD78470314BE87A00050DD04 /* CommentModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommentModel.m; sourceTree = "<group>"; };
+		DD78470414BE87A00050DD04 /* Constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
+		DD78470514BE87A00050DD04 /* ItemCategoryModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ItemCategoryModel.h; sourceTree = "<group>"; };
+		DD78470614BE87A00050DD04 /* ItemCategoryModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ItemCategoryModel.m; sourceTree = "<group>"; };
+		DD78470714BE87A00050DD04 /* ItemProductModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ItemProductModel.h; sourceTree = "<group>"; };
+		DD78470814BE87A00050DD04 /* ItemProductModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ItemProductModel.m; sourceTree = "<group>"; };
+		DD78470914BE87A00050DD04 /* Utility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Utility.h; sourceTree = "<group>"; };
+		DD78470A14BE87A00050DD04 /* Utility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Utility.m; sourceTree = "<group>"; };
 		DDE10A8B14BBD774006630F4 /* MyVeryLife.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyVeryLife.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DDE10A8F14BBD774006630F4 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		DDE10A9114BBD774006630F4 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -87,6 +102,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DD66CF3114BE85CD004D127C /* SystemConfiguration.framework in Frameworks */,
 				DDE10A9014BBD774006630F4 /* UIKit.framework in Frameworks */,
 				DDE10A9214BBD774006630F4 /* Foundation.framework in Frameworks */,
 				DDE10A9414BBD774006630F4 /* CoreGraphics.framework in Frameworks */,
@@ -96,6 +112,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		DD78470114BE86FA0050DD04 /* Taobao */ = {
+			isa = PBXGroup;
+			children = (
+				DD78470214BE87A00050DD04 /* CommentModel.h */,
+				DD78470314BE87A00050DD04 /* CommentModel.m */,
+				DD78470414BE87A00050DD04 /* Constants.h */,
+				DD78470514BE87A00050DD04 /* ItemCategoryModel.h */,
+				DD78470614BE87A00050DD04 /* ItemCategoryModel.m */,
+				DD78470714BE87A00050DD04 /* ItemProductModel.h */,
+				DD78470814BE87A00050DD04 /* ItemProductModel.m */,
+				DD78470914BE87A00050DD04 /* Utility.h */,
+				DD78470A14BE87A00050DD04 /* Utility.m */,
+			);
+			name = Taobao;
+			sourceTree = "<group>";
+		};
 		DDE10A8014BBD774006630F4 = {
 			isa = PBXGroup;
 			children = (
@@ -119,6 +151,7 @@
 		DDE10A8E14BBD774006630F4 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				DD66CF3014BE85CD004D127C /* SystemConfiguration.framework */,
 				DDE10A8F14BBD774006630F4 /* UIKit.framework */,
 				DDE10A9114BBD774006630F4 /* Foundation.framework */,
 				DDE10A9314BBD774006630F4 /* CoreGraphics.framework */,
@@ -129,6 +162,7 @@
 		DDE10A9514BBD774006630F4 /* MyVeryLife */ = {
 			isa = PBXGroup;
 			children = (
+				DD78470114BE86FA0050DD04 /* Taobao */,
 				DDE10A9E14BBD774006630F4 /* AppDelegate.h */,
 				DDE10A9F14BBD774006630F4 /* AppDelegate.m */,
 				DDE10AA114BBD775006630F4 /* MainStoryboard.storyboard */,
@@ -285,6 +319,10 @@
 				DDE10AD014BBDE9E006630F4 /* EventTabController.m in Sources */,
 				DDE10AD314BBDEB3006630F4 /* SettingTabController.m in Sources */,
 				DDECFA5714BD6B7400477A45 /* PagePhotosView.m in Sources */,
+				DD78470B14BE87A00050DD04 /* CommentModel.m in Sources */,
+				DD78470C14BE87A00050DD04 /* ItemCategoryModel.m in Sources */,
+				DD78470D14BE87A00050DD04 /* ItemProductModel.m in Sources */,
+				DD78470E14BE87A00050DD04 /* Utility.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
