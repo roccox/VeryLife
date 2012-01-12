@@ -12,11 +12,11 @@
 		DD78470C14BE87A00050DD04 /* ItemCategoryModel.m in Sources */ = {isa = PBXBuildFile; fileRef = DD78470614BE87A00050DD04 /* ItemCategoryModel.m */; };
 		DD78470D14BE87A00050DD04 /* ItemProductModel.m in Sources */ = {isa = PBXBuildFile; fileRef = DD78470814BE87A00050DD04 /* ItemProductModel.m */; };
 		DD78470E14BE87A00050DD04 /* Utility.m in Sources */ = {isa = PBXBuildFile; fileRef = DD78470A14BE87A00050DD04 /* Utility.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		DD78473A14BE8FDB0050DD04 /* SDImageCache.m in Sources */ = {isa = PBXBuildFile; fileRef = DD78472D14BE8FDB0050DD04 /* SDImageCache.m */; };
-		DD78473B14BE8FDB0050DD04 /* SDWebImageDecoder.m in Sources */ = {isa = PBXBuildFile; fileRef = DD78473114BE8FDB0050DD04 /* SDWebImageDecoder.m */; };
-		DD78473C14BE8FDB0050DD04 /* SDWebImageDownloader.m in Sources */ = {isa = PBXBuildFile; fileRef = DD78473314BE8FDB0050DD04 /* SDWebImageDownloader.m */; };
-		DD78473D14BE8FDB0050DD04 /* SDWebImageManager.m in Sources */ = {isa = PBXBuildFile; fileRef = DD78473614BE8FDB0050DD04 /* SDWebImageManager.m */; };
-		DD78473E14BE8FDB0050DD04 /* SDWebImagePrefetcher.m in Sources */ = {isa = PBXBuildFile; fileRef = DD78473914BE8FDB0050DD04 /* SDWebImagePrefetcher.m */; };
+		DD78473A14BE8FDB0050DD04 /* SDImageCache.m in Sources */ = {isa = PBXBuildFile; fileRef = DD78472D14BE8FDB0050DD04 /* SDImageCache.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		DD78473B14BE8FDB0050DD04 /* SDWebImageDecoder.m in Sources */ = {isa = PBXBuildFile; fileRef = DD78473114BE8FDB0050DD04 /* SDWebImageDecoder.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		DD78473C14BE8FDB0050DD04 /* SDWebImageDownloader.m in Sources */ = {isa = PBXBuildFile; fileRef = DD78473314BE8FDB0050DD04 /* SDWebImageDownloader.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		DD78473D14BE8FDB0050DD04 /* SDWebImageManager.m in Sources */ = {isa = PBXBuildFile; fileRef = DD78473614BE8FDB0050DD04 /* SDWebImageManager.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		DD78473E14BE8FDB0050DD04 /* SDWebImagePrefetcher.m in Sources */ = {isa = PBXBuildFile; fileRef = DD78473914BE8FDB0050DD04 /* SDWebImagePrefetcher.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		DDE10A9014BBD774006630F4 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DDE10A8F14BBD774006630F4 /* UIKit.framework */; };
 		DDE10A9214BBD774006630F4 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DDE10A9114BBD774006630F4 /* Foundation.framework */; };
 		DDE10A9414BBD774006630F4 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DDE10A9314BBD774006630F4 /* CoreGraphics.framework */; };
