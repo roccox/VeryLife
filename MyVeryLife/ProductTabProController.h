@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "SingleModel.h"
+#import "DetailInfo.h"
 
 @interface ProductTabProController : UITableViewController{
     ItemCategoryModel * cat;

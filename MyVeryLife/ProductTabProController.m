@@ -29,6 +29,52 @@
     // Release any cached data, images, etc that aren't in use.
 }
 
+
+#pragma - Tableview
+-(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+{
+    return 1;
+}
+
+-(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    return [[SingleModel getSingleModal].itemProlist count];
+}
+
+
+-(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    UITableViewCell *cell = [tableView 
+                             dequeueReusableCellWithIdentifier:@"catprocell"];
+	ItemProductModel * product = [[SingleModel getSingleModal].itemProlist objectAtIndex:indexPath.row];
+    UIImageView * proImage = (UIImageView*)[cell viewWithTag:100];
+    proImage.image = product.photo;
+    UILabel * proTitle = (UILabel *)[cell viewWithTag:101];
+    proTitle.text = product.title;
+    UILabel * proPrice = (UILabel *)[cell viewWithTag:102];
+    proPrice.text = product.price;
+    UILabel * proFreight = (UILabel *)[cell viewWithTag:103];
+    proFreight.text = product.item_express;
+    UILabel * proSold = (UILabel *)[cell viewWithTag:104];
+    proSold.text = product.sell_count;
+    
+    return cell;    
+}
+
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+	ItemProductModel * product = [[SingleModel getSingleModal].itemProlist objectAtIndex:indexPath.row];
+    
+    DetailInfo * controller = [[DetailInfo alloc]initWithNibName:@"DetailInfo" bundle:nil];
+    
+    controller.product = product;
+    controller.hidesBottomBarWhenPushed = YES;
+    //    self.navigationController.hidesBottomBarWhenPushed = YES;
+    [self.navigationController pushViewController:controller animated:YES];
+    
+}
+
+
 #pragma mark - View lifecycle
 
 /*
