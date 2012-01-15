@@ -58,17 +58,15 @@
 //        self.tableView.frame.origin.x;
 		pagePhotoView = view;
 	}
-	[[SingleModel getSingleModal]refreshData];
-    //Sleep for a while
-    sleep(3);
-    [self.pagePhotoView refreshData:self];
+	[[SingleModel getSingleModal]refreshData:YES];
 }
 
 #pragma taobao data
--(void) finishedPrepareData
+-(void) finishedRefreshData
 {
-    
+    [self.pagePhotoView refreshData:self];
 }
+
 #pragma mark - 获取产品信息
 -(void)getRecommendedProInfo
 {

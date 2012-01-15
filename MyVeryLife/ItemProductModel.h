@@ -21,6 +21,10 @@
 @property(nonatomic,retain)NSString *price;
 @property(nonatomic,retain)NSString *score;
 @property(nonatomic,retain)NSString *wap_detail_url;
+@property(nonatomic,retain)NSString *location;
+@property(nonatomic,retain)NSString *seller_cids;
+@property(nonatomic,retain)NSString *stock_num;
+@property(nonatomic,retain)NSString *wap_desc;
 
 @property(nonatomic,retain)NSString *item_type;
 @property(nonatomic,retain)NSString *item_EMS;

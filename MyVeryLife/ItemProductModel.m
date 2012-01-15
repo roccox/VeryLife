@@ -18,6 +18,10 @@
 @synthesize price;
 @synthesize score;
 @synthesize wap_detail_url;
+@synthesize location;
+@synthesize wap_desc;
+@synthesize stock_num;
+@synthesize seller_cids;
 
 @synthesize item_type;
 @synthesize item_EMS;

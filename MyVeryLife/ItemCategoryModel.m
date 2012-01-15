@@ -12,4 +12,5 @@
 @implementation ItemCategoryModel
 @synthesize cid;
 @synthesize name;
+@synthesize parent_id;
 @end

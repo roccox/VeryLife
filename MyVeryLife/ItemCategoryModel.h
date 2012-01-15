@@ -14,4 +14,5 @@
 }
 @property(nonatomic,retain)NSString *cid;
 @property(nonatomic,retain)NSString *name;
+@property(nonatomic,retain)NSString *parent_id;
 @end
