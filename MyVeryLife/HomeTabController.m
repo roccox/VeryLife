@@ -58,12 +58,14 @@
 //        self.tableView.frame.origin.x;
 		pagePhotoView = view;
 	}
+    [SingleModel getSingleModal].delegate = self;
 	[[SingleModel getSingleModal]refreshData:YES];
 }
 
 #pragma taobao data
 -(void) finishedRefreshData
 {
+    NSLog(@"finishedRefreshData-end");
     [self.pagePhotoView refreshData:self];
 }
 

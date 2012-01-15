@@ -42,6 +42,7 @@ static SingleModel *single = nil;
 {
     _parseState = TAOBAO_PARSE_START;
     
+    NSLog(@"%@",[[NSString alloc]initWithFormat:@"%d",item_no]);
     //Get Category List
     self.itemPro = [self.itemAllProList objectAtIndex:item_no];
     NSMutableDictionary *params=[[NSMutableDictionary alloc] init];
@@ -152,7 +153,6 @@ static SingleModel *single = nil;
             //商品列表
             if(![self.currentElement compare:@"num_iid"])
             {
-                NSLog(@"%@",string);
                 [SingleModel getSingleModal].itemPro.num_iid=string;
             }
             else if(![self.currentElement compare:@"title"])
@@ -268,6 +268,7 @@ static SingleModel *single = nil;
             {
                 _item_getinfo_no = 0;
                 [self tidyData];
+                NSLog(@"finishedRefreshData - start");
                 [self.delegate finishedRefreshData];
             }
             else
