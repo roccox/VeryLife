@@ -34,8 +34,12 @@ static SingleModel *single = nil;
 
 -(void)prepareProList:(ItemCategoryModel *) selItemCat
 {
-    
-    [self.delegate finishedRefreshData];
+    [itemProlist removeAllObjects];
+    for(ItemProductModel * pro in itemAllProList)
+    {
+        if([pro.seller_cids rangeOfString:selItemCat.cid].length >0)
+            [itemProlist addObject:pro];
+    }
 }
 
 -(void)getProInfo:(int)item_no

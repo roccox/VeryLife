@@ -5,20 +5,6 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="933"/>
     </dependencies>
     <scenes>
-        <scene sceneID="hhU-61-kEP">
-            <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="7Mh-sz-utS" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <viewController id="3IR-3G-eAX" customClass="SearchTabController" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="594-QD-bem">
-                        <rect key="frame" x="0.0" y="64" width="320" height="367"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                    </view>
-                    <navigationItem key="navigationItem" id="zre-3u-0WK"/>
-                </viewController>
-            </objects>
-            <point key="canvasLocation" x="1179" y="1059"/>
-        </scene>
         <scene sceneID="gXE-uI-P0j">
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="q7j-he-i9M" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -288,11 +274,74 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="3IR-3G-eAX" kind="relationship" relationship="rootViewController" id="NAv-CB-EBn"/>
+                        <segue destination="d61-Lb-FAV" kind="relationship" relationship="rootViewController" id="ojb-MH-6kZ"/>
                     </connections>
                 </navigationController>
             </objects>
             <point key="canvasLocation" x="647" y="1059"/>
+        </scene>
+        <scene sceneID="N30-Cn-iNb">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2jx-Es-mvo" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tableViewController id="d61-Lb-FAV" customClass="SearchTabController" sceneMemberID="viewController">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="96" sectionHeaderHeight="22" sectionFooterHeight="22" id="jFX-eH-uhB">
+                        <rect key="frame" x="0.0" y="64" width="320" height="367"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="allprocell" id="EW9-eF-6NY">
+                                <rect key="frame" x="0.0" y="22" width="320" height="96"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="95"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" tag="100" contentMode="scaleToFill" id="Ytf-mm-BVZ">
+                                            <rect key="frame" x="11" y="4" width="87" height="87"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        </imageView>
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="101" contentMode="left" text="Label" lineBreakMode="tailTruncation" minimumFontSize="10" id="c5U-q6-s4a">
+                                            <rect key="frame" x="106" y="10" width="169" height="36"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="102" contentMode="left" text="Label" lineBreakMode="tailTruncation" minimumFontSize="10" id="4V4-nz-Q5O">
+                                            <rect key="frame" x="106" y="45" width="42" height="21"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="103" contentMode="left" text="Label" lineBreakMode="tailTruncation" minimumFontSize="10" id="EmI-Am-zou">
+                                            <rect key="frame" x="215" y="45" width="42" height="21"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="104" contentMode="left" text="Label" lineBreakMode="tailTruncation" minimumFontSize="10" id="czm-k3-Bkz">
+                                            <rect key="frame" x="106" y="70" width="42" height="21"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                </view>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="d61-Lb-FAV" id="S2q-mk-BZX"/>
+                            <outlet property="delegate" destination="d61-Lb-FAV" id="VTe-ec-MOl"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="MCR-fV-9cA"/>
+                </tableViewController>
+            </objects>
+            <point key="canvasLocation" x="1025" y="1059"/>
         </scene>
         <scene sceneID="jB2-tf-Con">
             <objects>
@@ -335,6 +384,26 @@
         <image name="first" width="16" height="16"/>
         <image name="second" width="16" height="16"/>
     </resources>
+    <classes>
+        <class className="EventTabController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/EventTabController.h"/>
+        </class>
+        <class className="HomeTabController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/HomeTabController.h"/>
+        </class>
+        <class className="ProductTabController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/ProductTabController.h"/>
+        </class>
+        <class className="ProductTabProController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/ProductTabProController.h"/>
+        </class>
+        <class className="SearchTabController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/SearchTabController.h"/>
+        </class>
+        <class className="SettingTabController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/SettingTabController.h"/>
+        </class>
+    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

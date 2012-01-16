@@ -7,6 +7,7 @@
 //
 
 #import "ProductTabProController.h"
+#import "UIImageView+WebCache.h"
 
 @implementation ProductTabProController
 
@@ -48,7 +49,9 @@
                              dequeueReusableCellWithIdentifier:@"catprocell"];
 	ItemProductModel * product = [[SingleModel getSingleModal].itemProlist objectAtIndex:indexPath.row];
     UIImageView * proImage = (UIImageView*)[cell viewWithTag:100];
-    proImage.image = product.photo;
+    NSURL *url = [NSURL URLWithString:product.pic_url];
+    
+    [proImage setImageWithURL:url placeholderImage:[UIImage imageNamed:@"hold.png"]];
     UILabel * proTitle = (UILabel *)[cell viewWithTag:101];
     proTitle.text = product.title;
     UILabel * proPrice = (UILabel *)[cell viewWithTag:102];
@@ -84,13 +87,14 @@
 }
 */
 
-/*
+
 // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    [[SingleModel getSingleModal]prepareProList:cat];
 }
-*/
+
 
 - (void)viewDidUnload
 {

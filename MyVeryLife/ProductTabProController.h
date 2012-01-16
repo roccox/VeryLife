@@ -9,6 +9,8 @@
 #import <UIKit/UIKit.h>
 #import "SingleModel.h"
 #import "DetailInfo.h"
+#import "SDWebImageManagerDelegate.h"
+#import "SDWebImageDownloaderDelegate.h"
 
 @interface ProductTabProController : UITableViewController{
     ItemCategoryModel * cat;

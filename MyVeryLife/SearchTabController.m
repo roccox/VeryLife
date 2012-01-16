@@ -7,6 +7,7 @@
 //
 
 #import "SearchTabController.h"
+#import "UIImageView+WebCache.h"
 
 @implementation SearchTabController
 
@@ -55,6 +56,54 @@
 {
     // Return YES for supported orientations
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
+}
+
+
+#pragma - Tableview
+-(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+{
+    return 1;
+}
+
+-(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    return [[SingleModel getSingleModal].itemAllProList count];
+}
+
+
+-(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    UITableViewCell *cell = [tableView 
+                             dequeueReusableCellWithIdentifier:@"allprocell"];
+	ItemProductModel * product = [[SingleModel getSingleModal].itemAllProList objectAtIndex:indexPath.row];
+    UIImageView * proImage = (UIImageView*)[cell viewWithTag:100];
+    NSURL *url = [NSURL URLWithString:product.pic_url];
+    
+    [proImage setImageWithURL:url placeholderImage:[UIImage imageNamed:@"hold.png"]];
+    //    proImage.image = product.photo;
+    UILabel * proTitle = (UILabel *)[cell viewWithTag:101];
+    proTitle.text = product.title;
+    UILabel * proPrice = (UILabel *)[cell viewWithTag:102];
+    proPrice.text = product.price;
+    UILabel * proFreight = (UILabel *)[cell viewWithTag:103];
+    proFreight.text = product.item_express;
+    UILabel * proSold = (UILabel *)[cell viewWithTag:104];
+    proSold.text = product.sell_count;
+    
+    return cell;    
+}
+
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+	ItemProductModel * product = [[SingleModel getSingleModal].itemAllProList objectAtIndex:indexPath.row];
+    
+    DetailInfo * controller = [[DetailInfo alloc]initWithNibName:@"DetailInfo" bundle:nil];
+    
+    controller.product = product;
+    controller.hidesBottomBarWhenPushed = YES;
+    //    self.navigationController.hidesBottomBarWhenPushed = YES;
+    [self.navigationController pushViewController:controller animated:YES];
+    
 }
 
 @end

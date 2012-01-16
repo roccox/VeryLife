@@ -7,7 +7,16 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "SDWebImageManagerDelegate.h"
+#import "SDWebImageDownloaderDelegate.h"
 
-@interface SearchTabController : UIViewController
+#import "DetailInfo.h"
+#import "SingleModel.h"
 
+#import "Utility.h"
+
+@interface SearchTabController :  UITableViewController <TaobaoDataDelegate,SDWebImageManagerDelegate,SDWebImageDownloaderDelegate>
+
+
+-(void)refreshData;
 @end
