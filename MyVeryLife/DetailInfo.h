@@ -12,10 +12,12 @@
 #import "PagePhotosView.h"
 #import "PagePhotosDataSource.h"
 
+#import "UIScrollView+TouchScroll.h"
+
 #import "SDWebImageManagerDelegate.h"
 #import "SDWebImageDownloaderDelegate.h"
 
-@interface DetailInfo : UIViewController<PagePhotosDataSource,SDWebImageManagerDelegate,SDWebImageDownloaderDelegate>{
+@interface DetailInfo : UIViewController<PagePhotosDataSource,SDWebImageManagerDelegate,SDWebImageDownloaderDelegate,UIScrollViewDelegate>{
     ItemProductModel * product;
     
     UILabel * titleLabel;

@@ -8,7 +8,6 @@
 
 #import "HomeTabController.h"
 #import "UIImageView+WebCache.h"
-#import "UIScrollView+TouchScroll.h"
 
 @implementation HomeTabController
 

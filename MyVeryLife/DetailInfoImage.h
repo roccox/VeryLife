@@ -8,10 +8,13 @@
 
 #import <UIKit/UIKit.h>
 
-@interface DetailInfoImage : UIViewController{
+#import "SDWebImageManagerDelegate.h"
+#import "SDWebImageDownloaderDelegate.h"
+
+@interface DetailInfoImage : UIViewController<SDWebImageManagerDelegate,SDWebImageDownloaderDelegate>{
     UIImageView * imageView;
 }
 
 @property(strong,nonatomic)IBOutlet UIImageView * imageView;
-
+@property(nonatomic,strong)NSURL *url;
 @end

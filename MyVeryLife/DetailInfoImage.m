@@ -7,10 +7,12 @@
 //
 
 #import "DetailInfoImage.h"
+#import "UIImageView+WebCache.h"
 
 @implementation DetailInfoImage
 
 @synthesize imageView;
+@synthesize url;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -35,6 +37,8 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+    [self.imageView setImageWithURL:url placeholderImage:[UIImage imageNamed:@"hold.png"]];
+
 }
 
 - (void)viewDidUnload

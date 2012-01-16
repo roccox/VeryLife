@@ -84,8 +84,7 @@
     
     DetailInfoImage * controller = [[DetailInfoImage alloc]initWithNibName:@"DetailInfoImage" bundle:nil];
     NSURL *url = [NSURL URLWithString:product.pic_url];
-    [controller.imageView setImageWithURL:url placeholderImage:[UIImage imageNamed:@"hold.png"]];
-
+    controller.url = url;
     controller.hidesBottomBarWhenPushed = YES;
     //    self.navigationController.hidesBottomBarWhenPushed = YES;
     [self.navigationController pushViewController:controller animated:YES];
@@ -118,8 +117,23 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     CGSize newSize=self.view.frame.size;
-    newSize.height+=160;
+    newSize.height+=360;
     self.scrollView.contentSize=newSize;
+//    [self.scrollView setFrame:CGRectMake(0.0f, 260.0f, scrollView.frame.size.width, scrollView.frame.size.height)];
+    scrollView.delegate = self;
+
+    if (pagePhotoView == nil) 
+    {
+        // 创建下拉视图
+		PagePhotosView * view = [[PagePhotosView alloc] initWithFrame:CGRectMake(0.0f, 0.0 , 320.0f, 260.f) withDataSource:self];
+		[self.scrollView addSubview:view];
+        //        [self.tableView setContentOffset:CGPointMake(0.0f, -260.0f) animated:FALSE];
+        //        [self.tableView scrollsToTop];
+        //        [self.tableView setFrame:CGRectMake(0.0f, 0.0f, 320.0f, 367.0f)];
+        //        self.tableView.frame.origin.x;
+		pagePhotoView = view;
+        
+	}
 }
 
 - (void)viewDidUnload
