@@ -106,4 +106,13 @@
     
 }
 
+- (IBAction) sortBySellcount
+{
+    [[SingleModel getSingleModal] sortBySellCount];
+    [self.tableView reloadData];
+}
+-(IBAction)sortByDate
+{
+    
+}
 @end

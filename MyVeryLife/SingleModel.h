@@ -55,6 +55,8 @@ typedef enum{
 -(void)getProductsList:(int) page_no;
 -(void)tidyData;
 
+-(void)sortByDate;
+-(void)sortBySellCount;
 
 @end
 

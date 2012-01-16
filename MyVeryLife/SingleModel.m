@@ -30,6 +30,29 @@ static SingleModel *single = nil;
     return single;
 }
 
+-(void)sortByDate
+{
+    
+}
+
+-(void)sortBySellCount
+{
+    ItemProductModel * iPro, *jPro;
+    NSMutableArray * tmpList = [[NSMutableArray alloc]init];
+    for(int i=0;i<[itemAllProList count];i++)
+    {
+        iPro = [itemAllProList objectAtIndex:i];
+        for(int j=i+1;j<[itemAllProList count];j++)
+        {
+            jPro = [itemAllProList objectAtIndex:j];
+            if([iPro.sell_count intValue] < [jPro.sell_count intValue])
+                iPro = jPro;
+        }
+        [tmpList addObject:iPro];
+        NSLog(@"%@",iPro.sell_count);
+    }
+    itemAllProList = tmpList;
+}
 
 
 -(void)prepareProList:(ItemCategoryModel *) selItemCat

@@ -19,4 +19,6 @@
 
 
 -(void)refreshData;
+- (IBAction) sortBySellcount;
+-(IBAction)sortByDate;
 @end
