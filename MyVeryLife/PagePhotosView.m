@@ -7,6 +7,7 @@
 //
 
 #import "PagePhotosView.h"
+#import "UIScrollView+TouchScroll.h"
 
 @interface PagePhotosView (PrivateMethods)
 
@@ -189,6 +190,17 @@
     // load the page on either side to avoid flashes when the user starts scrolling
     [self loadScrollViewWithPage:0];
     [self loadScrollViewWithPage:1];
+}
+
+
+#pragma - touch event
+-(void)setScrollerDelegate:(id)delegate
+{
+    scrollView.delegate = delegate;
+}
+-(int)getCurPage
+{
+    return pageControl.currentPage;
 }
 
 @end

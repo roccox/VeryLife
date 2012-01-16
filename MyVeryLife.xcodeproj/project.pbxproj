@@ -20,7 +20,8 @@
 		DD78474214BE92E20050DD04 /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = DD78474114BE92E20050DD04 /* MBProgressHUD.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		DD78474514BE92F00050DD04 /* 37x-Checkmark.png in Resources */ = {isa = PBXBuildFile; fileRef = DD78474414BE92F00050DD04 /* 37x-Checkmark.png */; };
 		DD78474C14BEC0A20050DD04 /* SingleModel.m in Sources */ = {isa = PBXBuildFile; fileRef = DD78474B14BEC0A20050DD04 /* SingleModel.m */; };
-		DDCBC3FD14C32CA10086D6C3 /* UIImageView+WebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = DDCBC3FC14C32CA10086D6C3 /* UIImageView+WebCache.m */; };
+		DDCBC3FD14C32CA10086D6C3 /* UIImageView+WebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = DDCBC3FC14C32CA10086D6C3 /* UIImageView+WebCache.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		DDCBC40114C3C17B0086D6C3 /* UIScrollView+TouchScroll.m in Sources */ = {isa = PBXBuildFile; fileRef = DDCBC40014C3C17B0086D6C3 /* UIScrollView+TouchScroll.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		DDE10A9014BBD774006630F4 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DDE10A8F14BBD774006630F4 /* UIKit.framework */; };
 		DDE10A9214BBD774006630F4 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DDE10A9114BBD774006630F4 /* Foundation.framework */; };
 		DDE10A9414BBD774006630F4 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DDE10A9314BBD774006630F4 /* CoreGraphics.framework */; };
@@ -84,6 +85,8 @@
 		DD78474B14BEC0A20050DD04 /* SingleModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SingleModel.m; sourceTree = "<group>"; };
 		DDCBC3FB14C32CA10086D6C3 /* UIImageView+WebCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+WebCache.h"; sourceTree = "<group>"; };
 		DDCBC3FC14C32CA10086D6C3 /* UIImageView+WebCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+WebCache.m"; sourceTree = "<group>"; };
+		DDCBC3FF14C3C17B0086D6C3 /* UIScrollView+TouchScroll.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIScrollView+TouchScroll.h"; path = "MyVeryLife/UIScrollView+TouchScroll.h"; sourceTree = "<group>"; };
+		DDCBC40014C3C17B0086D6C3 /* UIScrollView+TouchScroll.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIScrollView+TouchScroll.m"; path = "MyVeryLife/UIScrollView+TouchScroll.m"; sourceTree = "<group>"; };
 		DDE10A8B14BBD774006630F4 /* MyVeryLife.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyVeryLife.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DDE10A8F14BBD774006630F4 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		DDE10A9114BBD774006630F4 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -215,6 +218,8 @@
 		DDE10A8014BBD774006630F4 = {
 			isa = PBXGroup;
 			children = (
+				DDCBC3FF14C3C17B0086D6C3 /* UIScrollView+TouchScroll.h */,
+				DDCBC40014C3C17B0086D6C3 /* UIScrollView+TouchScroll.m */,
 				DDECFA5414BD6B7400477A45 /* PagePhotosDataSource.h */,
 				DDECFA5514BD6B7400477A45 /* PagePhotosView.h */,
 				DDECFA5614BD6B7400477A45 /* PagePhotosView.m */,
@@ -421,6 +426,7 @@
 				DD78474C14BEC0A20050DD04 /* SingleModel.m in Sources */,
 				DDF0DAC314BF20B600D90BB1 /* ProductTabProController.m in Sources */,
 				DDCBC3FD14C32CA10086D6C3 /* UIImageView+WebCache.m in Sources */,
+				DDCBC40114C3C17B0086D6C3 /* UIScrollView+TouchScroll.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "PagePhotosDataSource.h"
+#import "UIScrollView+TouchScroll.h"
 
 #import "ItemProductModel.h"
 @interface PagePhotosView : UIView<UIScrollViewDelegate> {
@@ -29,4 +30,6 @@
 - (id)initWithFrame:(CGRect)frame withDataSource:(id<PagePhotosDataSource>)_dataSource;
 
 -(void)refreshData:(id<PagePhotosDataSource>)_dataSource;
+-(void)setScrollerDelegate:(id)delegate;
+-(int)getCurPage;
 @end

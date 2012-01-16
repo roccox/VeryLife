@@ -8,6 +8,7 @@
 
 #import "HomeTabController.h"
 #import "UIImageView+WebCache.h"
+#import "UIScrollView+TouchScroll.h"
 
 @implementation HomeTabController
 
@@ -19,6 +20,7 @@
     // Release any cached data, images, etc that aren't in use.
 }
 
+#pragma - for pagephotoview
 // 有多少页
 //
 - (int)numberOfPages {
@@ -42,6 +44,24 @@
 	return [UIImage imageNamed:imageName];
 
      */}
+
+- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
+{
+
+}
+
+- (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event
+{
+    NSLog(@"touchesEnded");
+	ItemProductModel * product = [[SingleModel getSingleModal].itemHotProList objectAtIndex: [pagePhotoView getCurPage]];
+    
+    DetailInfo * controller = [[DetailInfo alloc]initWithNibName:@"DetailInfo" bundle:nil];
+    
+    controller.product = product;
+    controller.hidesBottomBarWhenPushed = YES;
+    //    self.navigationController.hidesBottomBarWhenPushed = YES;
+    [self.navigationController pushViewController:controller animated:YES];
+}
 
 #pragma mark - View lifecycle
 
