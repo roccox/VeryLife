@@ -22,6 +22,8 @@
 		DD78474C14BEC0A20050DD04 /* SingleModel.m in Sources */ = {isa = PBXBuildFile; fileRef = DD78474B14BEC0A20050DD04 /* SingleModel.m */; };
 		DDCBC3FD14C32CA10086D6C3 /* UIImageView+WebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = DDCBC3FC14C32CA10086D6C3 /* UIImageView+WebCache.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		DDCBC40114C3C17B0086D6C3 /* UIScrollView+TouchScroll.m in Sources */ = {isa = PBXBuildFile; fileRef = DDCBC40014C3C17B0086D6C3 /* UIScrollView+TouchScroll.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		DDCBC40514C3CD6D0086D6C3 /* TestTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = DDCBC40314C3CD6D0086D6C3 /* TestTableView.m */; };
+		DDCBC40614C3CD6D0086D6C3 /* TestTableView.xib in Resources */ = {isa = PBXBuildFile; fileRef = DDCBC40414C3CD6D0086D6C3 /* TestTableView.xib */; };
 		DDE10A9014BBD774006630F4 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DDE10A8F14BBD774006630F4 /* UIKit.framework */; };
 		DDE10A9214BBD774006630F4 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DDE10A9114BBD774006630F4 /* Foundation.framework */; };
 		DDE10A9414BBD774006630F4 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DDE10A9314BBD774006630F4 /* CoreGraphics.framework */; };
@@ -87,6 +89,9 @@
 		DDCBC3FC14C32CA10086D6C3 /* UIImageView+WebCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+WebCache.m"; sourceTree = "<group>"; };
 		DDCBC3FF14C3C17B0086D6C3 /* UIScrollView+TouchScroll.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIScrollView+TouchScroll.h"; path = "MyVeryLife/UIScrollView+TouchScroll.h"; sourceTree = "<group>"; };
 		DDCBC40014C3C17B0086D6C3 /* UIScrollView+TouchScroll.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIScrollView+TouchScroll.m"; path = "MyVeryLife/UIScrollView+TouchScroll.m"; sourceTree = "<group>"; };
+		DDCBC40214C3CD6D0086D6C3 /* TestTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestTableView.h; sourceTree = "<group>"; };
+		DDCBC40314C3CD6D0086D6C3 /* TestTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestTableView.m; sourceTree = "<group>"; };
+		DDCBC40414C3CD6D0086D6C3 /* TestTableView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TestTableView.xib; sourceTree = "<group>"; };
 		DDE10A8B14BBD774006630F4 /* MyVeryLife.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyVeryLife.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DDE10A8F14BBD774006630F4 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		DDE10A9114BBD774006630F4 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -288,6 +293,9 @@
 				DDE10ABB14BBDD0B006630F4 /* DetailInfo.h */,
 				DDE10ABC14BBDD0B006630F4 /* DetailInfo.m */,
 				DDE10ABD14BBDD0B006630F4 /* DetailInfo.xib */,
+				DDCBC40214C3CD6D0086D6C3 /* TestTableView.h */,
+				DDCBC40314C3CD6D0086D6C3 /* TestTableView.m */,
+				DDCBC40414C3CD6D0086D6C3 /* TestTableView.xib */,
 			);
 			name = DetailInfo;
 			sourceTree = "<group>";
@@ -392,6 +400,7 @@
 				DDECFA5214BD6B2900477A45 /* 1933_4.jpg in Resources */,
 				DDECFA5314BD6B2900477A45 /* 1933_5.jpg in Resources */,
 				DD78474514BE92F00050DD04 /* 37x-Checkmark.png in Resources */,
+				DDCBC40614C3CD6D0086D6C3 /* TestTableView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -427,6 +436,7 @@
 				DDF0DAC314BF20B600D90BB1 /* ProductTabProController.m in Sources */,
 				DDCBC3FD14C32CA10086D6C3 /* UIImageView+WebCache.m in Sources */,
 				DDCBC40114C3C17B0086D6C3 /* UIScrollView+TouchScroll.m in Sources */,
+				DDCBC40514C3CD6D0086D6C3 /* TestTableView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

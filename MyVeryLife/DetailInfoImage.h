@@ -8,6 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
-@interface DetailInfoImage : UIViewController
+@interface DetailInfoImage : UIViewController{
+    UIImageView * imageView;
+}
+
+@property(strong,nonatomic)IBOutlet UIImageView * imageView;
 
 @end

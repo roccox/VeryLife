@@ -10,4 +10,6 @@
 
 @interface DetailInfoWeb : UIViewController
 
+@property(nonatomic,strong)IBOutlet UIWebView * webView;
+@property(nonatomic,strong)NSMutableURLRequest * request;
 @end

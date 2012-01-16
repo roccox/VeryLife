@@ -8,7 +8,10 @@
 
 #import "DetailInfoWeb.h"
 
+
 @implementation DetailInfoWeb
+@synthesize webView;
+@synthesize request;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -33,6 +36,8 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+    [webView loadRequest:request];
+
 }
 
 - (void)viewDidUnload

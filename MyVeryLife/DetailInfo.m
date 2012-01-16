@@ -7,10 +7,28 @@
 //
 
 #import "DetailInfo.h"
+#import "UIImageView+WebCache.h"
+#import "UIScrollView+TouchScroll.h"
+#import "DetailInfoImage.h"
+#import "DetailInfoWeb.h"
 
 @implementation DetailInfo
 
 @synthesize product;
+
+@synthesize titleLabel;
+@synthesize priceLabel;
+@synthesize sellCountLabel;
+@synthesize proTypeLabel;
+@synthesize locationLabel;
+
+@synthesize  colorLabel;
+@synthesize  sizeLabel;
+
+@synthesize  commentBtn;
+@synthesize buyBtn;
+
+@synthesize  pagePhotoView;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -27,6 +45,78 @@
     [super didReceiveMemoryWarning];
     
     // Release any cached data, images, etc that aren't in use.
+}
+
+#pragma - pagephotoview
+// 有多少页
+//
+- (int)numberOfPages {
+    	return 1;
+}
+
+// 每页的图片
+//
+- (UIImage *)imageAtIndex:(int)index {
+    NSURL *url = [NSURL URLWithString:product.pic_url];
+    UIImageView * tmpView = [[UIImageView alloc]init];
+    [tmpView setImageWithURL:url placeholderImage:[UIImage imageNamed:@"hold.png"]];
+    return tmpView.image;
+    
+    /*
+     return [[SingleModel getSingleModal].itemHotProList];
+     
+     NSString *imageName = [NSString stringWithFormat:@"1933_%d.jpg", index + 1];
+     return [UIImage imageNamed:imageName];
+     
+     */}
+
+- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
+{
+    
+}
+
+- (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event
+{
+    NSLog(@"touchesEnded");
+	ItemProductModel * product = [[SingleModel getSingleModal].itemHotProList objectAtIndex: [pagePhotoView getCurPage]];
+    
+    DetailInfoImage * controller = [[DetailInfoImage alloc]initWithNibName:@"DetailInfoImage" bundle:nil];
+    NSURL *url = [NSURL URLWithString:product.pic_url];
+    [controller.imageView setImageWithURL:url placeholderImage:[UIImage imageNamed:@"hold.png"]];
+
+    controller.hidesBottomBarWhenPushed = YES;
+    //    self.navigationController.hidesBottomBarWhenPushed = YES;
+    [self.navigationController pushViewController:controller animated:YES];
+}
+
+#pragma - button action
+- (IBAction)commentBtnClicked
+{
+    ItemProductModel * product = [[SingleModel getSingleModal].itemHotProList objectAtIndex: [pagePhotoView getCurPage]];
+    
+    DetailInfoWeb * controller = [[DetailInfoWeb alloc]initWithNibName:@"DetailInfoWeb" bundle:nil];
+    NSURL *url = [NSURL URLWithString: product.wap_detail_url];
+    NSMutableURLRequest *theRequest=[NSMutableURLRequest requestWithURL:url];
+    controller.request = theRequest;
+    
+    controller.hidesBottomBarWhenPushed = YES;
+    //    self.navigationController.hidesBottomBarWhenPushed = YES;
+    [self.navigationController pushViewController:controller animated:YES];
+}
+
+- (IBAction)buyBtnClicked
+{
+    ItemProductModel * product = [[SingleModel getSingleModal].itemHotProList objectAtIndex: [pagePhotoView getCurPage]];
+    
+    DetailInfoWeb * controller = [[DetailInfoWeb alloc]initWithNibName:@"DetailInfoWeb" bundle:nil];
+    NSURL *url = [NSURL URLWithString: product.wap_detail_url];
+    NSMutableURLRequest *theRequest=[NSMutableURLRequest requestWithURL:url];
+    [controller.webView loadRequest:theRequest];
+    
+    controller.hidesBottomBarWhenPushed = YES;
+    //    self.navigationController.hidesBottomBarWhenPushed = YES;
+    [self.navigationController pushViewController:controller animated:YES];
+
 }
 
 #pragma mark - View lifecycle
