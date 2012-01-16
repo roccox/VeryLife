@@ -77,6 +77,8 @@
         [imageViews replaceObjectAtIndex:page withObject:view];
 		[view release];
     }
+    else
+        [view setImage:[dataSource imageAtIndex:page]];
 	
     // add the controller's view to the scroll view
     if (nil == view.superview) {

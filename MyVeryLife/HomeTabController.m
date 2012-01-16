@@ -7,6 +7,7 @@
 //
 
 #import "HomeTabController.h"
+#import "UIImageView+WebCache.h"
 
 @implementation HomeTabController
 
@@ -21,7 +22,7 @@
 // 有多少页
 //
 - (int)numberOfPages {
-    return [[SingleModel getSingleModal].itemHotProList count];
+    return [[SingleModel getSingleModal].itemHotProList count]>8?8:[[SingleModel getSingleModal].itemHotProList count];
 //	return 5;
 }
 
@@ -29,7 +30,10 @@
 //
 - (UIImage *)imageAtIndex:(int)index {
     ItemProductModel * curPro = [[SingleModel getSingleModal].itemHotProList objectAtIndex:index];
-    return curPro.photo;
+    NSURL *url = [NSURL URLWithString:curPro.pic_url];
+    UIImageView * tmpView = [[UIImageView alloc]init];
+    [tmpView setImageWithURL:url placeholderImage:[UIImage imageNamed:@"hold.png"]];
+    return tmpView.image;
 
     /*
     return [[SingleModel getSingleModal].itemHotProList];
@@ -97,7 +101,10 @@
                              dequeueReusableCellWithIdentifier:@"homeprocell"];
 	ItemProductModel * product = [[SingleModel getSingleModal].itemNewProList objectAtIndex:indexPath.row];
     UIImageView * proImage = (UIImageView*)[cell viewWithTag:100];
-    proImage.image = product.photo;
+    NSURL *url = [NSURL URLWithString:product.pic_url];
+    
+    [proImage setImageWithURL:url placeholderImage:[UIImage imageNamed:@"hold.png"]];
+//    proImage.image = product.photo;
     UILabel * proTitle = (UILabel *)[cell viewWithTag:101];
     proTitle.text = product.title;
     UILabel * proPrice = (UILabel *)[cell viewWithTag:102];

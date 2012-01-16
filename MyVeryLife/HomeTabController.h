@@ -11,12 +11,15 @@
 #import "PagePhotosView.h"
 #import "PagePhotosDataSource.h"
 
+#import "SDWebImageManagerDelegate.h"
+#import "SDWebImageDownloaderDelegate.h"
+
 #import "DetailInfo.h"
 #import "SingleModel.h"
 
 #import "Utility.h"
 
-@interface HomeTabController : UITableViewController <PagePhotosDataSource,TaobaoDataDelegate>{
+@interface HomeTabController : UITableViewController <PagePhotosDataSource,TaobaoDataDelegate,SDWebImageManagerDelegate,SDWebImageDownloaderDelegate>{
 
 }
 
