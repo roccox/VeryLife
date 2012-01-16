@@ -28,6 +28,8 @@
 @synthesize  commentBtn;
 @synthesize buyBtn;
 
+@synthesize scrollView;
+
 @synthesize  pagePhotoView;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -92,6 +94,11 @@
 #pragma - button action
 - (IBAction)commentBtnClicked
 {
+
+}
+
+- (IBAction)buyBtnClicked
+{
     ItemProductModel * product = [[SingleModel getSingleModal].itemHotProList objectAtIndex: [pagePhotoView getCurPage]];
     
     DetailInfoWeb * controller = [[DetailInfoWeb alloc]initWithNibName:@"DetailInfoWeb" bundle:nil];
@@ -104,27 +111,15 @@
     [self.navigationController pushViewController:controller animated:YES];
 }
 
-- (IBAction)buyBtnClicked
-{
-    ItemProductModel * product = [[SingleModel getSingleModal].itemHotProList objectAtIndex: [pagePhotoView getCurPage]];
-    
-    DetailInfoWeb * controller = [[DetailInfoWeb alloc]initWithNibName:@"DetailInfoWeb" bundle:nil];
-    NSURL *url = [NSURL URLWithString: product.wap_detail_url];
-    NSMutableURLRequest *theRequest=[NSMutableURLRequest requestWithURL:url];
-    [controller.webView loadRequest:theRequest];
-    
-    controller.hidesBottomBarWhenPushed = YES;
-    //    self.navigationController.hidesBottomBarWhenPushed = YES;
-    [self.navigationController pushViewController:controller animated:YES];
-
-}
-
 #pragma mark - View lifecycle
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+    CGSize newSize=self.view.frame.size;
+    newSize.height+=160;
+    self.scrollView.contentSize=newSize;
 }
 
 - (void)viewDidUnload

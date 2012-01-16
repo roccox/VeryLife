@@ -30,6 +30,8 @@
     UIButton * commentBtn;
     UIButton * buyBtn;
     
+    UIScrollView  * scrollView;
+    
     PagePhotosView * pagePhotoView;
     
 }
@@ -45,8 +47,11 @@
 @property(nonatomic,strong)IBOutlet  UILabel * colorLabel;
 @property(nonatomic,strong)IBOutlet  UILabel * sizeLabel;
 
+
 @property(nonatomic,strong)UIButton * commentBtn;
 @property(nonatomic,strong)UIButton * buyBtn;
+
+@property(nonatomic,strong)IBOutlet UIScrollView * scrollView;
 
 @property(nonatomic,strong) PagePhotosView * pagePhotoView;
 
