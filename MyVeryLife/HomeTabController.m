@@ -52,6 +52,11 @@
 - (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event
 {
     NSLog(@"touchesEnded");
+    UITouch * touch = [touches anyObject];
+    if(![touch.view isKindOfClass:[UIScrollView class]])
+        return;
+
+
 	ItemProductModel * product = [[SingleModel getSingleModal].itemHotProList objectAtIndex: [pagePhotoView getCurPage]];
     
     DetailInfo * controller = [[DetailInfo alloc]initWithNibName:@"DetailInfo" bundle:nil];

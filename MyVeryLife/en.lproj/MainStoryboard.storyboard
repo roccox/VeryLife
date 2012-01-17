@@ -362,7 +362,43 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="MCR-fV-9cA"/>
+                    <connections>
+                        <outlet property="searchDisplayController" destination="q4R-sx-Itk" id="6CS-WX-cRo"/>
+                    </connections>
                 </tableViewController>
+                <searchDisplayController id="Dtu-l2-Bqu">
+                    <connections>
+                        <outlet property="delegate" destination="d61-Lb-FAV" id="7IL-ol-k31"/>
+                        <outlet property="searchContentsController" destination="d61-Lb-FAV" id="po1-Ve-okG"/>
+                        <outlet property="searchResultsDataSource" destination="d61-Lb-FAV" id="iaH-iX-xum"/>
+                        <outlet property="searchResultsDelegate" destination="d61-Lb-FAV" id="a9q-c6-CRt"/>
+                    </connections>
+                </searchDisplayController>
+                <searchDisplayController id="h2h-rd-6vi">
+                    <connections>
+                        <outlet property="delegate" destination="d61-Lb-FAV" id="URv-Nc-Hzm"/>
+                        <outlet property="searchBar" destination="8O6-Uy-TzC" id="I6Z-9q-6nn"/>
+                        <outlet property="searchContentsController" destination="d61-Lb-FAV" id="qfx-et-aBi"/>
+                        <outlet property="searchResultsDataSource" destination="d61-Lb-FAV" id="GUm-9G-0Yl"/>
+                        <outlet property="searchResultsDelegate" destination="d61-Lb-FAV" id="5T9-wd-UUx"/>
+                    </connections>
+                </searchDisplayController>
+                <searchBar contentMode="redraw" id="8O6-Uy-TzC">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                    <textInputTraits key="textInputTraits"/>
+                    <connections>
+                        <outlet property="delegate" destination="d61-Lb-FAV" id="Ixj-Xo-ddh"/>
+                    </connections>
+                </searchBar>
+                <searchDisplayController id="q4R-sx-Itk">
+                    <connections>
+                        <outlet property="delegate" destination="d61-Lb-FAV" id="8zS-fk-BNe"/>
+                        <outlet property="searchContentsController" destination="d61-Lb-FAV" id="tz7-IN-SzS"/>
+                        <outlet property="searchResultsDataSource" destination="d61-Lb-FAV" id="BfF-2j-LVm"/>
+                        <outlet property="searchResultsDelegate" destination="d61-Lb-FAV" id="cFS-ZI-i2Y"/>
+                    </connections>
+                </searchDisplayController>
             </objects>
             <point key="canvasLocation" x="1025" y="1059"/>
         </scene>
@@ -407,6 +443,30 @@
         <image name="first" width="16" height="16"/>
         <image name="second" width="16" height="16"/>
     </resources>
+    <classes>
+        <class className="EventTabController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/EventTabController.h"/>
+        </class>
+        <class className="HomeTabController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/HomeTabController.h"/>
+        </class>
+        <class className="ProductTabController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/ProductTabController.h"/>
+        </class>
+        <class className="ProductTabProController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/ProductTabProController.h"/>
+        </class>
+        <class className="SearchTabController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/SearchTabController.h"/>
+            <relationships>
+                <relationship kind="action" name="sortByDate"/>
+                <relationship kind="action" name="sortBySellcount"/>
+            </relationships>
+        </class>
+        <class className="SettingTabController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/SettingTabController.h"/>
+        </class>
+    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
