@@ -80,8 +80,11 @@
 
 - (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event
 {
-    NSLog(@"touchesEnded");
-	ItemProductModel * product = [[SingleModel getSingleModal].itemHotProList objectAtIndex: [pagePhotoView getCurPage]];
+    UITouch * touch = [touches anyObject];
+    NSLog(@"%@",touch);
+    if([touch locationInView:touch.window].y > 300)
+        return;
+
     
     DetailInfoImage * controller = [[DetailInfoImage alloc]initWithNibName:@"DetailInfoImage" bundle:nil];
     NSURL *url = [NSURL URLWithString:product.pic_url];

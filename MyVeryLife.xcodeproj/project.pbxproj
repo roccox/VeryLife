@@ -20,6 +20,8 @@
 		DD78474214BE92E20050DD04 /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = DD78474114BE92E20050DD04 /* MBProgressHUD.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		DD78474514BE92F00050DD04 /* 37x-Checkmark.png in Resources */ = {isa = PBXBuildFile; fileRef = DD78474414BE92F00050DD04 /* 37x-Checkmark.png */; };
 		DD78474C14BEC0A20050DD04 /* SingleModel.m in Sources */ = {isa = PBXBuildFile; fileRef = DD78474B14BEC0A20050DD04 /* SingleModel.m */; };
+		DD7F61B614C56C7600BE0E85 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DD7F61B514C56C7600BE0E85 /* Default@2x.png */; };
+		DD7F61B914C56C8000BE0E85 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = DD7F61B814C56C8000BE0E85 /* Default.png */; };
 		DDCBC3FD14C32CA10086D6C3 /* UIImageView+WebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = DDCBC3FC14C32CA10086D6C3 /* UIImageView+WebCache.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		DDCBC40114C3C17B0086D6C3 /* UIScrollView+TouchScroll.m in Sources */ = {isa = PBXBuildFile; fileRef = DDCBC40014C3C17B0086D6C3 /* UIScrollView+TouchScroll.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		DDCBC40514C3CD6D0086D6C3 /* TestTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = DDCBC40314C3CD6D0086D6C3 /* TestTableView.m */; };
@@ -51,11 +53,6 @@
 		DDE10ACD14BBDE89006630F4 /* SearchTabController.m in Sources */ = {isa = PBXBuildFile; fileRef = DDE10ACC14BBDE89006630F4 /* SearchTabController.m */; };
 		DDE10AD014BBDE9E006630F4 /* EventTabController.m in Sources */ = {isa = PBXBuildFile; fileRef = DDE10ACF14BBDE9E006630F4 /* EventTabController.m */; };
 		DDE10AD314BBDEB3006630F4 /* SettingTabController.m in Sources */ = {isa = PBXBuildFile; fileRef = DDE10AD214BBDEB3006630F4 /* SettingTabController.m */; };
-		DDECFA4F14BD6B2900477A45 /* 1933_1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = DDECFA4A14BD6B2800477A45 /* 1933_1.jpg */; };
-		DDECFA5014BD6B2900477A45 /* 1933_2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = DDECFA4B14BD6B2800477A45 /* 1933_2.jpg */; };
-		DDECFA5114BD6B2900477A45 /* 1933_3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = DDECFA4C14BD6B2800477A45 /* 1933_3.jpg */; };
-		DDECFA5214BD6B2900477A45 /* 1933_4.jpg in Resources */ = {isa = PBXBuildFile; fileRef = DDECFA4D14BD6B2800477A45 /* 1933_4.jpg */; };
-		DDECFA5314BD6B2900477A45 /* 1933_5.jpg in Resources */ = {isa = PBXBuildFile; fileRef = DDECFA4E14BD6B2900477A45 /* 1933_5.jpg */; };
 		DDECFA5714BD6B7400477A45 /* PagePhotosView.m in Sources */ = {isa = PBXBuildFile; fileRef = DDECFA5614BD6B7400477A45 /* PagePhotosView.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		DDF0DAC314BF20B600D90BB1 /* ProductTabProController.m in Sources */ = {isa = PBXBuildFile; fileRef = DDF0DAC214BF20B600D90BB1 /* ProductTabProController.m */; };
 /* End PBXBuildFile section */
@@ -90,6 +87,8 @@
 		DD78474414BE92F00050DD04 /* 37x-Checkmark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "37x-Checkmark.png"; sourceTree = "<group>"; };
 		DD78474A14BEC0A20050DD04 /* SingleModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SingleModel.h; sourceTree = "<group>"; };
 		DD78474B14BEC0A20050DD04 /* SingleModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SingleModel.m; sourceTree = "<group>"; };
+		DD7F61B514C56C7600BE0E85 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
+		DD7F61B814C56C8000BE0E85 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		DDCBC3FB14C32CA10086D6C3 /* UIImageView+WebCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+WebCache.h"; sourceTree = "<group>"; };
 		DDCBC3FC14C32CA10086D6C3 /* UIImageView+WebCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+WebCache.m"; sourceTree = "<group>"; };
 		DDCBC3FF14C3C17B0086D6C3 /* UIScrollView+TouchScroll.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIScrollView+TouchScroll.h"; path = "MyVeryLife/UIScrollView+TouchScroll.h"; sourceTree = "<group>"; };
@@ -138,11 +137,6 @@
 		DDE10ACF14BBDE9E006630F4 /* EventTabController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventTabController.m; sourceTree = "<group>"; };
 		DDE10AD114BBDEB3006630F4 /* SettingTabController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingTabController.h; sourceTree = "<group>"; };
 		DDE10AD214BBDEB3006630F4 /* SettingTabController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingTabController.m; sourceTree = "<group>"; };
-		DDECFA4A14BD6B2800477A45 /* 1933_1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 1933_1.jpg; sourceTree = "<group>"; };
-		DDECFA4B14BD6B2800477A45 /* 1933_2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 1933_2.jpg; sourceTree = "<group>"; };
-		DDECFA4C14BD6B2800477A45 /* 1933_3.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 1933_3.jpg; sourceTree = "<group>"; };
-		DDECFA4D14BD6B2800477A45 /* 1933_4.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 1933_4.jpg; sourceTree = "<group>"; };
-		DDECFA4E14BD6B2900477A45 /* 1933_5.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 1933_5.jpg; sourceTree = "<group>"; };
 		DDECFA5414BD6B7400477A45 /* PagePhotosDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PagePhotosDataSource.h; path = MyVeryLife/PagePhotosDataSource.h; sourceTree = "<group>"; };
 		DDECFA5514BD6B7400477A45 /* PagePhotosView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PagePhotosView.h; path = MyVeryLife/PagePhotosView.h; sourceTree = "<group>"; };
 		DDECFA5614BD6B7400477A45 /* PagePhotosView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PagePhotosView.m; path = MyVeryLife/PagePhotosView.m; sourceTree = "<group>"; };
@@ -239,6 +233,8 @@
 		DDE10A8014BBD774006630F4 = {
 			isa = PBXGroup;
 			children = (
+				DD7F61B814C56C8000BE0E85 /* Default.png */,
+				DD7F61B514C56C7600BE0E85 /* Default@2x.png */,
 				DDCBC3FF14C3C17B0086D6C3 /* UIScrollView+TouchScroll.h */,
 				DDCBC40014C3C17B0086D6C3 /* UIScrollView+TouchScroll.m */,
 				DDECFA5414BD6B7400477A45 /* PagePhotosDataSource.h */,
@@ -322,11 +318,6 @@
 		DDE10AD414BBDEC8006630F4 /* Resource */ = {
 			isa = PBXGroup;
 			children = (
-				DDECFA4A14BD6B2800477A45 /* 1933_1.jpg */,
-				DDECFA4B14BD6B2800477A45 /* 1933_2.jpg */,
-				DDECFA4C14BD6B2800477A45 /* 1933_3.jpg */,
-				DDECFA4D14BD6B2800477A45 /* 1933_4.jpg */,
-				DDECFA4E14BD6B2900477A45 /* 1933_5.jpg */,
 				DDE10AA714BBD775006630F4 /* first.png */,
 				DDE10AA914BBD775006630F4 /* first@2x.png */,
 				DDE10AAE14BBD775006630F4 /* second.png */,
@@ -413,16 +404,13 @@
 				DDE10ABF14BBDD0B006630F4 /* DetailInfo.xib in Resources */,
 				DDE10AC414BBDD20006630F4 /* DetailInfoWeb.xib in Resources */,
 				DDE10AC914BBDD7F006630F4 /* DetailInfoImage.xib in Resources */,
-				DDECFA4F14BD6B2900477A45 /* 1933_1.jpg in Resources */,
-				DDECFA5014BD6B2900477A45 /* 1933_2.jpg in Resources */,
-				DDECFA5114BD6B2900477A45 /* 1933_3.jpg in Resources */,
-				DDECFA5214BD6B2900477A45 /* 1933_4.jpg in Resources */,
-				DDECFA5314BD6B2900477A45 /* 1933_5.jpg in Resources */,
 				DD78474514BE92F00050DD04 /* 37x-Checkmark.png in Resources */,
 				DDCBC40614C3CD6D0086D6C3 /* TestTableView.xib in Resources */,
 				DDCBC40C14C475F70086D6C3 /* hold.png in Resources */,
 				DDCBC41D14C538A10086D6C3 /* CommentController.xib in Resources */,
 				DDCBC42314C53A1D0086D6C3 /* CommentCell.xib in Resources */,
+				DD7F61B614C56C7600BE0E85 /* Default@2x.png in Resources */,
+				DD7F61B914C56C8000BE0E85 /* Default.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
