@@ -139,6 +139,18 @@
 		pagePhotoView = view;
         
 	}
+    self.titleLabel.text = product.title;
+    self.priceLabel.text = product.price;
+    self.sellCountLabel.text = product.sell_count;
+    self.proTypeLabel.text = product.item_type;
+    self.locationLabel.text = product.location;
+    /*
+     UILabel * colorLabel;
+     UILabel * sizeLabel;
+     
+     UIButton * commentBtn;
+     UIButton * buyBtn;
+     */
 }
 
 - (void)viewDidUnload
