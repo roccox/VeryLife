@@ -20,6 +20,7 @@ static SingleModel *single = nil;
 @synthesize itemProlist;
 @synthesize itemNewProList;
 @synthesize itemHotProList;
+@synthesize itemCommentList;
 
 @synthesize currentElement;
 
@@ -84,6 +85,25 @@ static SingleModel *single = nil;
     
 }
 
+-(void)getComment:(NSString *) num_iid
+{
+    _parseState = TAOBAO_PARSE_START;
+    
+    [itemCommentList removeAllObjects];
+
+    //Get Category List
+    NSMutableDictionary *params=[[NSMutableDictionary alloc] init];
+    [params setObject:num_iid forKey:@"num_iid"];
+    [params setObject:@"podees" forKey:@"seller_nick"];
+    [params setObject:@"40" forKey:@"page_size"];
+    [params setObject:@"taobao.traderates.search" forKey:@"method"];
+    
+    NSData *resultData=[Utility getResultData:params];
+    NSXMLParser *xmlParser=[[NSXMLParser alloc] initWithData:resultData];
+    [xmlParser setDelegate:self];
+    [xmlParser parse];    
+}
+
 -(void) getProductsList:(int)page_no
 {
     _parseState = TAOBAO_PARSE_START;
@@ -117,6 +137,8 @@ static SingleModel *single = nil;
         self.itemHotProList = [[NSMutableArray alloc]init];
     if(self.itemProlist == nil)
         self.itemProlist = [[NSMutableArray alloc]init];
+    if(itemCommentList == nil)
+        itemCommentList = [[NSMutableArray alloc]init];
 
     _parseState = TAOBAO_PARSE_START;
 
@@ -155,7 +177,16 @@ static SingleModel *single = nil;
     else if([self.currentElement isEqualToString:@"item_get_response"])
     {
         _parseState = TAOBAO_PARSE_PRO_INFO;
-    }    
+    }
+    else if([self.currentElement isEqualToString:@"traderates_search_response"])
+    {
+        _parseState = TAOBAO_PARSE_COMMENT;
+    }
+    else if([self.currentElement isEqualToString:@"trade_rate"])
+    {
+        itemComment = [[CommentModel alloc]init];
+    }
+    
 }
 
 -(void)parser:(NSXMLParser *)parser foundCharacters:(NSString *)string
@@ -209,11 +240,7 @@ static SingleModel *single = nil;
             break;
         case TAOBAO_PARSE_PRO_INFO:
             //商品信息
-            if(![self.currentElement compare:@"num_iid"])
-            {
-                //should Assert here
-            }
-            else if(![self.currentElement compare:@"seller_cids"])
+            if(![self.currentElement compare:@"seller_cids"])
             {
                 self.itemPro.seller_cids=string;
             }
@@ -232,6 +259,25 @@ static SingleModel *single = nil;
             else if(![self.currentElement compare:@"wap_detail_url"])
             {
                 self.itemPro.wap_detail_url=string;
+            }
+            break;
+        case TAOBAO_PARSE_COMMENT:
+            //评价信息
+            if([self.currentElement isEqualToString:@"content"])
+            {
+                itemComment.content=string;
+            }
+            if([self.currentElement isEqualToString:@"created"])
+            {
+                itemComment.created=string;
+            }
+            if([self.currentElement isEqualToString:@"nick"])
+            {
+                itemComment.rated_nick=string;
+            }
+            if([self.currentElement isEqualToString:@"result"])
+            {
+                itemComment.result=string;
             }
             break;
         default:
@@ -256,20 +302,18 @@ static SingleModel *single = nil;
                 [self.itemAllProList addObject:self.itemPro];
             }
             break;
-            break;
         case TAOBAO_PARSE_PRO_INFO:
+            break;
+        case TAOBAO_PARSE_COMMENT:
+            if([elementName isEqualToString:@"trade_rate"])
+            {
+                [self.itemCommentList addObject:itemComment];
+            }
             break;
         default:
             break;
     }
 
-    if([elementName isEqualToString:@"item_cat"])
-    {
-        [self.itemCatlist addObject:self.itemCat];
-    }
-    if([elementName isEqualToString:@"itemcats_get_response"])
-    {
-    }
 }
 
 -(void)parserDidEndDocument:(NSXMLParser *)parser
@@ -300,6 +344,9 @@ static SingleModel *single = nil;
             }
             else
                 [self getProInfo:_item_getinfo_no];
+            break;
+        case TAOBAO_PARSE_COMMENT:
+            [self.delegate finishedCommentData];
             break;
         default:
             break;

@@ -25,6 +25,10 @@
 		DDCBC40514C3CD6D0086D6C3 /* TestTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = DDCBC40314C3CD6D0086D6C3 /* TestTableView.m */; };
 		DDCBC40614C3CD6D0086D6C3 /* TestTableView.xib in Resources */ = {isa = PBXBuildFile; fileRef = DDCBC40414C3CD6D0086D6C3 /* TestTableView.xib */; };
 		DDCBC40C14C475F70086D6C3 /* hold.png in Resources */ = {isa = PBXBuildFile; fileRef = DDCBC40B14C475F70086D6C3 /* hold.png */; };
+		DDCBC41C14C538A10086D6C3 /* CommentController.m in Sources */ = {isa = PBXBuildFile; fileRef = DDCBC41A14C538A00086D6C3 /* CommentController.m */; };
+		DDCBC41D14C538A10086D6C3 /* CommentController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DDCBC41B14C538A10086D6C3 /* CommentController.xib */; };
+		DDCBC42214C53A1D0086D6C3 /* CommentCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DDCBC42014C53A1D0086D6C3 /* CommentCell.m */; };
+		DDCBC42314C53A1D0086D6C3 /* CommentCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DDCBC42114C53A1D0086D6C3 /* CommentCell.xib */; };
 		DDE10A9014BBD774006630F4 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DDE10A8F14BBD774006630F4 /* UIKit.framework */; };
 		DDE10A9214BBD774006630F4 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DDE10A9114BBD774006630F4 /* Foundation.framework */; };
 		DDE10A9414BBD774006630F4 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DDE10A9314BBD774006630F4 /* CoreGraphics.framework */; };
@@ -94,6 +98,12 @@
 		DDCBC40314C3CD6D0086D6C3 /* TestTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestTableView.m; sourceTree = "<group>"; };
 		DDCBC40414C3CD6D0086D6C3 /* TestTableView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TestTableView.xib; sourceTree = "<group>"; };
 		DDCBC40B14C475F70086D6C3 /* hold.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = hold.png; sourceTree = "<group>"; };
+		DDCBC41914C538A00086D6C3 /* CommentController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommentController.h; sourceTree = "<group>"; };
+		DDCBC41A14C538A00086D6C3 /* CommentController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommentController.m; sourceTree = "<group>"; };
+		DDCBC41B14C538A10086D6C3 /* CommentController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CommentController.xib; sourceTree = "<group>"; };
+		DDCBC41F14C53A1D0086D6C3 /* CommentCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommentCell.h; sourceTree = "<group>"; };
+		DDCBC42014C53A1D0086D6C3 /* CommentCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommentCell.m; sourceTree = "<group>"; };
+		DDCBC42114C53A1D0086D6C3 /* CommentCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CommentCell.xib; sourceTree = "<group>"; };
 		DDE10A8B14BBD774006630F4 /* MyVeryLife.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyVeryLife.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DDE10A8F14BBD774006630F4 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		DDE10A9114BBD774006630F4 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -158,6 +168,9 @@
 		DD78470114BE86FA0050DD04 /* Taobao */ = {
 			isa = PBXGroup;
 			children = (
+				DDCBC41F14C53A1D0086D6C3 /* CommentCell.h */,
+				DDCBC42014C53A1D0086D6C3 /* CommentCell.m */,
+				DDCBC42114C53A1D0086D6C3 /* CommentCell.xib */,
 				DD78470214BE87A00050DD04 /* CommentModel.h */,
 				DD78470314BE87A00050DD04 /* CommentModel.m */,
 				DD78470414BE87A00050DD04 /* Constants.h */,
@@ -299,6 +312,9 @@
 				DDCBC40214C3CD6D0086D6C3 /* TestTableView.h */,
 				DDCBC40314C3CD6D0086D6C3 /* TestTableView.m */,
 				DDCBC40414C3CD6D0086D6C3 /* TestTableView.xib */,
+				DDCBC41914C538A00086D6C3 /* CommentController.h */,
+				DDCBC41A14C538A00086D6C3 /* CommentController.m */,
+				DDCBC41B14C538A10086D6C3 /* CommentController.xib */,
 			);
 			name = DetailInfo;
 			sourceTree = "<group>";
@@ -405,6 +421,8 @@
 				DD78474514BE92F00050DD04 /* 37x-Checkmark.png in Resources */,
 				DDCBC40614C3CD6D0086D6C3 /* TestTableView.xib in Resources */,
 				DDCBC40C14C475F70086D6C3 /* hold.png in Resources */,
+				DDCBC41D14C538A10086D6C3 /* CommentController.xib in Resources */,
+				DDCBC42314C53A1D0086D6C3 /* CommentCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -441,6 +459,8 @@
 				DDCBC3FD14C32CA10086D6C3 /* UIImageView+WebCache.m in Sources */,
 				DDCBC40114C3C17B0086D6C3 /* UIScrollView+TouchScroll.m in Sources */,
 				DDCBC40514C3CD6D0086D6C3 /* TestTableView.m in Sources */,
+				DDCBC41C14C538A10086D6C3 /* CommentController.m in Sources */,
+				DDCBC42214C53A1D0086D6C3 /* CommentCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

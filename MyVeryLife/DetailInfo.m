@@ -11,6 +11,7 @@
 #import "UIScrollView+TouchScroll.h"
 #import "DetailInfoImage.h"
 #import "DetailInfoWeb.h"
+#import "CommentController.h"
 
 @implementation DetailInfo
 
@@ -93,13 +94,17 @@
 #pragma - button action
 - (IBAction)commentBtnClicked
 {
+    CommentController * controller = [[CommentController alloc]initWithNibName:@"CommentController" bundle:nil];
+    controller.num_iid = product.num_iid;
+    
+    controller.hidesBottomBarWhenPushed = YES;
+    //    self.navigationController.hidesBottomBarWhenPushed = YES;
+    [self.navigationController pushViewController:controller animated:YES];
 
 }
 
 - (IBAction)buyBtnClicked
 {
-    ItemProductModel * product = [[SingleModel getSingleModal].itemHotProList objectAtIndex: [pagePhotoView getCurPage]];
-    
     DetailInfoWeb * controller = [[DetailInfoWeb alloc]initWithNibName:@"DetailInfoWeb" bundle:nil];
     NSURL *url = [NSURL URLWithString: product.wap_detail_url];
     NSMutableURLRequest *theRequest=[NSMutableURLRequest requestWithURL:url];
