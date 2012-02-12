@@ -66,7 +66,7 @@ static SingleModel *single = nil;
     }
 }
 
--(void)getProInfo:(int)item_no
+-(void)getProDetailInfo:(int)item_no
 {
     _parseState = TAOBAO_PARSE_START;
     
@@ -84,6 +84,32 @@ static SingleModel *single = nil;
     [xmlParser parse];    
     
 }
+
+-(void)getProInfo:(int)page_no
+{
+    _parseState = TAOBAO_PARSE_START;
+    
+    //Get Category List
+    NSMutableDictionary *params=[[NSMutableDictionary alloc] init];
+    [params setObject:@"num_iid,seller_cids" forKey:@"fields"];
+    NSString * iid = @"";
+    ItemProductModel * pro;
+    for(int i = page_no*20; i< self.itemAllProList.count && i< (page_no+1)*20;i++)
+    {
+        pro = [self.itemAllProList objectAtIndex:i];
+        iid = [iid stringByAppendingFormat:@"%@,",pro.num_iid];
+    }
+    [params setObject:iid forKey:@"num_iids"];
+    NSLog(@"%@",iid);
+    [params setObject:@"taobao.items.list.get" forKey:@"method"];
+    
+    NSData *resultData=[Utility getResultData:params];
+    NSXMLParser *xmlParser=[[NSXMLParser alloc] initWithData:resultData];
+    [xmlParser setDelegate:self];
+    [xmlParser parse];    
+    
+}
+
 
 -(void)getComment:(NSString *) num_iid
 {
@@ -158,6 +184,7 @@ static SingleModel *single = nil;
 -(void)parser:(NSXMLParser *)parser didStartElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName attributes:(NSDictionary *)attributeDict
 {
     self.currentElement=elementName;
+
     if([self.currentElement isEqualToString:@"sellercats_list_get_response"])
     {
         _parseState = TAOBAO_PARSE_CAT;
@@ -174,9 +201,13 @@ static SingleModel *single = nil;
     {
         [SingleModel getSingleModal].itemPro = [[ItemProductModel alloc] init];
     }
-    else if([self.currentElement isEqualToString:@"item_get_response"])
+    else if([self.currentElement isEqualToString:@"items_list_get_response"])
     {
         _parseState = TAOBAO_PARSE_PRO_INFO;
+    }
+    else if([self.currentElement isEqualToString:@"item_get_response"])
+    {
+        _parseState = TAOBAO_PARSE_DETAIL_INFO;
     }
     else if([self.currentElement isEqualToString:@"traderates_search_response"])
     {
@@ -240,11 +271,26 @@ static SingleModel *single = nil;
             break;
         case TAOBAO_PARSE_PRO_INFO:
             //商品信息
-            if(![self.currentElement compare:@"seller_cids"])
+            if(![self.currentElement compare:@"num_iid"])
+            {
+                //search itemPro
+                ItemProductModel * pro;
+                for(int i=0;i<[self.itemAllProList count];i++)
+                {
+                    pro = [self.itemAllProList objectAtIndex:i];
+                    if([pro.num_iid isEqualToString: string])
+                        self.itemPro = pro;
+                }
+
+            }
+            else if(![self.currentElement compare:@"seller_cids"])
             {
                 self.itemPro.seller_cids=string;
             }
-            else if(![self.currentElement compare:@"num"])
+            break;
+        case TAOBAO_PARSE_DETAIL_INFO:
+            //商品信息
+            if(![self.currentElement compare:@"num"])
             {
                 self.itemPro.stock_num=string;
             }
@@ -304,6 +350,8 @@ static SingleModel *single = nil;
             break;
         case TAOBAO_PARSE_PRO_INFO:
             break;
+        case TAOBAO_PARSE_DETAIL_INFO:
+            break;
         case TAOBAO_PARSE_COMMENT:
             if([elementName isEqualToString:@"trade_rate"])
             {
@@ -335,7 +383,7 @@ static SingleModel *single = nil;
             break;
         case TAOBAO_PARSE_PRO_INFO:
             _item_getinfo_no++;
-            if(_item_getinfo_no == [self.itemAllProList count])
+            if(_item_getinfo_no * 20 >= [self.itemAllProList count])
             {
                 _item_getinfo_no = 0;
                 [self tidyData];

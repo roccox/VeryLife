@@ -17,6 +17,7 @@ typedef enum{
     TAOBAO_PARSE_CAT,
     TAOBAO_PARSE_PRO_LIST,
     TAOBAO_PARSE_PRO_INFO,
+    TAOBAO_PARSE_DETAIL_INFO,
     TAOBAO_PARSE_COMMENT
 }TaobaoPraseState;
 
@@ -56,7 +57,8 @@ typedef enum{
 
 + (SingleModel *)getSingleModal;
 -(void)prepareProList:(ItemCategoryModel *) selItemCat;
--(void)getProInfo:(int) item_no;
+-(void)getProDetailInfo:(int) item_no;
+-(void)getProInfo:(int) page_no;
 -(void)refreshData:(BOOL) force;
 -(void)getProductsList:(int) page_no;
 -(void)tidyData;
