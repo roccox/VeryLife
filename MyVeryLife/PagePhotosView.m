@@ -71,15 +71,7 @@
     if (page >= kNumberOfPages) return;
 	
     // replace the placeholder if necessary
-    UIImageView *view = [imageViews objectAtIndex:page];
-    if ((NSNull *)view == [NSNull null]) {
-		UIImage *image = [dataSource imageAtIndex:page];
-        view = [[UIImageView alloc] initWithImage:image];
-        [imageViews replaceObjectAtIndex:page withObject:view];
-		[view release];
-    }
-    else
-        [view setImage:[dataSource imageAtIndex:page]];
+    UIImageView *view = [dataSource imageAtIndex:page];
 	
     // add the controller's view to the scroll view
     if (nil == view.superview) {
@@ -192,6 +184,12 @@
     [self loadScrollViewWithPage:1];
 }
 
+#pragma - load images ok
+-(void) didFinishWithImage
+{
+    [self loadScrollViewWithPage:0];
+    [self loadScrollViewWithPage:1];
+}
 
 #pragma - touch event
 -(void)setScrollerDelegate:(id)delegate
