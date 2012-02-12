@@ -59,11 +59,11 @@
 
 // 每页的图片
 //
-- (UIImage *)imageAtIndex:(int)index {
+- (UIImageView *)imageAtIndex:(int)index {
     NSURL *url = [NSURL URLWithString:product.pic_url];
     UIImageView * tmpView = [[UIImageView alloc]init];
     [tmpView setImageWithURL:url placeholderImage:[UIImage imageNamed:@"hold.png"]];
-    return tmpView.image;
+    return tmpView;
     
     /*
      return [[SingleModel getSingleModal].itemHotProList];

@@ -184,12 +184,7 @@
     [self loadScrollViewWithPage:1];
 }
 
-#pragma - load images ok
--(void) didFinishWithImage
-{
-    [self loadScrollViewWithPage:0];
-    [self loadScrollViewWithPage:1];
-}
+
 
 #pragma - touch event
 -(void)setScrollerDelegate:(id)delegate
