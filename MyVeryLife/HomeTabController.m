@@ -59,6 +59,7 @@
 
 	ItemProductModel * product = [[SingleModel getSingleModal].itemHotProList objectAtIndex: [pagePhotoView getCurPage]];
     
+    [[SingleModel getSingleModal] getProDetailInfo:product];
     DetailInfo * controller = [[DetailInfo alloc]initWithNibName:@"DetailInfo" bundle:nil];
     
     controller.product = product;
@@ -96,6 +97,8 @@
     NSLog(@"finishedRefreshData-end");
     [self.pagePhotoView refreshData:self];
 }
+
+
 
 #pragma mark - 获取产品信息
 -(void)getRecommendedProInfo
@@ -145,8 +148,9 @@
 {
 	ItemProductModel * product = [[SingleModel getSingleModal].itemNewProList objectAtIndex:indexPath.row];
 
+    [[SingleModel getSingleModal] getProDetailInfo:product];
     DetailInfo * controller = [[DetailInfo alloc]initWithNibName:@"DetailInfo" bundle:nil];
-
+    
     controller.product = product;
     controller.hidesBottomBarWhenPushed = YES;
 //    self.navigationController.hidesBottomBarWhenPushed = YES;

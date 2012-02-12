@@ -57,7 +57,7 @@ typedef enum{
 
 + (SingleModel *)getSingleModal;
 -(void)prepareProList:(ItemCategoryModel *) selItemCat;
--(void)getProDetailInfo:(int) item_no;
+-(void)getProDetailInfo:(ItemProductModel *)item;
 -(void)getProInfo:(int) page_no;
 -(void)refreshData:(BOOL) force;
 -(void)getProductsList:(int) page_no;
@@ -72,4 +72,5 @@ typedef enum{
 @optional
 -(void) finishedCommentData;
 -(void) finishedRefreshData;
+-(void) finishedDetailData;
 @end

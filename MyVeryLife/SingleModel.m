@@ -66,15 +66,14 @@ static SingleModel *single = nil;
     }
 }
 
--(void)getProDetailInfo:(int)item_no
+-(void)getProDetailInfo:(ItemProductModel *)item
 {
     _parseState = TAOBAO_PARSE_START;
     
-    NSLog(@"%@",[[NSString alloc]initWithFormat:@"%d",item_no]);
     //Get Category List
-    self.itemPro = [self.itemAllProList objectAtIndex:item_no];
+    self.itemPro = item;
     NSMutableDictionary *params=[[NSMutableDictionary alloc] init];
-    [params setObject:@"num_iid,seller_cids,num,price,express_fee,item_images,wap_desc,wap_detail_url" forKey:@"fields"];
+    [params setObject:@"num_iid,num,price,express_fee,item_images,wap_desc,wap_detail_url" forKey:@"fields"];
     [params setObject:self.itemPro.num_iid forKey:@"num_iid"];
     [params setObject:@"taobao.item.get" forKey:@"method"];
     
@@ -392,6 +391,9 @@ static SingleModel *single = nil;
             }
             else
                 [self getProInfo:_item_getinfo_no];
+            break;
+        case TAOBAO_PARSE_DETAIL_INFO:
+//            [self.delegate finishedDetailData];
             break;
         case TAOBAO_PARSE_COMMENT:
             [self.delegate finishedCommentData];
