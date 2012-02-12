@@ -11,7 +11,7 @@
 #import "UIScrollView+TouchScroll.h"
 
 #import "ItemProductModel.h"
-@interface PagePhotosView : UIView<UIScrollViewDelegate> {
+@interface PagePhotosView : UIView<UIScrollViewDelegate,PagePhotosRefresh> {
 	UIScrollView *scrollView;
 	UIPageControl *pageControl;
 	

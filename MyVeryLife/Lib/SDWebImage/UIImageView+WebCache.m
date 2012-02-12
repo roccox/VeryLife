@@ -8,6 +8,8 @@
 
 #import "UIImageView+WebCache.h"
 
+#import "PagePhotosView.h"
+
 @implementation UIImageView (WebCache)
 
 - (void)setImageWithURL:(NSURL *)url
@@ -42,7 +44,14 @@
 
 - (void)webImageManager:(SDWebImageManager *)imageManager didFinishWithImage:(UIImage *)image
 {
+
     self.image = image;
+    if([[[self superview]superview] isKindOfClass:[PagePhotosView class]])
+    {
+        id<PagePhotosRefresh> view = [[self superview]superview];
+        [view refreshImageView];
+    }
+        
 }
 
 @end

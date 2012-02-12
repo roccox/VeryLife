@@ -63,6 +63,11 @@
     return self;
 }
 
+#pragma - refreshPhotoView protocol
+- (void)refreshImageView
+{
+    [self loadScrollViewWithPage:self->pageControl.currentPage];
+}
 
 - (void)loadScrollViewWithPage:(int)page {
 	int kNumberOfPages = [dataSource numberOfPages];
@@ -71,14 +76,36 @@
     if (page >= kNumberOfPages) return;
 	
     // replace the placeholder if necessary
-    UIImageView *view = [dataSource imageAtIndex:page];
 	
+    UIImageView *view = [imageViews objectAtIndex:page];
+    if ((NSNull *)view == [NSNull null]) {
+        view = [dataSource imageAtIndex:page];
+        [imageViews replaceObjectAtIndex:page withObject:view];
+    }
+
+    CGRect frame = scrollView.frame;
+    frame.origin.x = frame.size.width * page;
+    frame.origin.y = 0;
+    
+    double ratio = 1.0;
+    double ratioH = frame.size.height/view.image.size.height;
+    double ratioW = frame.size.width/view.image.size.width;
+    ratio = ratioH<ratioW?ratioH:ratioW;
+    ratioH = ratio;
+    ratioW = ratio;
+    
+    NSLog(@"%f,%f,%f,%f",frame.size.width,frame.size.height,view.image.size.width,view.image.size.height);
+    
+    frame.size.width = view.image.size.width * ratioW;
+    frame.size.height = view.image.size.height * ratioH;
+    
+    frame.origin.x += (320 - frame.size.width)/2;
+    
+    view.frame = frame;
+
+    
     // add the controller's view to the scroll view
     if (nil == view.superview) {
-        CGRect frame = scrollView.frame;
-        frame.origin.x = frame.size.width * page;
-        frame.origin.y = 0;
-        view.frame = frame;
         [scrollView addSubview:view];
     }
 }

@@ -20,3 +20,9 @@
 - (UIImageView *)imageAtIndex:(int)index;
 
 @end
+
+@protocol PagePhotosRefresh
+
+- (void) refreshImageView;
+
+@end
