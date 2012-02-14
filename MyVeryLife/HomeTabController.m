@@ -89,6 +89,7 @@
 	}
     [SingleModel getSingleModal].delegate = self;
 	[[SingleModel getSingleModal]refreshData:YES];
+//    [self.navigationController setTitle:@"金太家の日式良品店"];
 }
 
 #pragma taobao data
@@ -154,7 +155,8 @@
     
     controller.product = product;
     controller.hidesBottomBarWhenPushed = YES;
-//    self.navigationController.hidesBottomBarWhenPushed = YES;
+    [self.navigationController setTitle:@"宝贝详情"];
+    //    self.navigationController.hidesBottomBarWhenPushed = YES;
     [self.navigationController pushViewController:controller animated:YES];
 
 }

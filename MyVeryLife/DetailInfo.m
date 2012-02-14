@@ -154,6 +154,7 @@
      UIButton * commentBtn;
      UIButton * buyBtn;
      */
+    self.title=@"宝贝详情";
 }
 
 - (void)viewDidUnload

@@ -93,6 +93,7 @@
 {
     [super viewDidLoad];
     [[SingleModel getSingleModal]prepareProList:cat];
+    self.title=self.cat.name;
 }
 
 
