@@ -15,10 +15,17 @@
 
 #import "Utility.h"
 
-@interface SearchTabController :  UITableViewController <TaobaoDataDelegate,SDWebImageManagerDelegate,SDWebImageDownloaderDelegate>
+#import "ProductCell.h"
 
+@interface SearchTabController :  UITableViewController <TaobaoDataDelegate,SDWebImageManagerDelegate,SDWebImageDownloaderDelegate,UISearchBarDelegate>{
+    NSMutableArray * filterList;
+    UISearchBar * searchBar;
+    BOOL isFilted;
+}
+
+@property(strong,nonatomic) NSMutableArray * filterList;
+@property(strong,nonatomic) IBOutlet UISearchBar * searchBar;
 
 -(void)refreshData;
-- (IBAction) sortBySellcount;
--(IBAction)sortByDate;
+
 @end

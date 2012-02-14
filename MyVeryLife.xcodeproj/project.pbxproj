@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DD35550314E9EAE00041E9BA /* ProductCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DD35550214E9EAE00041E9BA /* ProductCell.m */; };
+		DD35550914E9EBEC0041E9BA /* ProductCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DD35550814E9EBEC0041E9BA /* ProductCell.xib */; };
 		DD66CF3114BE85CD004D127C /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DD66CF3014BE85CD004D127C /* SystemConfiguration.framework */; };
 		DD78470B14BE87A00050DD04 /* CommentModel.m in Sources */ = {isa = PBXBuildFile; fileRef = DD78470314BE87A00050DD04 /* CommentModel.m */; };
 		DD78470C14BE87A00050DD04 /* ItemCategoryModel.m in Sources */ = {isa = PBXBuildFile; fileRef = DD78470614BE87A00050DD04 /* ItemCategoryModel.m */; };
@@ -58,6 +60,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		DD35550114E9EAE00041E9BA /* ProductCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProductCell.h; sourceTree = "<group>"; };
+		DD35550214E9EAE00041E9BA /* ProductCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProductCell.m; sourceTree = "<group>"; };
+		DD35550814E9EBEC0041E9BA /* ProductCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProductCell.xib; sourceTree = "<group>"; };
 		DD66CF3014BE85CD004D127C /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		DD78470214BE87A00050DD04 /* CommentModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommentModel.h; sourceTree = "<group>"; };
 		DD78470314BE87A00050DD04 /* CommentModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommentModel.m; sourceTree = "<group>"; };
@@ -311,6 +316,9 @@
 				DDCBC41914C538A00086D6C3 /* CommentController.h */,
 				DDCBC41A14C538A00086D6C3 /* CommentController.m */,
 				DDCBC41B14C538A10086D6C3 /* CommentController.xib */,
+				DD35550114E9EAE00041E9BA /* ProductCell.h */,
+				DD35550814E9EBEC0041E9BA /* ProductCell.xib */,
+				DD35550214E9EAE00041E9BA /* ProductCell.m */,
 			);
 			name = DetailInfo;
 			sourceTree = "<group>";
@@ -411,6 +419,7 @@
 				DDCBC42314C53A1D0086D6C3 /* CommentCell.xib in Resources */,
 				DD7F61B614C56C7600BE0E85 /* Default@2x.png in Resources */,
 				DD7F61B914C56C8000BE0E85 /* Default.png in Resources */,
+				DD35550914E9EBEC0041E9BA /* ProductCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -449,6 +458,7 @@
 				DDCBC40514C3CD6D0086D6C3 /* TestTableView.m in Sources */,
 				DDCBC41C14C538A10086D6C3 /* CommentController.m in Sources */,
 				DDCBC42214C53A1D0086D6C3 /* CommentCell.m in Sources */,
+				DD35550314E9EAE00041E9BA /* ProductCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

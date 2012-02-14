@@ -11,6 +11,8 @@
 
 @implementation SearchTabController
 
+@synthesize filterList, searchBar;
+
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -37,13 +39,16 @@
 }
 */
 
-/*
+
 // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    self.filterList = [[NSMutableArray alloc]init];
+    [self.filterList removeAllObjects];
+    searchBar.delegate = self;
 }
-*/
+
 
 - (void)viewDidUnload
 {
@@ -67,7 +72,10 @@
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return [[SingleModel getSingleModal].itemAllProList count];
+    if (isFilted)
+        return [self.filterList count];
+    else
+        return [[SingleModel getSingleModal].itemAllProList count];
 }
 
 
@@ -75,7 +83,12 @@
 {
     UITableViewCell *cell = [tableView 
                              dequeueReusableCellWithIdentifier:@"allprocell"];
-	ItemProductModel * product = [[SingleModel getSingleModal].itemAllProList objectAtIndex:indexPath.row];
+    ItemProductModel * product;
+	if (isFilted)
+        product = [self.filterList objectAtIndex:indexPath.row];
+    else
+        product = [[SingleModel getSingleModal].itemAllProList objectAtIndex:indexPath.row];
+
     UIImageView * proImage = (UIImageView*)[cell viewWithTag:100];
     NSURL *url = [NSURL URLWithString:product.pic_url];
     
@@ -91,11 +104,48 @@
     proSold.text = product.sell_count;
     
     return cell;    
+    /*
+    ProductCell *cell = [tableView 
+                             dequeueReusableCellWithIdentifier:@"allprocell"];
+    if(cell == nil)
+    {
+		cell = [[ProductCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"allprocell"];
+//		cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+        
+        
+    }
+    
+    ItemProductModel * product;
+	if (tableView == self.searchDisplayController.searchResultsTableView)
+        product = [self.filterList objectAtIndex:indexPath.row];
+    else
+        product = [[SingleModel getSingleModal].itemAllProList objectAtIndex:indexPath.row];
+        
+    UIImageView * proImage = cell.myImage;
+    NSURL *url = [NSURL URLWithString:product.pic_url];
+    
+    [proImage setImageWithURL:url placeholderImage:[UIImage imageNamed:@"hold.png"]];
+    //    proImage.image = product.photo;
+    UILabel * proTitle = cell.title;
+    proTitle.text = product.title;
+    UILabel * proPrice = cell.price;
+    proPrice.text = product.price;
+    UILabel * proFreight = cell.freight;
+    proFreight.text = product.item_express;
+    UILabel * proSold = cell.sold;
+    proSold.text = product.sell_count;
+    
+    return cell;    
+     */
 }
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-	ItemProductModel * product = [[SingleModel getSingleModal].itemAllProList objectAtIndex:indexPath.row];
+    ItemProductModel * product;
+	if (isFilted)
+        product = [self.filterList objectAtIndex:indexPath.row];
+    else
+        product = [[SingleModel getSingleModal].itemAllProList objectAtIndex:indexPath.row];
     
     DetailInfo * controller = [[DetailInfo alloc]initWithNibName:@"DetailInfo" bundle:nil];
     
@@ -106,13 +156,55 @@
     
 }
 
-- (IBAction) sortBySellcount
+#pragma  - search bar
+-(void)searchBar:(UISearchBar*)searchBar textDidChange:(NSString*)text
 {
-    [[SingleModel getSingleModal] sortBySellCount];
-    [self.tableView reloadData];
-}
--(IBAction)sortByDate
-{
+    if(text.length == 0)
+    {
+        isFilted = FALSE;
+        return;
+    }
     
+    isFilted = TRUE;
+
+	[self.filterList removeAllObjects]; // First clear the filtered array.
+	
+
+	for (ItemProductModel *product in [SingleModel getSingleModal].itemAllProList)
+	{
+        //		if ([scope isEqualToString:@"All"] || [product.type isEqualToString:scope])
+		{
+            NSRange range = [product.title rangeOfString:text options:(NSCaseInsensitiveSearch|NSDiacriticInsensitiveSearch)];
+            if(range.location != NSNotFound)
+			{
+				[self.filterList addObject:product];
+            }
+		}
+	}
+
+    
+    [self.tableView reloadData];
+
 }
+
+- (BOOL)searchBarShouldBeginEditing:(UISearchBar *)searchBar
+{
+    searchBar.showsCancelButton = TRUE;
+    return YES;
+}
+
+- (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar
+{
+    [searchBar resignFirstResponder];
+}
+
+- (void)searchBarCancelButtonClicked:(UISearchBar *) searchBar
+{
+    [searchBar resignFirstResponder];
+    searchBar.text = @"";
+    isFilted = FALSE;
+    [self.tableView reloadData];
+    searchBar.showsCancelButton = FALSE;
+}
+
 @end
