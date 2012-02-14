@@ -23,21 +23,21 @@
 // 有多少页
 //
 - (int)numberOfPages {
-    return [[SingleModel getSingleModal].itemHotProList count]>8?8:[[SingleModel getSingleModal].itemHotProList count];
+    return [[SingleModel getSingleModal].itemNewProList count];
 //	return 5;
 }
 
 // 每页的图片
 //
 - (UIImageView *)imageAtIndex:(int)index {
-    ItemProductModel * curPro = [[SingleModel getSingleModal].itemHotProList objectAtIndex:index];
+    ItemProductModel * curPro = [[SingleModel getSingleModal].itemNewProList objectAtIndex:index];
     NSURL *url = [NSURL URLWithString:curPro.pic_url];
     UIImageView * tmpView = [[UIImageView alloc]init];
     [tmpView setImageWithURL:url placeholderImage:[UIImage imageNamed:@"hold.png"]];
     return tmpView;
 
     /*
-    return [[SingleModel getSingleModal].itemHotProList];
+    return [[SingleModel getSingleModal].itemNewProList];
 
 	NSString *imageName = [NSString stringWithFormat:@"1933_%d.jpg", index + 1];
 	return [UIImage imageNamed:imageName];
@@ -57,7 +57,7 @@
         return;
 
 
-	ItemProductModel * product = [[SingleModel getSingleModal].itemHotProList objectAtIndex: [pagePhotoView getCurPage]];
+	ItemProductModel * product = [[SingleModel getSingleModal].itemNewProList objectAtIndex: [pagePhotoView getCurPage]];
     
     [[SingleModel getSingleModal] getProDetailInfo:product];
     DetailInfo * controller = [[DetailInfo alloc]initWithNibName:@"DetailInfo" bundle:nil];
@@ -118,7 +118,8 @@
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return [[SingleModel getSingleModal].itemNewProList count];
+    int count = [[SingleModel getSingleModal].itemHotProList count];
+    return count<=10?count:10;
 }
 
 
@@ -126,7 +127,7 @@
 {
     UITableViewCell *cell = [tableView 
                              dequeueReusableCellWithIdentifier:@"homeprocell"];
-	ItemProductModel * product = [[SingleModel getSingleModal].itemNewProList objectAtIndex:indexPath.row];
+	ItemProductModel * product = [[SingleModel getSingleModal].itemHotProList objectAtIndex:indexPath.row];
     UIImageView * proImage = (UIImageView*)[cell viewWithTag:100];
     NSURL *url = [NSURL URLWithString:product.pic_url];
     
@@ -146,7 +147,7 @@
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-	ItemProductModel * product = [[SingleModel getSingleModal].itemNewProList objectAtIndex:indexPath.row];
+	ItemProductModel * product = [[SingleModel getSingleModal].itemHotProList objectAtIndex:indexPath.row];
 
     [[SingleModel getSingleModal] getProDetailInfo:product];
     DetailInfo * controller = [[DetailInfo alloc]initWithNibName:@"DetailInfo" bundle:nil];

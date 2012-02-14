@@ -33,4 +33,5 @@
 @property(nonatomic,retain)NSString *item_downShelf;
 @property(nonatomic,retain)NSString *sell_count;
 @property(nonatomic,retain)NSString *seller_nick;
+@property(nonatomic,retain)NSString *list_time;
 @end

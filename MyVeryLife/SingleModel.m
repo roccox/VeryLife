@@ -90,7 +90,7 @@ static SingleModel *single = nil;
     
     //Get Category List
     NSMutableDictionary *params=[[NSMutableDictionary alloc] init];
-    [params setObject:@"num_iid,seller_cids" forKey:@"fields"];
+    [params setObject:@"num_iid,seller_cids,list_time" forKey:@"fields"];
     NSString * iid = @"";
     ItemProductModel * pro;
     for(int i = page_no*20; i< self.itemAllProList.count && i< (page_no+1)*20;i++)
@@ -140,6 +140,7 @@ static SingleModel *single = nil;
     [params setObject:@"podees" forKey:@"nicks"];
     [params setObject:@"volume:desc" forKey:@"order_by"];
     [params setObject:_page_num forKey:@"page_no"];
+    [params setObject:@"volume:desc" forKey:@"order_by"];
     [params setObject:@"taobao.items.get" forKey:@"method"];
     
     NSData *resultData=[Utility getResultData:params];
@@ -230,7 +231,10 @@ static SingleModel *single = nil;
             }
             else if(![self.currentElement compare:@"name"])
             {
-                [SingleModel getSingleModal].itemCat.name=string;
+                if([[SingleModel getSingleModal].itemCat.name length] ==0)
+                    [SingleModel getSingleModal].itemCat.name=string;
+                else
+                    [SingleModel getSingleModal].itemCat.name = [[SingleModel getSingleModal].itemCat.name stringByAppendingFormat:@"%@",string];
             }
             else if(![self.currentElement compare:@"parent_cid"])
             {
@@ -285,6 +289,10 @@ static SingleModel *single = nil;
             else if(![self.currentElement compare:@"seller_cids"])
             {
                 self.itemPro.seller_cids=string;
+            }
+            else if(![self.currentElement compare:@"list_time"])
+            {
+                self.itemPro.list_time=string;
             }
             break;
         case TAOBAO_PARSE_DETAIL_INFO:
@@ -414,14 +422,19 @@ static SingleModel *single = nil;
     for(int i=0;i<[self.itemCatlist count];i++)
     {
         ItemCategoryModel * cat = [itemCatlist objectAtIndex:i];
-        if([cat.name hasSuffix:@"上新"] || [cat.name hasSuffix:@"新品"])
+        if([cat.name isEqualToString:@"产品种类"] || [cat.name isEqualToString:@"品牌"])
+        {
+            [itemCatlist removeObjectAtIndex:i];
+            i--;
+        }
+        if([cat.name hasPrefix:@"※"])
         {
             for(ItemProductModel * pro in itemAllProList)
             {
                 if([pro.seller_cids rangeOfString:cat.cid].length > 0)
                 {
                     [self.itemNewProList addObject:pro];
-                    break;
+                    continue;
                 }
             }
             [itemCatlist removeObjectAtIndex:i];

@@ -30,4 +30,5 @@
 @synthesize item_downShelf;
 @synthesize sell_count;
 @synthesize seller_nick;
+@synthesize list_time;
 @end
