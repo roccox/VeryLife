@@ -27,5 +27,8 @@
 @property(strong,nonatomic) IBOutlet UISearchBar * searchBar;
 
 -(void)refreshData;
+-(IBAction) sortByCount;
+-(IBAction) sortByPrice;
+-(IBAction) sortByListTime;
 
 @end
