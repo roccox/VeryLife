@@ -20,7 +20,6 @@
     // Override point for customization after application launch.
     self.refreshHomeTab = NO;
     self.refreshProTab = NO;
-    self.refreshSearchTab = NO;
     return YES;
 }
 							

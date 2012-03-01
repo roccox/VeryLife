@@ -211,10 +211,7 @@
 
 
 
--(void)refreshData
-{
-    
-}
+
 -(IBAction) sortByCount
 {
     NSMutableArray * list;

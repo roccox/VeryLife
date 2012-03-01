@@ -24,6 +24,13 @@
 - (id)initWithFrame:(CGRect)frame withDataSource:(id<PagePhotosDataSource>)_dataSource withBImage:(UIImage*) image {
     if ((self = [super initWithFrame:frame])) {
 		self.dataSource = _dataSource;
+
+        bImage = [[UIImageView alloc]init];
+        CGRect bFrame = CGRectMake(0, 0, 320, 240);
+        bImage.frame = bFrame;
+        [bImage setImage:image];
+        [self addSubview:bImage];
+        
         // Initialization UIScrollView
 		int pageControlHeight = 20;
 		scrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 0, frame.size.width, frame.size.height - pageControlHeight)];
@@ -54,11 +61,7 @@
 		pageControl.currentPage = 0;
 		pageControl.backgroundColor = [UIColor blackColor];
 
-        bImage = [[UIImageView alloc]init];
-        CGRect bFrame = CGRectMake(0, 0, 320, 240);
-        bImage.frame = bFrame;
-        [bImage setImage:image];
-        [scrollView addSubview:bImage];
+
 		// pages are created on demand
 		// load the visible page
 		// load the page on either side to avoid flashes when the user starts scrolling
@@ -168,6 +171,7 @@
 
 - (void)dealloc {
     [bImage release];
+    [self.imageViews release];
 	[scrollView release];
 	[pageControl release];
     [super dealloc];
@@ -178,9 +182,18 @@
 -(void)refreshData:(id<PagePhotosDataSource>)_dataSource
 {
     //release views
+    [bImage removeFromSuperview];
+    [self.imageViews removeAllObjects];
     [scrollView release];
 	[pageControl release];
     
+    UIImage * image = bImage.image;
+    bImage = [[UIImageView alloc]init];
+    CGRect bFrame = CGRectMake(0, 0, 320, 240);
+    bImage.frame = bFrame;
+    [bImage setImage:image];
+    [self addSubview:bImage];
+
     self.dataSource = _dataSource;
     // Initialization UIScrollView
     int pageControlHeight = 20;
@@ -212,13 +225,7 @@
     pageControl.currentPage = 0;
     pageControl.backgroundColor = [UIColor blackColor];
     
-    
-    bImage = [[UIImageView alloc]init];
-    
-    CGRect bFrame = CGRectMake(0, 0, 320, 240);
-    bImage.frame = bFrame;
-    [scrollView addSubview:bImage];
-    
+
     // pages are created on demand
     // load the visible page
     // load the page on either side to avoid flashes when the user starts scrolling

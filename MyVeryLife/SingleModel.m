@@ -166,6 +166,13 @@ static SingleModel *single = nil;
     if(itemCommentList == nil)
         itemCommentList = [[NSMutableArray alloc]init];
 
+    [self.itemCatlist removeAllObjects];
+    [self.itemAllProList removeAllObjects];
+    [self.itemNewProList removeAllObjects];
+    [self.itemHotProList removeAllObjects];
+    [self.itemProlist removeAllObjects];
+    [self.itemCommentList removeAllObjects];
+    
     _parseState = TAOBAO_PARSE_START;
 
     //Get Category List

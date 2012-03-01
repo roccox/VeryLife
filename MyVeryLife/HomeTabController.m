@@ -24,14 +24,23 @@
 // 有多少页
 //
 - (int)numberOfPages {
-    return [[SingleModel getSingleModal].itemNewProList count];
+    int count = [[SingleModel getSingleModal].itemNewProList count];
+    if(count == 0)
+        [SingleModel getSingleModal].itemNewProList = [SingleModel getSingleModal].itemHotProList;
+    
+    count = [[SingleModel getSingleModal].itemNewProList count];
+
+    count = count<5?count:5;
+    return count;
 //	return 5;
 }
 
 // 每页的图片
 //
 - (UIImageView *)imageAtIndex:(int)index {
-    ItemProductModel * curPro = [[SingleModel getSingleModal].itemNewProList objectAtIndex:index];
+    ItemProductModel * curPro ;
+    curPro = [[SingleModel getSingleModal].itemNewProList objectAtIndex:index];
+    
     NSURL *url = [NSURL URLWithString:curPro.pic_url];
     UIImageView * tmpView = [[UIImageView alloc]init];
     [tmpView setImageWithURL:url placeholderImage:[UIImage imageNamed:@"hold.png"]];
@@ -134,8 +143,11 @@
 {	
     NSLog(@"egoRefreshTableHeaderDidTriggerRefresh");
     reLoading = YES;
-    [SingleModel getSingleModal].delegate = self;
-    [[SingleModel getSingleModal]refreshData:YES];
+    
+    NSThread* myThread = [[NSThread alloc] initWithTarget:self
+                                                 selector:@selector(refreshData)
+                                                   object:nil];
+    [myThread start];
 }
 // 下拉时回调
 - (BOOL)egoRefreshTableHeaderDataSourceIsLoading:(EGORefreshTableHeaderView*)view
@@ -158,10 +170,24 @@
 	[refreshHeaderView egoRefreshScrollViewDataSourceDidFinishedLoading:self.tableView];
 }
 
+-(void)refreshData
+{
+    [SingleModel getSingleModal].delegate = self;
+    [[SingleModel getSingleModal]refreshData:YES];
+
+}
+
+
+
 #pragma taobao data
 -(void) finishedRefreshData
 {
     NSLog(@"finishedRefreshData-end");
+    [self performSelectorOnMainThread:@selector(reloadData) withObject:nil waitUntilDone:NO];
+
+}
+-(void) reloadData
+{
     self.reLoading = NO;
 	[self performSelector:@selector(doneLoadingTableViewData) withObject:nil afterDelay:1.0];
     
