@@ -16,7 +16,7 @@
 @interface StartViewController : UIViewController <TaobaoDataDelegate>
 
 
-@property(nonatomic,strong) IBOutlet UIImageView * image;
+
 @property(nonatomic,strong) IBOutlet UITextView * status;
 
 -(void)getData;

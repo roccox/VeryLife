@@ -9,7 +9,7 @@
 #import "StartViewController.h"
 
 @implementation StartViewController
-@synthesize status,image;
+@synthesize status;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -41,11 +41,19 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    //check netwok
+    BOOL connected = [Utility connectedToNetwork];
+    
+    if (!connected) {
+        self.status.text = @"亲，好像网络有问题哦～～～";
+        return;
+    }
 
     NSThread* myThread = [[NSThread alloc] initWithTarget:self
                                                  selector:@selector(getData)
                                                    object:nil];
     [myThread start];
+    self.status.text = @"亲，正在下载数据，别着急哦～～～";
 }
 
 - (void)viewDidUnload
