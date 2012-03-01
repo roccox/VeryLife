@@ -268,7 +268,7 @@
         {
             proR = [list objectAtIndex:j];
             priceR = [proR.price intValue];
-            if(priceL < priceR)
+            if(priceL > priceR)
             {
                 [list replaceObjectAtIndex:i withObject:proR];
                 [list replaceObjectAtIndex:j withObject:proL];

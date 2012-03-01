@@ -156,7 +156,6 @@
 {
 	ItemProductModel * product = [[SingleModel getSingleModal].itemHotProList objectAtIndex:indexPath.row];
 
-    [[SingleModel getSingleModal] getProDetailInfo:product];
     DetailInfo * controller = [[DetailInfo alloc]initWithNibName:@"DetailInfo" bundle:nil];
     
     controller.product = product;

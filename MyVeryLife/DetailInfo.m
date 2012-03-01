@@ -123,6 +123,9 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+
+    [[SingleModel getSingleModal] getProDetailInfo:product];
+
     // Do any additional setup after loading the view from its nib.
     CGSize newSize=self.view.frame.size;
     newSize.height+=360;
