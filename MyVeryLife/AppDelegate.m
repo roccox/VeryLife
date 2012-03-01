@@ -11,12 +11,16 @@
 @implementation AppDelegate
 
 @synthesize window = _window;
+@synthesize refreshProTab,refreshHomeTab;
 
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
+    self.refreshHomeTab = NO;
+    self.refreshProTab = NO;
+    self.refreshSearchTab = NO;
     return YES;
 }
 							

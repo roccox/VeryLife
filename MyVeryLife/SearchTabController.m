@@ -9,6 +9,7 @@
 #import "SearchTabController.h"
 #import "UIImageView+WebCache.h"
 
+
 @implementation SearchTabController
 
 @synthesize filterList, searchBar;
@@ -206,6 +207,9 @@
     [self.tableView reloadData];
     searchBar.showsCancelButton = FALSE;
 }
+
+
+
 
 -(void)refreshData
 {

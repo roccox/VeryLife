@@ -8,6 +8,7 @@
 
 #import "HomeTabController.h"
 #import "UIImageView+WebCache.h"
+#import "AppDelegate.h"
 
 @implementation HomeTabController
 
@@ -163,6 +164,17 @@
     NSLog(@"finishedRefreshData-end");
     self.reLoading = NO;
 	[self performSelector:@selector(doneLoadingTableViewData) withObject:nil afterDelay:1.0];
+    
+    AppDelegate * delgate = [[UIApplication sharedApplication]delegate];
+    delgate.refreshHomeTab = YES;
+    delgate.refreshProTab = YES;
+
+    
+    //refresh table and photoview
+    delgate.refreshHomeTab = NO;
+    [self.tableView reloadData];
+    [self.pagePhotoView refreshData:self];
+    
 //	[refreshHeaderView egoRefreshScrollViewDataSourceDidFinishedLoading:self.tableView];
 
 //    [self.tabBarController reloadInputViews];

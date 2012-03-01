@@ -7,6 +7,7 @@
 //
 
 #import "ProductTabController.h"
+#import "AppDelegate.h"
 
 @implementation ProductTabController
 
@@ -90,6 +91,14 @@
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
+
+    AppDelegate * delgate = [[UIApplication sharedApplication]delegate];
+    if(delgate.refreshProTab)
+    {
+        //refresh table and photoview
+        delgate.refreshProTab = NO;
+        [self.tableView reloadData];
+    }
 }
 
 - (void)viewDidAppear:(BOOL)animated
