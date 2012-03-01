@@ -104,7 +104,7 @@
     if (pagePhotoView == nil) 
     {
         // 创建下拉视图
-		PagePhotosView * view = [[PagePhotosView alloc] initWithFrame:CGRectMake(0.0f, 0.0 , 320.0f, 260.f) withDataSource:self withBImage:[UIImage imageNamed:@"Default@2x.png"]];
+		PagePhotosView * view = [[PagePhotosView alloc] initWithFrame:CGRectMake(0.0f, 0.0 , 320.0f, 260.f) withDataSource:self withBImage:[UIImage imageNamed:@"New.jpg"]];
 		[self.tableView addSubview:view];
 //        [self.tableView setContentOffset:CGPointMake(0.0f, -260.0f) animated:FALSE];
 //        [self.tableView scrollsToTop];
@@ -151,7 +151,7 @@
 // 下拉时回调
 - (BOOL)egoRefreshTableHeaderDataSourceIsLoading:(EGORefreshTableHeaderView*)view
 {	
-    NSLog(@"egoRefreshTableHeaderDataSourceIsLoading");
+//    NSLog(@"egoRefreshTableHeaderDataSourceIsLoading");
 	return reLoading; // should return if data source model is reloading
 }
 // 请求上次更新时间时调用

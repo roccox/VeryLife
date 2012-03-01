@@ -52,6 +52,7 @@
 
 @property(nonatomic,strong)UIButton * commentBtn;
 @property(nonatomic,strong)UIButton * buyBtn;
+@property(nonatomic,strong)IBOutlet UITextView * desc;
 
 @property(nonatomic,strong)IBOutlet UIScrollView * scrollView;
 

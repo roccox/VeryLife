@@ -26,8 +26,11 @@
 @synthesize  colorLabel;
 @synthesize  sizeLabel;
 
+@synthesize desc;
+
 @synthesize  commentBtn;
 @synthesize buyBtn;
+
 
 @synthesize scrollView;
 
@@ -136,7 +139,7 @@
     if (pagePhotoView == nil) 
     {
         // 创建下拉视图
-		PagePhotosView * view = [[PagePhotosView alloc] initWithFrame:CGRectMake(0.0f, 0.0 , 320.0f, 260.f) withDataSource:self withBImage:[UIImage imageNamed:@"first.png"]];
+		PagePhotosView * view = [[PagePhotosView alloc] initWithFrame:CGRectMake(0.0f, 0.0 , 320.0f, 260.f) withDataSource:self withBImage:[UIImage imageNamed:@"bg.png"]];
 		[self.scrollView addSubview:view];
         //        [self.tableView setContentOffset:CGPointMake(0.0f, -260.0f) animated:FALSE];
         //        [self.tableView scrollsToTop];
@@ -158,6 +161,8 @@
      UIButton * buyBtn;
      */
     self.title=@"宝贝详情";
+    self.desc.text = product.wap_desc;
+    NSLog(@"id-%@,Desc-%@",product.num_iid,product.wap_desc);
 }
 
 - (void)viewDidUnload
