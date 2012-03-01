@@ -50,7 +50,6 @@ static SingleModel *single = nil;
                 iPro = jPro;
         }
         [tmpList addObject:iPro];
-        NSLog(@"%@",iPro.sell_count);
     }
     itemAllProList = tmpList;
 }
@@ -99,7 +98,6 @@ static SingleModel *single = nil;
         iid = [iid stringByAppendingFormat:@"%@,",pro.num_iid];
     }
     [params setObject:iid forKey:@"num_iids"];
-    NSLog(@"%@",iid);
     [params setObject:@"taobao.items.list.get" forKey:@"method"];
     
     NSData *resultData=[Utility getResultData:params];
@@ -165,13 +163,6 @@ static SingleModel *single = nil;
         self.itemProlist = [[NSMutableArray alloc]init];
     if(itemCommentList == nil)
         itemCommentList = [[NSMutableArray alloc]init];
-
-    [self.itemCatlist removeAllObjects];
-    [self.itemAllProList removeAllObjects];
-    [self.itemNewProList removeAllObjects];
-    [self.itemHotProList removeAllObjects];
-    [self.itemProlist removeAllObjects];
-    [self.itemCommentList removeAllObjects];
     
     _parseState = TAOBAO_PARSE_START;
 
@@ -353,13 +344,35 @@ static SingleModel *single = nil;
             //商品类别
             if([elementName isEqualToString:@"seller_cat"])
             {
-                [self.itemCatlist addObject:self.itemCat];
+                BOOL isExist = NO;
+                for( ItemCategoryModel * cat in self.itemCatlist)
+                {
+                    if([cat.cid compare: self.itemCat.cid] == NSOrderedSame)
+                    {
+                        isExist = YES;
+                        break;
+                    }
+                    
+                }
+                if(!isExist)
+                    [self.itemCatlist addObject:self.itemCat];
             }
             break;
         case TAOBAO_PARSE_PRO_LIST:
             if([elementName isEqualToString:@"item"])
             {
-                [self.itemAllProList addObject:self.itemPro];
+                BOOL isExist = NO;
+                for( ItemProductModel * pro in self.itemAllProList)
+                {
+                    if([pro.num_iid compare: self.itemPro.num_iid]  == NSOrderedSame)
+                    {
+                        isExist = YES;
+                        break;
+                    }
+                    
+                }
+                if(!isExist)
+                    [self.itemAllProList addObject:self.itemPro];
             }
             break;
         case TAOBAO_PARSE_PRO_INFO:
@@ -420,10 +433,23 @@ static SingleModel *single = nil;
 
 -(void)tidyData
 {
+    BOOL isExist = NO;
+    ItemProductModel * newPro;
     //Hot Sale List - get the first 4 items
-    for(int i=0;i<[itemAllProList count];i++)
+    for(int i=0;i<[itemAllProList count] && i<=10;i++)
     {
-        [self.itemHotProList addObject:[self.itemAllProList objectAtIndex:i]];
+        newPro = [self.itemAllProList objectAtIndex:i];
+        for( ItemProductModel * pro in self.itemHotProList)
+        {
+            if([pro.num_iid compare: newPro.num_iid] == NSOrderedSame)
+            {
+                isExist = YES;
+                break;
+            }
+            
+        }
+        if(!isExist)
+            [self.itemHotProList addObject:newPro];
     }
     //new Product
     for(int i=0;i<[self.itemCatlist count];i++)
@@ -440,7 +466,17 @@ static SingleModel *single = nil;
             {
                 if([pro.seller_cids rangeOfString:cat.cid].length > 0)
                 {
-                    [self.itemNewProList addObject:pro];
+                    for( ItemProductModel * _pro in self.itemHotProList)
+                    {
+                        if([pro.num_iid compare: _pro.num_iid] == NSOrderedSame)
+                        {
+                            isExist = YES;
+                            break;
+                        }
+                        
+                    }
+                    if(!isExist)
+                        [self.itemNewProList addObject:pro];
                     continue;
                 }
             }

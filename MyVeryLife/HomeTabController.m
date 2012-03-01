@@ -30,7 +30,6 @@
     
     count = [[SingleModel getSingleModal].itemNewProList count];
 
-    count = count<5?count:5;
     return count;
 //	return 5;
 }
@@ -230,7 +229,7 @@
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     int count = [[SingleModel getSingleModal].itemHotProList count];
-    return count<=10?count:10;
+    return count;
 }
 
 
