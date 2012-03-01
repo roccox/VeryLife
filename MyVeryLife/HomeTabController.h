@@ -19,15 +19,22 @@
 
 #import "Utility.h"
 
-@interface HomeTabController : UITableViewController <PagePhotosDataSource,TaobaoDataDelegate,SDWebImageManagerDelegate,SDWebImageDownloaderDelegate>{
+#import "EGORefreshTableHeaderView.h"
+
+
+@interface HomeTabController : UITableViewController <PagePhotosDataSource,TaobaoDataDelegate,SDWebImageManagerDelegate,SDWebImageDownloaderDelegate,EGORefreshTableHeaderDelegate>{
 
 }
-
+@property (strong, nonatomic) EGORefreshTableHeaderView *refreshHeaderView;
 @property (strong,nonatomic) PagePhotosView * pagePhotoView;
+@property(strong,nonatomic)NSDate * updateDate;
+@property(assign,nonatomic)BOOL reLoading;
 
 -(void)getRecommendedProInfo;
 -(void)getNewProInfo;
 
 -(void)refreshData;
 
+
+- (void)doneLoadingTableViewData;
 @end

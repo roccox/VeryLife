@@ -29,9 +29,10 @@
 
 - (IBAction)changePage:(id)sender;
 
-- (id)initWithFrame:(CGRect)frame withDataSource:(id<PagePhotosDataSource>)_dataSource;
+- (id)initWithFrame:(CGRect)frame withDataSource:(id<PagePhotosDataSource>)_dataSource withBImage:(UIImage*) image;
 
 -(void)refreshData:(id<PagePhotosDataSource>)_dataSource;
+
 -(void)setScrollerDelegate:(id)delegate;
 -(int)getCurPage;
 

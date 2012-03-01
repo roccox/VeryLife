@@ -21,7 +21,7 @@
 @synthesize imageViews;
 @synthesize bImage;
 
-- (id)initWithFrame:(CGRect)frame withDataSource:(id<PagePhotosDataSource>)_dataSource {
+- (id)initWithFrame:(CGRect)frame withDataSource:(id<PagePhotosDataSource>)_dataSource withBImage:(UIImage*) image {
     if ((self = [super initWithFrame:frame])) {
 		self.dataSource = _dataSource;
         // Initialization UIScrollView
@@ -57,8 +57,8 @@
         bImage = [[UIImageView alloc]init];
         CGRect bFrame = CGRectMake(0, 0, 320, 240);
         bImage.frame = bFrame;
+        [bImage setImage:image];
         [scrollView addSubview:bImage];
-
 		// pages are created on demand
 		// load the visible page
 		// load the page on either side to avoid flashes when the user starts scrolling
@@ -173,18 +173,20 @@
     [super dealloc];
 }
 
+
+
 -(void)refreshData:(id<PagePhotosDataSource>)_dataSource
 {
     //release views
     [scrollView release];
 	[pageControl release];
- 
+    
     self.dataSource = _dataSource;
     // Initialization UIScrollView
     int pageControlHeight = 20;
     scrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 0, 320.f, 240.0f)];
     pageControl = [[UIPageControl alloc] initWithFrame:CGRectMake(0, 240.f, 320.f,pageControlHeight)];
-		
+    
     [self addSubview:scrollView];
     [self addSubview:pageControl];
     
@@ -209,22 +211,20 @@
     pageControl.numberOfPages = kNumberOfPages;
     pageControl.currentPage = 0;
     pageControl.backgroundColor = [UIColor blackColor];
-		
+    
     
     bImage = [[UIImageView alloc]init];
     
     CGRect bFrame = CGRectMake(0, 0, 320, 240);
     bImage.frame = bFrame;
     [scrollView addSubview:bImage];
-
+    
     // pages are created on demand
     // load the visible page
     // load the page on either side to avoid flashes when the user starts scrolling
     [self loadScrollViewWithPage:0];
     [self loadScrollViewWithPage:1];
 }
-
-
 
 #pragma - touch event
 -(void)setScrollerDelegate:(id)delegate

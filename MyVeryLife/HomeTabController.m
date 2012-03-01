@@ -11,7 +11,7 @@
 
 @implementation HomeTabController
 
-@synthesize pagePhotoView;
+@synthesize pagePhotoView,refreshHeaderView,reLoading,updateDate;
 
 - (void)didReceiveMemoryWarning
 {
@@ -75,14 +75,27 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
 
-    //Hide Tool Bar
+    
+    
+    if (refreshHeaderView == nil) 
+    {
+        // 创建下拉视图
+		EGORefreshTableHeaderView *view = [[EGORefreshTableHeaderView alloc] initWithFrame:CGRectMake(0.0f, 0.0f - self.tableView.bounds.size.height, self.view.frame.size.width, self.tableView.bounds.size.height)];
+		view.delegate = self;
+		[self.tableView addSubview:view];
+		refreshHeaderView = view;
+        self.updateDate = [NSDate date];
+	}
+	
+	// 更新时间
+	[refreshHeaderView refreshLastUpdatedDate];    //Hide Tool Bar
 //    self.navigationController.navigationBarHidden = YES;
 //    self.tabBarController.tabBar.hidden = NO;
     
     if (pagePhotoView == nil) 
     {
         // 创建下拉视图
-		PagePhotosView * view = [[PagePhotosView alloc] initWithFrame:CGRectMake(0.0f, 0.0 , 320.0f, 260.f) withDataSource:self];
+		PagePhotosView * view = [[PagePhotosView alloc] initWithFrame:CGRectMake(0.0f, 0.0 , 320.0f, 260.f) withDataSource:self withBImage:[UIImage imageNamed:@"Default@2x.png"]];
 		[self.tableView addSubview:view];
 //        [self.tableView setContentOffset:CGPointMake(0.0f, -260.0f) animated:FALSE];
 //        [self.tableView scrollsToTop];
@@ -91,6 +104,7 @@
 		pagePhotoView = view;
         
 	}
+    self.reLoading = NO;
     //Disable Tab
 
 //    [SingleModel getSingleModal].delegate = self;
@@ -98,11 +112,63 @@
 //    [self.navigationController setTitle:@"金太家の日式良品店"];
 }
 
+#pragma mark -
+#pragma mark UIScrollViewDelegate Methods
+// 页面滚动时回调
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView
+{	
+    //NSLog(@"scrollViewDidScroll");
+	[refreshHeaderView egoRefreshScrollViewDidScroll:scrollView];
+}
+// 滚动结束时回调
+- (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate
+{	
+    //NSLog(@"scrollViewDidEndDragging");
+	[refreshHeaderView egoRefreshScrollViewDidEndDragging:scrollView];
+}
+
+#pragma mark EGORefreshTableHeaderDelegate Methods
+// 开始刷新时回调
+- (void)egoRefreshTableHeaderDidTriggerRefresh:(EGORefreshTableHeaderView*)view
+{	
+    NSLog(@"egoRefreshTableHeaderDidTriggerRefresh");
+    reLoading = YES;
+    [SingleModel getSingleModal].delegate = self;
+    [[SingleModel getSingleModal]refreshData:YES];
+}
+// 下拉时回调
+- (BOOL)egoRefreshTableHeaderDataSourceIsLoading:(EGORefreshTableHeaderView*)view
+{	
+    NSLog(@"egoRefreshTableHeaderDataSourceIsLoading");
+	return reLoading; // should return if data source model is reloading
+}
+// 请求上次更新时间时调用
+- (NSDate*)egoRefreshTableHeaderDataSourceLastUpdated:(EGORefreshTableHeaderView*)view
+{	
+    NSLog(@"egoRefreshTableHeaderDataSourceLastUpdated");
+	return [NSDate date]; // should return date data source was last changed
+}
+
+// 刷新结束时调用
+- (void)doneLoadingTableViewData
+{
+	//  model should call this when its done loading
+	self.reLoading = NO;
+	[refreshHeaderView egoRefreshScrollViewDataSourceDidFinishedLoading:self.tableView];
+}
+
 #pragma taobao data
 -(void) finishedRefreshData
 {
     NSLog(@"finishedRefreshData-end");
-    [self.pagePhotoView refreshData:self];
+    self.reLoading = NO;
+	[self performSelector:@selector(doneLoadingTableViewData) withObject:nil afterDelay:1.0];
+//	[refreshHeaderView egoRefreshScrollViewDataSourceDidFinishedLoading:self.tableView];
+
+//    [self.tabBarController reloadInputViews];
+    
+//    [self.tableView reloadData];
+//    [self.pagePhotoView refreshData:self];
 }
 
 

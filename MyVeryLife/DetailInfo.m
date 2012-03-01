@@ -136,7 +136,7 @@
     if (pagePhotoView == nil) 
     {
         // 创建下拉视图
-		PagePhotosView * view = [[PagePhotosView alloc] initWithFrame:CGRectMake(0.0f, 0.0 , 320.0f, 260.f) withDataSource:self];
+		PagePhotosView * view = [[PagePhotosView alloc] initWithFrame:CGRectMake(0.0f, 0.0 , 320.0f, 260.f) withDataSource:self withBImage:[UIImage imageNamed:@"first.png"]];
 		[self.scrollView addSubview:view];
         //        [self.tableView setContentOffset:CGPointMake(0.0f, -260.0f) animated:FALSE];
         //        [self.tableView scrollsToTop];

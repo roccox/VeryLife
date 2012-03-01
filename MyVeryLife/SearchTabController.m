@@ -298,24 +298,22 @@
     //filter
     ItemProductModel * proL;
     ItemProductModel * proR;
-    NSDate * dateL, * dateR;
-    NSDateFormatter * formatter = [[NSDateFormatter alloc]init];
-    [formatter setDateFormat:@"yyyy-MM-dd HH:mm:ss"];
+    NSString * dateL, * dateR;
     
     for(int i=0;i<[list count]-1;i++)
     {
         proL = [list objectAtIndex:i];
-        dateL = [formatter dateFromString:proL.list_time];
+        dateL = proL.list_time;
         for(int j=i+1;j<[list count];j++)
         {
             proR = [list objectAtIndex:j];
-            dateR = [formatter dateFromString:proR.list_time];
+            dateR = proR.list_time;
             if([dateL compare:dateR] ==  NSOrderedAscending)
             {
                 [list replaceObjectAtIndex:i withObject:proR];
                 [list replaceObjectAtIndex:j withObject:proL];
                 proL = proR;
-                dateL = [formatter dateFromString:proL.list_time];
+                dateL = proL.list_time;
             }
         }
     }
