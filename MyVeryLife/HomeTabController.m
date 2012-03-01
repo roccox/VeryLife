@@ -75,6 +75,9 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
 
+    //Hide Tool Bar
+//    self.navigationController.navigationBarHidden = YES;
+//    self.tabBarController.tabBar.hidden = NO;
     
     if (pagePhotoView == nil) 
     {
@@ -86,9 +89,12 @@
 //        [self.tableView setFrame:CGRectMake(0.0f, 0.0f, 320.0f, 367.0f)];
 //        self.tableView.frame.origin.x;
 		pagePhotoView = view;
+        
 	}
-    [SingleModel getSingleModal].delegate = self;
-	[[SingleModel getSingleModal]refreshData:YES];
+    //Disable Tab
+
+//    [SingleModel getSingleModal].delegate = self;
+//	[[SingleModel getSingleModal]refreshData:YES];
 //    [self.navigationController setTitle:@"金太家の日式良品店"];
 }
 

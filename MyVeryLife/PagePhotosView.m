@@ -19,6 +19,7 @@
 @implementation PagePhotosView
 @synthesize dataSource;
 @synthesize imageViews;
+@synthesize bImage;
 
 - (id)initWithFrame:(CGRect)frame withDataSource:(id<PagePhotosDataSource>)_dataSource {
     if ((self = [super initWithFrame:frame])) {
@@ -52,7 +53,12 @@
 		pageControl.numberOfPages = kNumberOfPages;
 		pageControl.currentPage = 0;
 		pageControl.backgroundColor = [UIColor blackColor];
-		
+
+        bImage = [[UIImageView alloc]init];
+        CGRect bFrame = CGRectMake(0, 0, 320, 240);
+        bImage.frame = bFrame;
+        [scrollView addSubview:bImage];
+
 		// pages are created on demand
 		// load the visible page
 		// load the page on either side to avoid flashes when the user starts scrolling
@@ -94,7 +100,6 @@
     ratioH = ratio;
     ratioW = ratio;
     
-    NSLog(@"%f,%f,%f,%f",frame.size.width,frame.size.height,view.image.size.width,view.image.size.height);
     
     frame.size.width = view.image.size.width * ratioW;
     frame.size.height = view.image.size.height * ratioH;
@@ -162,6 +167,7 @@
 
 
 - (void)dealloc {
+    [bImage release];
 	[scrollView release];
 	[pageControl release];
     [super dealloc];
@@ -204,6 +210,13 @@
     pageControl.currentPage = 0;
     pageControl.backgroundColor = [UIColor blackColor];
 		
+    
+    bImage = [[UIImageView alloc]init];
+    
+    CGRect bFrame = CGRectMake(0, 0, 320, 240);
+    bImage.frame = bFrame;
+    [scrollView addSubview:bImage];
+
     // pages are created on demand
     // load the visible page
     // load the page on either side to avoid flashes when the user starts scrolling

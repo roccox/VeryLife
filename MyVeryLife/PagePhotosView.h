@@ -12,6 +12,7 @@
 
 #import "ItemProductModel.h"
 @interface PagePhotosView : UIView<UIScrollViewDelegate,PagePhotosRefresh> {
+    UIImageView * bImage;
 	UIScrollView *scrollView;
 	UIPageControl *pageControl;
 	
@@ -22,6 +23,7 @@
     BOOL pageControlUsed;
 }
 
+@property(nonatomic,retain) UIImageView * bImage;
 @property (nonatomic, assign) id<PagePhotosDataSource> dataSource;
 @property (nonatomic, retain) NSMutableArray *imageViews;
 
@@ -32,4 +34,5 @@
 -(void)refreshData:(id<PagePhotosDataSource>)_dataSource;
 -(void)setScrollerDelegate:(id)delegate;
 -(int)getCurPage;
+
 @end
