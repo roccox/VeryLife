@@ -265,7 +265,6 @@
     
     controller.product = product;
     controller.hidesBottomBarWhenPushed = YES;
-    [self.navigationController setTitle:@"宝贝详情"];
     //    self.navigationController.hidesBottomBarWhenPushed = YES;
     [self.navigationController pushViewController:controller animated:YES];
 

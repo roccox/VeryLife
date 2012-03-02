@@ -57,7 +57,7 @@
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="km8-8K-r4e" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController id="tBG-yk-a0j" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="首页" image="first" id="7"/>
+                    <tabBarItem key="tabBarItem" title="首页" image="whiteArrow.png" id="7"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="Ipc-Rh-WZs">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -467,8 +467,8 @@
     </scenes>
     <resources>
         <image name="Default@2x.png" width="640" height="960"/>
-        <image name="first" width="16" height="16"/>
         <image name="second" width="16" height="16"/>
+        <image name="whiteArrow.png" width="23" height="60"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>

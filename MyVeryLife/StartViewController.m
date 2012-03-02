@@ -41,19 +41,26 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    [self start];
+}
+
+-(void)start
+{
     //check netwok
     BOOL connected = [Utility connectedToNetwork];
     
     if (!connected) {
         self.status.text = @"亲，好像网络有问题哦～～～";
+        [self performSelector:@selector(start) withObject:nil afterDelay:3.0];
         return;
     }
-
+    
     NSThread* myThread = [[NSThread alloc] initWithTarget:self
                                                  selector:@selector(getData)
                                                    object:nil];
     [myThread start];
     self.status.text = @"亲，正在下载数据，别着急哦～～～";
+   
 }
 
 - (void)viewDidUnload

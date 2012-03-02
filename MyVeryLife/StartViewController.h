@@ -19,6 +19,7 @@
 
 @property(nonatomic,strong) IBOutlet UITextView * status;
 
+-(void)start;
 -(void)getData;
 -(IBAction)goBtn:(id)sender;
 @end
