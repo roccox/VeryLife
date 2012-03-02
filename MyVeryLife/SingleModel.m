@@ -58,10 +58,29 @@ static SingleModel *single = nil;
 -(void)prepareProList:(ItemCategoryModel *) selItemCat
 {
     [itemProlist removeAllObjects];
+    NSMutableArray * childCat = [[NSMutableArray alloc]initWithCapacity:4];
+    //search child cat
+    for(ItemCategoryModel * cat in itemCatlist)
+    {
+        if([cat.parent_id compare:selItemCat.cid] == NSOrderedSame)
+            [childCat addObject:cat];
+    }
+    
     for(ItemProductModel * pro in itemAllProList)
     {
         if([pro.seller_cids rangeOfString:selItemCat.cid].length >0)
             [itemProlist addObject:pro];
+        else
+        {
+            for(ItemCategoryModel * cat in childCat)
+            {
+                if([pro.seller_cids rangeOfString:cat.cid].length >0)
+                {
+                    [itemProlist addObject:pro];                
+                    continue;
+                }
+            }
+        }
     }
 }
 
@@ -134,7 +153,7 @@ static SingleModel *single = nil;
     //Get Category List
     NSString * _page_num = [[NSString alloc]initWithFormat:@"%d",page_no];
     NSMutableDictionary *params=[[NSMutableDictionary alloc] init];
-    [params setObject:@"num_iid,title,volume,pic_url,location,price" forKey:@"fields"];
+    [params setObject:@"num_iid,title,volume,pic_url,location,price,stuff_status" forKey:@"fields"];
     [params setObject:@"podees" forKey:@"nicks"];
     [params setObject:@"volume:desc" forKey:@"order_by"];
     [params setObject:_page_num forKey:@"page_no"];
@@ -305,12 +324,23 @@ static SingleModel *single = nil;
             }
             else if(![self.currentElement compare:@"wap_desc"])
             {
-                self.itemPro.wap_desc=string;
+                NSString * _pro = [SingleModel getSingleModal].itemPro.wap_desc;
+                if([_pro length] ==0)
+                    _pro=string;
+                else
+                    _pro = [_pro stringByAppendingFormat:@"%@",string];   
+                
+                [SingleModel getSingleModal].itemPro.wap_desc = _pro;
             }
             else if(![self.currentElement compare:@"wap_detail_url"])
             {
                 self.itemPro.wap_detail_url=string;
             }
+            else if(![self.currentElement compare:@"stuff_status"])
+            {
+                self.itemPro.item_type=string;
+            }
+            
             break;
         case TAOBAO_PARSE_COMMENT:
             //评价信息
@@ -459,6 +489,7 @@ static SingleModel *single = nil;
         {
             [itemCatlist removeObjectAtIndex:i];
             i--;
+            continue;
         }
         if([cat.name hasPrefix:@"※"])
         {
@@ -480,8 +511,8 @@ static SingleModel *single = nil;
                     continue;
                 }
             }
-            [itemCatlist removeObjectAtIndex:i];
-            i--;
+//            [itemCatlist removeObjectAtIndex:i];
+//            i--;
         }
     }
     

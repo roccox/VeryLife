@@ -108,6 +108,7 @@
     frame.size.height = view.image.size.height * ratioH;
     
     frame.origin.x += (320 - frame.size.width)/2;
+    frame.origin.y += (240 - frame.size.height)/2;
     
     view.frame = frame;
 

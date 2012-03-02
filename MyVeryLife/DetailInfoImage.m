@@ -39,6 +39,24 @@
     // Do any additional setup after loading the view from its nib.
     [self.imageView setImageWithURL:url placeholderImage:[UIImage imageNamed:@"hold.png"]];
 
+    CGRect oriFrame = self.imageView.frame;
+    CGRect frame = self.imageView.frame;
+
+    double ratio = 1.0;
+    double ratioH = frame.size.height/self.imageView.image.size.height;
+    double ratioW = frame.size.width/self.imageView.image.size.width;
+    ratio = ratioH<ratioW?ratioH:ratioW;
+    ratioH = ratio;
+    ratioW = ratio;
+    
+    
+    frame.size.width = self.imageView.image.size.width * ratioW;
+    frame.size.height = self.imageView.image.size.height * ratioH;
+    
+    frame.origin.x += (oriFrame.size.width - frame.size.width)/2;
+    frame.origin.y += (oriFrame.size.height - frame.size.height)/2;
+    
+    self.imageView.frame = frame;
 }
 
 - (void)viewDidUnload

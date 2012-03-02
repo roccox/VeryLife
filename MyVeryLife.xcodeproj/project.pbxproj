@@ -145,7 +145,7 @@
 		DDCBC41F14C53A1D0086D6C3 /* CommentCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommentCell.h; sourceTree = "<group>"; };
 		DDCBC42014C53A1D0086D6C3 /* CommentCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommentCell.m; sourceTree = "<group>"; };
 		DDCBC42114C53A1D0086D6C3 /* CommentCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CommentCell.xib; sourceTree = "<group>"; };
-		DDE10A8B14BBD774006630F4 /* MyVeryLife.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyVeryLife.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		DDE10A8B14BBD774006630F4 /* 金太家.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "金太家.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DDE10A8F14BBD774006630F4 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		DDE10A9114BBD774006630F4 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		DDE10A9314BBD774006630F4 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -318,7 +318,7 @@
 		DDE10A8C14BBD774006630F4 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				DDE10A8B14BBD774006630F4 /* MyVeryLife.app */,
+				DDE10A8B14BBD774006630F4 /* 金太家.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -437,7 +437,7 @@
 			);
 			name = MyVeryLife;
 			productName = MyVeryLife;
-			productReference = DDE10A8B14BBD774006630F4 /* MyVeryLife.app */;
+			productReference = DDE10A8B14BBD774006630F4 /* 金太家.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -618,7 +618,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "MyVeryLife/MyVeryLife-Prefix.pch";
 				INFOPLIST_FILE = "MyVeryLife/MyVeryLife-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "金太家";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -629,7 +629,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "MyVeryLife/MyVeryLife-Prefix.pch";
 				INFOPLIST_FILE = "MyVeryLife/MyVeryLife-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "金太家";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

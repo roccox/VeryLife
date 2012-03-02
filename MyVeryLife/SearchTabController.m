@@ -97,10 +97,8 @@
     //    proImage.image = product.photo;
     UILabel * proTitle = (UILabel *)[cell viewWithTag:101];
     proTitle.text = product.title;
-    UILabel * proPrice = (UILabel *)[cell viewWithTag:102];
+    UILabel * proPrice = (UILabel *)[cell viewWithTag:103];
     proPrice.text = product.price;
-    UILabel * proFreight = (UILabel *)[cell viewWithTag:103];
-    proFreight.text = product.item_express;
     UILabel * proSold = (UILabel *)[cell viewWithTag:104];
     proSold.text = product.sell_count;
     

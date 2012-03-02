@@ -151,7 +151,6 @@
     self.titleLabel.text = product.title;
     self.priceLabel.text = product.price;
     self.sellCountLabel.text = product.sell_count;
-    self.proTypeLabel.text = product.item_type;
     self.locationLabel.text = product.location;
     /*
      UILabel * colorLabel;
@@ -162,7 +161,14 @@
      */
     self.title=@"宝贝详情";
     self.desc.text = product.wap_desc;
-    NSLog(@"id-%@,Desc-%@",product.num_iid,product.wap_desc);
+    if([product.item_type compare:@"new"] == NSOrderedSame)
+        self.proTypeLabel.text = @"全新";
+    else if([product.item_type compare:@"unused"] == NSOrderedSame)
+        self.proTypeLabel.text = @"闲置";
+    else if([product.item_type compare:@"second"] == NSOrderedSame)
+        self.proTypeLabel.text = @"二手";
+        
+    NSLog(@"id-%@,Desc-%@",product.num_iid,product.item_type);
 }
 
 - (void)viewDidUnload
