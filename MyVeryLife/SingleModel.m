@@ -451,7 +451,7 @@ static SingleModel *single = nil;
                 [self getProInfo:_item_getinfo_no];
             break;
         case TAOBAO_PARSE_DETAIL_INFO:
-//            [self.delegate finishedDetailData];
+            [self.delegate finishedDetailData];
             break;
         case TAOBAO_PARSE_COMMENT:
             [self.delegate finishedCommentData];

@@ -68,7 +68,7 @@
 
 	ItemProductModel * product = [[SingleModel getSingleModal].itemNewProList objectAtIndex: [pagePhotoView getCurPage]];
     
-    [[SingleModel getSingleModal] getProDetailInfo:product];
+//    [[SingleModel getSingleModal] getProDetailInfo:product];
     DetailInfo * controller = [[DetailInfo alloc]initWithNibName:@"DetailInfo" bundle:nil];
     
     controller.product = product;

@@ -31,6 +31,8 @@
 @synthesize  commentBtn;
 @synthesize buyBtn;
 
+@synthesize waitingView;
+
 
 @synthesize scrollView;
 
@@ -127,15 +129,46 @@
 {
     [super viewDidLoad];
 
-    [[SingleModel getSingleModal] getProDetailInfo:product];
+    //create a waiting icon
+    if(waitingView == nil)
+    {
+        waitingView = [[UIActivityIndicatorView alloc]initWithFrame:CGRectMake(0.0f, 0.0 , 320.0f, 480.f)];
+        [self.view addSubview:waitingView];
+    }
 
+    
+    NSThread* myThread = [[NSThread alloc] initWithTarget:self
+                                                 selector:@selector(getDetailData)
+                                                   object:nil];
+    [myThread start];
     // Do any additional setup after loading the view from its nib.
+
+}
+
+-(void)getDetailData
+{
+    [SingleModel getSingleModal].delegate = self;
+    [[SingleModel getSingleModal] getProDetailInfo:product];
+}
+
+#pragma - taobao
+-(void)finishedDetailData
+{
+    [self performSelectorOnMainThread:@selector(dataReady) withObject:nil waitUntilDone:NO];
+
+}
+
+-(void)dataReady
+{
+    if(waitingView.superview != nil)
+        [waitingView removeFromSuperview];
+    
     CGSize newSize=self.view.frame.size;
     newSize.height+=360;
     self.scrollView.contentSize=newSize;
-//    [self.scrollView setFrame:CGRectMake(0.0f, 260.0f, scrollView.frame.size.width, scrollView.frame.size.height)];
+    //    [self.scrollView setFrame:CGRectMake(0.0f, 260.0f, scrollView.frame.size.width, scrollView.frame.size.height)];
     scrollView.delegate = self;
-
+    
     if (pagePhotoView == nil) 
     {
         // 创建下拉视图
@@ -167,7 +200,7 @@
         self.proTypeLabel.text = @"闲置";
     else if([product.item_type compare:@"second"] == NSOrderedSame)
         self.proTypeLabel.text = @"二手";
-        
+    
     NSLog(@"id-%@,Desc-%@",product.num_iid,product.item_type);
 }
 

@@ -17,7 +17,7 @@
 #import "SDWebImageManagerDelegate.h"
 #import "SDWebImageDownloaderDelegate.h"
 
-@interface DetailInfo : UIViewController<PagePhotosDataSource,SDWebImageManagerDelegate,SDWebImageDownloaderDelegate,UIScrollViewDelegate>{
+@interface DetailInfo : UIViewController<PagePhotosDataSource,SDWebImageManagerDelegate,SDWebImageDownloaderDelegate,UIScrollViewDelegate,TaobaoDataDelegate>{
     ItemProductModel * product;
     
     UILabel * titleLabel;
@@ -56,8 +56,12 @@
 
 @property(nonatomic,strong)IBOutlet UIScrollView * scrollView;
 
+@property(nonatomic,strong) UIActivityIndicatorView * waitingView;
+
 @property(nonatomic,strong) PagePhotosView * pagePhotoView;
 
 - (IBAction)commentBtnClicked;
 - (IBAction)buyBtnClicked;
+-(void) dataReady;
+-(void)getData;
 @end
