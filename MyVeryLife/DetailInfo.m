@@ -128,14 +128,26 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-
-    //create a waiting icon
-    if(waitingView == nil)
+    
+    
+    CGSize newSize=self.view.frame.size;
+    newSize.height+=360;
+    self.scrollView.contentSize=newSize;
+    //    [self.scrollView setFrame:CGRectMake(0.0f, 260.0f, scrollView.frame.size.width, scrollView.frame.size.height)];
+    scrollView.delegate = self;
+    
+    if (pagePhotoView == nil) 
     {
-        waitingView = [[UIActivityIndicatorView alloc]initWithFrame:CGRectMake(0.0f, 0.0 , 320.0f, 480.f)];
-        [self.view addSubview:waitingView];
-    }
-
+        // 创建下拉视图
+		PagePhotosView * view = [[PagePhotosView alloc] initWithFrame:CGRectMake(0.0f, 0.0 , 320.0f, 260.f) withDataSource:self withBImage:[UIImage imageNamed:@"bg.png"]];
+		[self.scrollView addSubview:view];
+        //        [self.tableView setContentOffset:CGPointMake(0.0f, -260.0f) animated:FALSE];
+        //        [self.tableView scrollsToTop];
+        //        [self.tableView setFrame:CGRectMake(0.0f, 0.0f, 320.0f, 367.0f)];
+        //        self.tableView.frame.origin.x;
+		pagePhotoView = view;
+        
+	}
     
     NSThread* myThread = [[NSThread alloc] initWithTarget:self
                                                  selector:@selector(getDetailData)
@@ -160,27 +172,7 @@
 
 -(void)dataReady
 {
-    if(waitingView.superview != nil)
-        [waitingView removeFromSuperview];
-    
-    CGSize newSize=self.view.frame.size;
-    newSize.height+=360;
-    self.scrollView.contentSize=newSize;
-    //    [self.scrollView setFrame:CGRectMake(0.0f, 260.0f, scrollView.frame.size.width, scrollView.frame.size.height)];
-    scrollView.delegate = self;
-    
-    if (pagePhotoView == nil) 
-    {
-        // 创建下拉视图
-		PagePhotosView * view = [[PagePhotosView alloc] initWithFrame:CGRectMake(0.0f, 0.0 , 320.0f, 260.f) withDataSource:self withBImage:[UIImage imageNamed:@"bg.png"]];
-		[self.scrollView addSubview:view];
-        //        [self.tableView setContentOffset:CGPointMake(0.0f, -260.0f) animated:FALSE];
-        //        [self.tableView scrollsToTop];
-        //        [self.tableView setFrame:CGRectMake(0.0f, 0.0f, 320.0f, 367.0f)];
-        //        self.tableView.frame.origin.x;
-		pagePhotoView = view;
-        
-	}
+
     self.titleLabel.text = product.title;
     self.priceLabel.text = product.price;
     self.sellCountLabel.text = product.sell_count;
