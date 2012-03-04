@@ -11,7 +11,7 @@
 @implementation AppDelegate
 
 @synthesize window = _window;
-@synthesize refreshProTab,refreshHomeTab;
+@synthesize refreshProTab,refreshHomeTab,curThread;
 
 
 
@@ -48,6 +48,8 @@
 
 - (void)applicationDidBecomeActive:(UIApplication *)application
 {
+    if([self.curThread isFinished])
+        [curThread start];
     /*
      Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
      */

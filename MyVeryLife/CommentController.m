@@ -7,6 +7,7 @@
 //
 
 #import "CommentController.h"
+#import "AppDelegate.h"
 
 @implementation CommentController
 @synthesize num_iid;
@@ -39,8 +40,34 @@
  
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    NSThread* myThread = [[NSThread alloc] initWithTarget:self
+                                                 selector:@selector(refreshData)
+                                                   object:nil];
+    AppDelegate * delegate = [[UIApplication sharedApplication] delegate];
+    delegate.curThread = myThread;
+    
+    [myThread start];
+}
+-(void)refreshData
+{
     [[SingleModel getSingleModal]setDelegate:self];
-    [[SingleModel getSingleModal]getComment:num_iid];
+    [[SingleModel getSingleModal]getComment:num_iid];    
+}
+
+
+
+#pragma taobao data
+-(void) finishedCommentData
+{
+    [self performSelectorOnMainThread:@selector(reloadData) withObject:nil waitUntilDone:NO];
+    
+}
+-(void) reloadData
+{
+    AppDelegate * delegate = [[UIApplication sharedApplication] delegate];
+    delegate.curThread = nil;
+    
+    [self.tableView reloadData];
 }
 
 - (void)viewDidUnload

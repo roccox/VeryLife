@@ -7,6 +7,7 @@
 //
 
 #import "StartViewController.h"
+#import "AppDelegate.h"
 
 @implementation StartViewController
 @synthesize status;
@@ -58,6 +59,8 @@
     NSThread* myThread = [[NSThread alloc] initWithTarget:self
                                                  selector:@selector(getData)
                                                    object:nil];
+    AppDelegate * delegate = [[UIApplication sharedApplication] delegate];
+    delegate.curThread = myThread;
     [myThread start];
     self.status.text = @"亲，正在下载数据，别着急哦～～～";
    
@@ -84,6 +87,12 @@
 
 -(void)gotoNext
 {
+    NSThread* myThread = [[NSThread alloc] initWithTarget:self
+                                                 selector:@selector(getData)
+                                                   object:nil];
+    AppDelegate * delegate = [[UIApplication sharedApplication] delegate];
+    delegate.curThread = nil;
+    
     [self performSegueWithIdentifier:@"gobtn" sender:self];
 }
 

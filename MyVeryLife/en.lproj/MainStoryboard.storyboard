@@ -57,7 +57,7 @@
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="km8-8K-r4e" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController id="tBG-yk-a0j" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="首页" image="1st.png" id="7"/>
+                    <tabBarItem key="tabBarItem" title="首页" image="37x-Checkmark.png" id="7"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="Ipc-Rh-WZs">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -161,7 +161,7 @@
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eHF-pn-pEZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController id="H1m-U8-VQO" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="分类" image="second" id="6"/>
+                    <tabBarItem key="tabBarItem" title="分类" image="grayArrow.png" id="6"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="doM-fQ-OWe">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -340,7 +340,7 @@
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Xyt-eS-N9p" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController id="ysa-dl-UpQ" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="搜索" id="CdP-Kb-g3X"/>
+                    <tabBarItem key="tabBarItem" title="搜索" image="first.png" id="CdP-Kb-g3X"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="DlZ-dz-Edn">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -466,10 +466,44 @@
         </scene>
     </scenes>
     <resources>
-        <image name="1st.png" width="30" height="30"/>
+        <image name="37x-Checkmark.png" width="37" height="37"/>
         <image name="Default@2x.png" width="640" height="960"/>
-        <image name="second" width="16" height="16"/>
+        <image name="first.png" width="30" height="30"/>
+        <image name="grayArrow.png" width="23" height="60"/>
     </resources>
+    <classes>
+        <class className="EventTabController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/EventTabController.h"/>
+        </class>
+        <class className="HomeTabController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/HomeTabController.h"/>
+        </class>
+        <class className="ProductTabController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/ProductTabController.h"/>
+        </class>
+        <class className="ProductTabProController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/ProductTabProController.h"/>
+        </class>
+        <class className="SearchTabController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/SearchTabController.h"/>
+            <relationships>
+                <relationship kind="action" name="sortByCount"/>
+                <relationship kind="action" name="sortByListTime"/>
+                <relationship kind="action" name="sortByPrice"/>
+                <relationship kind="outlet" name="searchBar" candidateClass="UISearchBar"/>
+            </relationships>
+        </class>
+        <class className="SettingTabController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/SettingTabController.h"/>
+        </class>
+        <class className="StartViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/StartViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="goBtn:"/>
+                <relationship kind="outlet" name="status" candidateClass="UITextView"/>
+            </relationships>
+        </class>
+    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

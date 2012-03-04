@@ -17,6 +17,7 @@
 @property (strong, nonatomic) UIWindow *window;
 @property(assign,nonatomic) BOOL refreshHomeTab;
 @property(assign,nonatomic) BOOL refreshProTab;
+@property(strong,nonatomic) NSThread * curThread;
 
 
 @end

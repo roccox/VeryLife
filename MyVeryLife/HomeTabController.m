@@ -150,6 +150,9 @@
     NSThread* myThread = [[NSThread alloc] initWithTarget:self
                                                  selector:@selector(refreshData)
                                                    object:nil];
+    AppDelegate * delegate = [[UIApplication sharedApplication] delegate];
+    delegate.curThread = myThread;
+    
     [myThread start];
 }
 // 下拉时回调
@@ -191,6 +194,9 @@
 }
 -(void) reloadData
 {
+    AppDelegate * delegate = [[UIApplication sharedApplication] delegate];
+    delegate.curThread = nil;
+
     self.reLoading = NO;
 	[self performSelector:@selector(doneLoadingTableViewData) withObject:nil afterDelay:1.0];
     

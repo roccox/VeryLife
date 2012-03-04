@@ -12,6 +12,7 @@
 #import "DetailInfoImage.h"
 #import "DetailInfoWeb.h"
 #import "CommentController.h"
+#import "AppDelegate.h"
 
 @implementation DetailInfo
 
@@ -152,6 +153,9 @@
     NSThread* myThread = [[NSThread alloc] initWithTarget:self
                                                  selector:@selector(getDetailData)
                                                    object:nil];
+    AppDelegate * delegate = [[UIApplication sharedApplication] delegate];
+    delegate.curThread = myThread;
+
     [myThread start];
     // Do any additional setup after loading the view from its nib.
 
@@ -172,6 +176,8 @@
 
 -(void)dataReady
 {
+    AppDelegate * delegate = [[UIApplication sharedApplication] delegate];
+    delegate.curThread = nil;
 
     self.titleLabel.text = product.title;
     self.priceLabel.text = product.price;
