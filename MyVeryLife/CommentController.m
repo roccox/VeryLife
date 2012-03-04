@@ -40,6 +40,7 @@
  
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    [[SingleModel getSingleModal]clearComment];
     NSThread* myThread = [[NSThread alloc] initWithTarget:self
                                                  selector:@selector(refreshData)
                                                    object:nil];
@@ -60,8 +61,8 @@
 -(void) finishedCommentData
 {
     [self performSelectorOnMainThread:@selector(reloadData) withObject:nil waitUntilDone:NO];
-    
 }
+
 -(void) reloadData
 {
     AppDelegate * delegate = [[UIApplication sharedApplication] delegate];
@@ -192,9 +193,4 @@
      */
 }
 
-#pragma - taobao delegate
--(void) finishedCommentData
-{
-    [self.tableView reloadData];
-}
 @end

@@ -126,6 +126,10 @@ static SingleModel *single = nil;
     
 }
 
+-(void)clearComment
+{
+    [itemCommentList removeAllObjects];    
+}
 
 -(void)getComment:(NSString *) num_iid
 {

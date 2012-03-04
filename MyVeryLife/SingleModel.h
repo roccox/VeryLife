@@ -66,6 +66,7 @@ typedef enum{
 -(void)sortByDate;
 -(void)sortBySellCount;
 -(void)getComment:(NSString *) num_iid;
+-(void)clearComment;
 @end
 
 @protocol TaobaoDataDelegate
