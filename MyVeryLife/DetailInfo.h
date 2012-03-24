@@ -63,5 +63,7 @@
 - (IBAction)commentBtnClicked;
 - (IBAction)buyBtnClicked;
 -(void) dataReady;
+-(void) refreshUI;
 -(void)getData;
+-(NSString *) flatHtml:(NSString *) html;
 @end

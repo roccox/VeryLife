@@ -91,7 +91,8 @@ static SingleModel *single = nil;
     //Get Category List
     self.itemPro = item;
     NSMutableDictionary *params=[[NSMutableDictionary alloc] init];
-    [params setObject:@"num_iid,num,price,express_fee,item_images,wap_desc,wap_detail_url" forKey:@"fields"];
+    //wap_desc
+    [params setObject:@"num_iid,num,price,express_fee,item_images,desc,wap_detail_url" forKey:@"fields"];
     [params setObject:self.itemPro.num_iid forKey:@"num_iid"];
     [params setObject:@"taobao.item.get" forKey:@"method"];
     
@@ -326,13 +327,18 @@ static SingleModel *single = nil;
             {
                 self.itemPro.item_express =string;
             }
-            else if(![self.currentElement compare:@"wap_desc"])
+            else if(![self.currentElement compare:@"desc"])//wap_desc
             {
                 NSString * _pro = [SingleModel getSingleModal].itemPro.wap_desc;
                 if([_pro length] ==0)
                     _pro=string;
                 else
+                {
+//                    _pro = @"t\n";
+//                    _pro = [_pro stringByAppendingString: @"t\n"];
+//                    _pro = [_pro stringByAppendingString:@"\n"];
                     _pro = [_pro stringByAppendingFormat:@"%@",string];   
+                }
                 
                 [SingleModel getSingleModal].itemPro.wap_desc = _pro;
             }

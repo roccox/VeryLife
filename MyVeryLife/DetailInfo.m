@@ -150,15 +150,19 @@
         
 	}
     
-    NSThread* myThread = [[NSThread alloc] initWithTarget:self
+    if([product.wap_desc length] > 0)
+        [self refreshUI];
+    else
+    {        
+        NSThread* myThread = [[NSThread alloc] initWithTarget:self
                                                  selector:@selector(getDetailData)
                                                    object:nil];
-    AppDelegate * delegate = [[UIApplication sharedApplication] delegate];
-    delegate.curThread = myThread;
 
-    [myThread start];
-    // Do any additional setup after loading the view from its nib.
+        AppDelegate * delegate = [[UIApplication sharedApplication] delegate];
+        delegate.curThread = myThread;
 
+        [myThread start];
+    }
 }
 
 -(void)getDetailData
@@ -174,11 +178,8 @@
 
 }
 
--(void)dataReady
+-(void)refreshUI
 {
-    AppDelegate * delegate = [[UIApplication sharedApplication] delegate];
-    delegate.curThread = nil;
-
     self.titleLabel.text = product.title;
     self.priceLabel.text = product.price;
     self.sellCountLabel.text = product.sell_count;
@@ -191,7 +192,7 @@
      UIButton * buyBtn;
      */
     self.title=@"宝贝详情";
-    self.desc.text = product.wap_desc;
+    self.desc.text = [self flatHtml:product.wap_desc];
     if([product.item_type compare:@"new"] == NSOrderedSame)
         self.proTypeLabel.text = @"全新";
     else if([product.item_type compare:@"unused"] == NSOrderedSame)
@@ -200,6 +201,49 @@
         self.proTypeLabel.text = @"二手";
     
     NSLog(@"id-%@,Desc-%@",product.num_iid,product.item_type);
+}
+
+-(void)dataReady
+{
+    AppDelegate * delegate = [[UIApplication sharedApplication] delegate];
+    delegate.curThread = nil;
+    [self refreshUI];
+}
+
+- (NSString *) flatHtml:(NSString *) html {
+    
+    NSScanner *theScanner;
+    NSString *text = nil;
+    
+    theScanner = [NSScanner scannerWithString:html];
+    
+    while ([theScanner isAtEnd] == NO) {
+        
+        // find start of tag
+        [theScanner scanUpToString:@"<" intoString:NULL] ; 
+        
+        // find end of tag
+        [theScanner scanUpToString:@">" intoString:&text] ;
+        
+        // replace the found tag with a space
+        //(you can filter multi-spaces out later if you wish)
+        if (! [text compare:@"</p"])
+            html = [html stringByReplacingOccurrencesOfString:
+                [ NSString stringWithFormat:@"%@>", text]
+                                               withString:@"\n"];
+        else
+            html = [html stringByReplacingOccurrencesOfString:
+                    [ NSString stringWithFormat:@"%@>", text]
+                                                   withString:@""];
+        
+    } // while //
+
+    html = [html stringByReplacingOccurrencesOfString:
+            [ NSString stringWithFormat:@"%@",@"&nbsp;"]
+                                           withString:@""];
+
+    return html;
+    
 }
 
 - (void)viewDidUnload
