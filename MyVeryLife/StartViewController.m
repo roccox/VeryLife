@@ -62,7 +62,7 @@
     AppDelegate * delegate = [[UIApplication sharedApplication] delegate];
     delegate.curThread = myThread;
     [myThread start];
-    self.status.text = @"亲，正在下载数据，别着急哦～～～";
+    self.status.text = @"正在下载数据，稍候哦......";
    
 }
 
