@@ -643,10 +643,12 @@
 		DDE10AB614BBD775006630F4 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Peng Jin";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "MyVeryLife/VeryLife-Prefix.pch";
 				INFOPLIST_FILE = "MyVeryLife/VeryLife-Info.plist";
 				PRODUCT_NAME = VeryLife;
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "7D0F3479-A527-421F-82B8-0EAE69D100B0";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
