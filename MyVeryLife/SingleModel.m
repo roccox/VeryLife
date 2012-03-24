@@ -473,6 +473,7 @@ static SingleModel *single = nil;
     for(int i=0;i<[itemAllProList count] && i<=10;i++)
     {
         newPro = [self.itemAllProList objectAtIndex:i];
+        isExist = NO;
         for( ItemProductModel * pro in self.itemHotProList)
         {
             if([pro.num_iid compare: newPro.num_iid] == NSOrderedSame)
@@ -501,7 +502,8 @@ static SingleModel *single = nil;
             {
                 if([pro.seller_cids rangeOfString:cat.cid].length > 0)
                 {
-                    for( ItemProductModel * _pro in self.itemHotProList)
+                    isExist = NO;
+                    for( ItemProductModel * _pro in self.itemNewProList)
                     {
                         if([pro.num_iid compare: _pro.num_iid] == NSOrderedSame)
                         {
