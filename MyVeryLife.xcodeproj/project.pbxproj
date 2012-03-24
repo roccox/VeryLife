@@ -153,14 +153,14 @@
 		DDCBC41F14C53A1D0086D6C3 /* CommentCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommentCell.h; sourceTree = "<group>"; };
 		DDCBC42014C53A1D0086D6C3 /* CommentCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommentCell.m; sourceTree = "<group>"; };
 		DDCBC42114C53A1D0086D6C3 /* CommentCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CommentCell.xib; sourceTree = "<group>"; };
-		DDE10A8B14BBD774006630F4 /* MyVeryLife.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyVeryLife.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		DDE10A8B14BBD774006630F4 /* VeryLife.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VeryLife.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DDE10A8F14BBD774006630F4 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		DDE10A9114BBD774006630F4 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		DDE10A9314BBD774006630F4 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		DDE10A9714BBD774006630F4 /* MyVeryLife-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "MyVeryLife-Info.plist"; sourceTree = "<group>"; };
+		DDE10A9714BBD774006630F4 /* VeryLife-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "VeryLife-Info.plist"; sourceTree = "<group>"; };
 		DDE10A9914BBD774006630F4 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		DDE10A9B14BBD774006630F4 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		DDE10A9D14BBD774006630F4 /* MyVeryLife-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MyVeryLife-Prefix.pch"; sourceTree = "<group>"; };
+		DDE10A9D14BBD774006630F4 /* VeryLife-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "VeryLife-Prefix.pch"; sourceTree = "<group>"; };
 		DDE10A9E14BBD774006630F4 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		DDE10A9F14BBD774006630F4 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		DDE10AA214BBD775006630F4 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
@@ -330,7 +330,7 @@
 		DDE10A8C14BBD774006630F4 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				DDE10A8B14BBD774006630F4 /* MyVeryLife.app */,
+				DDE10A8B14BBD774006630F4 /* VeryLife.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -369,10 +369,10 @@
 		DDE10A9614BBD774006630F4 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				DDE10A9714BBD774006630F4 /* MyVeryLife-Info.plist */,
+				DDE10A9714BBD774006630F4 /* VeryLife-Info.plist */,
 				DDE10A9814BBD774006630F4 /* InfoPlist.strings */,
 				DDE10A9B14BBD774006630F4 /* main.m */,
-				DDE10A9D14BBD774006630F4 /* MyVeryLife-Prefix.pch */,
+				DDE10A9D14BBD774006630F4 /* VeryLife-Prefix.pch */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -435,9 +435,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		DDE10A8A14BBD774006630F4 /* MyVeryLife */ = {
+		DDE10A8A14BBD774006630F4 /* VeryLife */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = DDE10AB414BBD775006630F4 /* Build configuration list for PBXNativeTarget "MyVeryLife" */;
+			buildConfigurationList = DDE10AB414BBD775006630F4 /* Build configuration list for PBXNativeTarget "VeryLife" */;
 			buildPhases = (
 				DDE10A8714BBD774006630F4 /* Sources */,
 				DDE10A8814BBD774006630F4 /* Frameworks */,
@@ -447,9 +447,9 @@
 			);
 			dependencies = (
 			);
-			name = MyVeryLife;
+			name = VeryLife;
 			productName = MyVeryLife;
-			productReference = DDE10A8B14BBD774006630F4 /* MyVeryLife.app */;
+			productReference = DDE10A8B14BBD774006630F4 /* VeryLife.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -460,7 +460,7 @@
 			attributes = {
 				LastUpgradeCheck = 0420;
 			};
-			buildConfigurationList = DDE10A8514BBD774006630F4 /* Build configuration list for PBXProject "MyVeryLife" */;
+			buildConfigurationList = DDE10A8514BBD774006630F4 /* Build configuration list for PBXProject "VeryLife" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -472,7 +472,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				DDE10A8A14BBD774006630F4 /* MyVeryLife */,
+				DDE10A8A14BBD774006630F4 /* VeryLife */,
 			);
 		};
 /* End PBXProject section */
@@ -633,9 +633,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "MyVeryLife/MyVeryLife-Prefix.pch";
-				INFOPLIST_FILE = "MyVeryLife/MyVeryLife-Info.plist";
-				PRODUCT_NAME = MyVeryLife;
+				GCC_PREFIX_HEADER = "MyVeryLife/VeryLife-Prefix.pch";
+				INFOPLIST_FILE = "MyVeryLife/VeryLife-Info.plist";
+				PRODUCT_NAME = VeryLife;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -643,10 +643,12 @@
 		DDE10AB614BBD775006630F4 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Peng Jin";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "MyVeryLife/MyVeryLife-Prefix.pch";
-				INFOPLIST_FILE = "MyVeryLife/MyVeryLife-Info.plist";
-				PRODUCT_NAME = MyVeryLife;
+				GCC_PREFIX_HEADER = "MyVeryLife/VeryLife-Prefix.pch";
+				INFOPLIST_FILE = "MyVeryLife/VeryLife-Info.plist";
+				PRODUCT_NAME = VeryLife;
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "7D0F3479-A527-421F-82B8-0EAE69D100B0";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
@@ -654,7 +656,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		DDE10A8514BBD774006630F4 /* Build configuration list for PBXProject "MyVeryLife" */ = {
+		DDE10A8514BBD774006630F4 /* Build configuration list for PBXProject "VeryLife" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				DDE10AB214BBD775006630F4 /* Debug */,
@@ -663,7 +665,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		DDE10AB414BBD775006630F4 /* Build configuration list for PBXNativeTarget "MyVeryLife" */ = {
+		DDE10AB414BBD775006630F4 /* Build configuration list for PBXNativeTarget "VeryLife" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				DDE10AB514BBD775006630F4 /* Debug */,
