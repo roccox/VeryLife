@@ -187,6 +187,8 @@ static SingleModel *single = nil;
         self.itemProlist = [[NSMutableArray alloc]init];
     if(itemCommentList == nil)
         itemCommentList = [[NSMutableArray alloc]init];
+
+    //TODO: check the itemNewProList
     
     _parseState = TAOBAO_PARSE_START;
 
