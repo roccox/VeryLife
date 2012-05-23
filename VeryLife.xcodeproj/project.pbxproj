@@ -648,7 +648,7 @@
 				GCC_PREFIX_HEADER = "MyVeryLife/VeryLife-Prefix.pch";
 				INFOPLIST_FILE = "MyVeryLife/VeryLife-Info.plist";
 				PRODUCT_NAME = VeryLife;
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "7D0F3479-A527-421F-82B8-0EAE69D100B0";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "F2185A8C-BC5E-40E6-B739-316A10FE91A6";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
