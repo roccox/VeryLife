@@ -403,6 +403,7 @@ static SingleModel *single = nil;
         case TAOBAO_PARSE_PRO_LIST:
             if([elementName isEqualToString:@"item"])
             {
+                /* taobao send duplicated data in different pages
                 BOOL isExist = NO;
                 for( ItemProductModel * pro in self.itemAllProList)
                 {
@@ -414,6 +415,7 @@ static SingleModel *single = nil;
                     
                 }
                 if(!isExist)
+                 */
                     [self.itemAllProList addObject:self.itemPro];
             }
             break;
@@ -443,8 +445,11 @@ static SingleModel *single = nil;
             break;
         case TAOBAO_PARSE_PRO_LIST:
             if([self.itemAllProList count] < _item_total_count)
+            {
+                NSLog(@"count= %d",[self.itemAllProList count]);
                 [self getProductsList:[self.itemAllProList count]/40 + 1];
-            else    
+            }
+            else
             {
                 _item_getinfo_no = 0;
                 [self getProInfo:_item_getinfo_no];

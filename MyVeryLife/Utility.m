@@ -39,6 +39,22 @@
     return [self createMD5:signData];
 }
 
++(NSString *)createSign2:(NSMutableDictionary *)params
+{
+    NSArray *keys=[params allKeys];
+    keys=[keys sortedArrayUsingSelector:@selector(compare:)];
+    
+    NSString *signData=[[[NSString alloc] init] autorelease];
+    signData=[signData stringByAppendingFormat:APP_SECRET2];
+    for(NSString *key in keys)
+    {
+        signData=[signData stringByAppendingFormat:@"%@%@",key,[params objectForKey:key]];
+    }
+    signData=[signData stringByAppendingFormat:APP_SECRET2];
+    return [self createMD5:signData];
+}
+
+
 +(NSString *)createPostURL:(NSMutableDictionary *)params
 {
     NSString *postString=@"";
@@ -69,6 +85,25 @@
     [params setObject:[Utility getCurrentDate] forKey:@"timestamp"];
     [params setObject:@"2.0" forKey:@"v"];
     [params setObject:[Utility createSign:params] forKey:@"sign"];
+    
+    NSString *postURL=[Utility createPostURL:params];
+    NSError *error;
+    NSURLResponse *theResponse;
+    NSMutableURLRequest *theRequest=[NSMutableURLRequest requestWithURL:[NSURL URLWithString:BASEURL]];
+    [theRequest setHTTPMethod:@"POST"];
+    [theRequest setHTTPBody:[postURL dataUsingEncoding:NSUTF8StringEncoding]];
+    [theRequest addValue:@"application/x-www-form-urlencoded" forHTTPHeaderField:@"Content-Type"];
+    return [NSURLConnection sendSynchronousRequest:theRequest returningResponse:&theResponse error:&error];
+}
+
++(NSData *)getResultData2:(NSMutableDictionary *)params
+{
+    [params setObject:APP_KEY2 forKey:@"app_key"];
+    [params setObject:@"xml" forKey:@"format"];
+    [params setObject:@"md5" forKey:@"sign_method"];
+    [params setObject:[Utility getCurrentDate] forKey:@"timestamp"];
+    [params setObject:@"2.0" forKey:@"v"];
+    [params setObject:[Utility createSign2:params] forKey:@"sign"];
     
     NSString *postURL=[Utility createPostURL:params];
     NSError *error;
